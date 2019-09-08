@@ -1,0 +1,20 @@
+script#mustache-combat-entry-enchps(type="x-tmpl-mustache")
+    div.combat-entry.d-flex.flex-row.justify-content-start.align-items-center.text-light.text-shadow.position-relative.p-1.m-0(
+        id = `combat-entry-enchps-{{display_name_short}}`,
+        class = `job-{{job}}`,
+        class = `{{#you}}you{{/you}}`,
+        data-sonsho = { sort: `{{enchps}}`}
+    )
+        div.bar-graph.position-absolute.h-100(style={ width: `{{fraction.enchps}}%` })
+        img.mr-1
+        span.entrant-name.flex-grow-1 {{display_name}}
+        span.d-inline-block.text-right
+            span.text-negative-field.mr-1(class = `{{^overhealing}}d-none{{/overhealing}}`)
+                span.entrant-overhealing.dynamic-field(data-sonsho={ key: 'overhealing' }) {{#format}}overhealing{{/format}}
+                span.entrant-total-overhealing-fraction.dynamic-field.ml-1(data-sonsho={ key: 'fraction.overhealing' }) {{#format}}fraction.overhealing{{/format}}
+            //- span.entrant-shielding.text-shielding.dynamic-field.d-inline-block.mr-1(
+                class = `{{^shielding}}d-none{{/shielding}}`,
+                data-sonsho={ key: 'shielding'}) {{#format}}shielding{{/format}}
+            span.entrant-healing.d-inline-block(data-sonsho={ key: 'healing' }) {{#format}}healing{{/format}}
+            span.entrant-hps.d-inline-block.font-weight-bold.ml-1(data-sonsho={ key: 'enchps' }) {{#format}}enchps{{/format}}
+            span.entrant-total-healing-fraction.d-inline-block.ml-1(data-sonsho={ key: 'fraction.healing' }) {{#format}}fraction.healing{{/format}}

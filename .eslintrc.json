@@ -1,0 +1,40 @@
+{
+    "extends": ["eslint:recommended", "google"],
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "node": true,
+        "jquery": true,
+        "mongo": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 8,
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "sourceType": "module"
+    },
+    "rules": {
+        "camelcase": ["off", { "properties": "never" }],
+        "eol-last": ["error", "never"],
+        "guard-for-in": "off",
+        "indent": ["error", 4],
+        "linebreak-style": "off",
+        "max-len": ["warn", { "code": 160, "tabWidth": 4, "ignoreUrls": true }],
+        "no-console": "off",
+        "no-multi-spaces": ["error", { "ignoreEOLComments": true }],
+        "no-redeclare": "error",
+        "no-shadow": "error",
+        "no-trailing-spaces": ["error", { "ignoreComments": true }],
+        "no-unused-vars": ["warn", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
+        "no-var": "off",
+        "object-curly-spacing": ["error", "always"],
+        "one-var": "off",
+        "quote-props": ["error", "as-needed"],
+        "require-jsdoc": ["warn", { "require": { "FunctionDeclaration": true, "MethodDefinition": true, "ClassDeclaration": true } }],
+        "semi" : ["error", "never"],
+        "space-before-function-paren": ["error", "always"],
+        "valid-jsdoc": ["warn", { "requireParamDescription": false, "requireReturnDescription": false, "requireReturn": false, "prefer": { "returns": "return" } }]
+    }
+}

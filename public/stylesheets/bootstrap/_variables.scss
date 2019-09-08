@@ -1,0 +1,69 @@
+// Themes
+$ffxiv-job-colors: (
+    "ACN": #2d9b78, // Arcanist
+    "ARC": #91ba5e, // Archer
+    "AST": #ffe74a, // Astrologian
+    "BLM": #a579d6, // Black Mage
+    "BLU": #2459ff, // Blue Mage
+    "BRD": #91ba5e, // Bard
+    "CNJ": #fff0dc, // Conjurer
+    "DNC": #e2b0af, // Dancer
+    "DRG": #4164cd, // Dragoon
+    "DRK": #d126cc, // Dark Knight
+    "GLA": #a8d2e6, // Gladiator
+    "GNB": #796d30, // Gunbreaker
+    "LNC": #4164cd, // Lancer
+    "MCH": #6ee1d6, // Machinist
+    "MNK": #d69c00, // Monk
+    "MRD": #cf2621, // Marauder
+    "NIN": #af1964, // Ninja
+    "PLD": #a8d2e6, // Paladin
+    "PGL": #d69c00, // Pugilist
+    "RDM": #e87b7b, // Red Mage
+    "ROG": #af1964, // Rogue
+    "SAM": #e46d04, // Samurai
+    "SCH": #8657ff, // Scholar
+    "SMN": #2d9b78, // Summoner
+    "THM": #a579d6, // Thamauturge
+    "WAR": #cf2621, // Warrior
+    "WHM": #fff0dc, // White Mage
+    "-pet": #64BDC8, // Chocobo/Pet
+    "-limit-break": #2599be, // Limit Break
+);
+
+$ffxiv-role-colors: (
+    "tanking": #84bdf8,
+    "damage": #f84d44,
+    "healing": #84f8Bd,
+);
+
+$ffxiv-custom-colors: (
+    "negative-field": lighten(map-get($ffxiv-role-colors, "damage"), 10%),
+    "shielding": #b5f7ff,
+);
+
+// Body
+// $body-bg:#343a40; // $dark
+// $body-bg: rgba(0,0,0,.4);
+
+// Base Bootstrap
+@import '../../../node_modules/bootstrap/scss/variables';
+
+$theme-colors: map-merge($ffxiv-job-colors, $theme-colors);
+$theme-colors: map-merge($ffxiv-role-colors, $theme-colors);
+$theme-colors: map-merge($ffxiv-custom-colors, $theme-colors);
+
+// Text Classes
+$text-shadow:
+    -1px -1px 0 $gray-900,  
+    1px -1px 0 $gray-900,
+    -1px 1px 0 $gray-900,
+    1px 1px 0 $gray-900,
+    0px 0px 2px rgba(0,0,0,0.8),
+    2px 0px 4px rgba(0,0,0,0.8),
+    -2px 0px 4px rgba(0,0,0,0.8);
+
+// Images
+$default-img-size:24px;
+
+// Variables

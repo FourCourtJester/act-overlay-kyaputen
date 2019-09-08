@@ -1,0 +1,17 @@
+script#mustache-combat-entry-enctps(type="x-tmpl-mustache")
+    div.combat-entry.d-flex.flex-row.justify-content-start.align-items-center.text-light.text-shadow.position-relative.p-1.m-0(
+        id = `combat-entry-enctps-{{display_name_short}}`,
+        class = `job-{{job}}`,
+        class = `{{#you}}you{{/you}}`,
+        data-sonsho = { sort: `{{enctps}}`}
+    )
+        div.bar-graph.position-absolute.h-100(style={ width: `{{fraction.enctps}}%` })
+        img.mr-1
+        span.entrant-name.flex-grow-1 {{display_name}}
+        span.d-inline-block.text-right
+            span.text-negative-field.mr-1(class = `{{^deaths}}d-none{{/deaths}}`)
+                span.icon.mr-1 💀
+                span.entrant-deaths.dynamic-field(data-sonsho={ key: 'deaths' }) {{#format}}deaths{{/format}}
+            span.entrant-damage-taken.d-inline-block(data-sonsho={ key: 'damage_taken' }) {{#format}}damage_taken{{/format}}
+            span.entrant-tps.d-inline-block.font-weight-bold.ml-1(data-sonsho={ key: 'enctps' }) {{#format}}enctps{{/format}}
+            span.entrant-total-damage-fraction.d-inline-block.ml-1(data-sonsho={ key: 'fraction.damage_taken' }) {{#format}}fraction.damage_taken{{/format}}

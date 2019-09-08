@@ -1,0 +1,287 @@
+{
+    "zone": "Eden's Gate: Ressurection",
+    "mechanics": {
+        "d-shift": {
+            "name": "Dimensional Shift",
+            "message": "",
+            "ttl": 5
+        },
+        "delta": {
+            "name": "Delta Attack",
+            "message": "",
+            "ttl": 5
+        },
+        "enrage": {
+            "name": "Fragor Maximus",
+            "message": "Enrage",
+            "ttl": 5
+        },
+        "f-m": {
+            "name": "Fragor Maximus",
+            "message": "Raid Buster",
+            "ttl": 5
+        },
+        "flare": {
+            "name": "Eden's Flare",
+            "message": "",
+            "ttl": 5
+        },
+        "gravity": {
+            "name": "Eden's Gravity",
+            "message": "Raid Buster",
+            "ttl": 5
+        },
+        "m-boost": {
+            "name": "Mana Boost",
+            "message": "Interruptable buff",
+            "ttl": 5
+        },
+        "m-burst": {
+            "name": "Mana Burst",
+            "message": "Raid Buster",
+            "ttl": 5
+        },
+        "m-s": {
+            "name": "Mana Slice",
+            "message": "Cleave",
+            "ttl": 5
+        },
+        "p-b": {
+            "name": "Pure Beam",
+            "message": "Stand in front of an orb",
+            "ttl": 5
+        },
+        "p-l": {
+            "name": "Pure Light",
+            "message": "Be behind Eden",
+            "ttl": 5
+        },
+        "raid-beams": {
+            "name": "Activate Beams",
+            "message": "Aim away from the center",
+            "ttl": 5
+        },
+        "random": {
+            "name": "Random Ability",
+            "message": "Be alert",
+            "ttl": 5
+        },
+        "spear": {
+            "name": "Spear of Paradise",
+            "message": "Tank Buster",
+            "ttl": 5
+        },
+        "v-v-dps": {
+            "name": "Vice and Virtue",
+            "message": "DPS Puddles",
+            "ttl": 5
+        },
+        "v-v-heal-to-dps": {
+            "name": "Vice and Virtue",
+            "message": "Healer transfer to DPS",
+            "ttl": 5
+        },
+        "v-v-heal-to-tank": {
+            "name": "Vice and Virtue",
+            "message": "Healer transfer to Tank",
+            "ttl": 5
+        },
+        "v-v-stack-dps": {
+            "name": "Vice and Virtue",
+            "message": "Pair up",
+            "ttl": 5
+        },
+        "v-v-stack-tank": {
+            "name": "Vice and Virtue",
+            "message": "Stack with a Tank",
+            "ttl": 5
+        },
+        "v-v-tank": {
+            "name": "Vice and Virtue",
+            "message": "Tank Buster",
+            "ttl": 5
+        }
+    },
+    "script": [
+        {
+            "t": "00:12",
+            "mechanic": "gravity"
+        },
+        {
+            "t": "00:25",
+            "mechanic": "v-v-dps"
+        },
+        {
+            "t": "00:30",
+            "mechanic": "flare"
+        },
+        {
+            "t": "00:51",
+            "mechanic": "v-v-tank"
+        },
+        {
+            "t": "00:58",
+            "mechanic": "spear"
+        },
+        {
+            "t": "01:09",
+            "mechanic": "v-v-heal-to-tank"
+        },
+        {
+            "t": "01:20",
+            "mechanic": "p-l"
+        },
+        {
+            "t": "01:34",
+            "mechanic": "delta"
+        },
+        {
+            "t": "01:45",
+            "mechanic": "d-shift"
+        },
+        {
+            "t": "02:05",
+            "mechanic": "p-b"
+        },
+        {
+            "t": "02:12",
+            "mechanic": "p-l"
+        },
+        {
+            "t": "02:23",
+            "mechanic": "d-shift"
+        },
+        {
+            "t": "02:32",
+            "mechanic": "f-m"
+        },
+        {
+            "t": "03:00",
+            "mechanic": "m-boost"
+        },
+        {
+            "t": "03:05",
+            "mechanic": "m-s"
+        },
+        {
+            "t": "03:14",
+            "mechanic": "m-burst"
+        },
+        {
+            "t": "03:19",
+            "mechanic": "m-s"
+        },
+        {
+            "t": "03:29",
+            "mechanic": "m-burst"
+        },
+        {
+            "t": "03:34",
+            "mechanic": "m-s"
+        },
+        {
+            "t": "04:56",
+            "mechanic": "v-v-stack-tank"
+        },
+        {
+            "t": "05:09",
+            "mechanic": "v-v-stack-dps"
+        },
+        {
+            "t": "05:22",
+            "mechanic": "delta"
+        },
+        {
+            "t": "05:34",
+            "mechanic": "v-v-heal-to-dps"
+        },
+        {
+            "t": "05:42",
+            "mechanic": "spear"
+        },
+        {
+            "t": "05:55",
+            "mechanic": "d-shift"
+        },
+        {
+            "t": "06:06",
+            "mechanic": "p-b"
+        },
+        {
+            "t": "06:11",
+            "mechanic": "raid-beams"
+        },
+        {
+            "t": "06:25",
+            "mechanic": "p-l"
+        },
+        {
+            "t": "06:36",
+            "mechanic": "d-shift"
+        },
+        {
+            "t": "06:48",
+            "mechanic": "gravity"
+        },
+        {
+            "t": "06:59",
+            "mechanic": "flare"
+        },
+        {
+            "t": "07:17",
+            "mechanic": "v-v-tank"
+        },
+        {
+            "t": "07:23",
+            "mechanic": "spear"
+        },
+        {
+            "t": "07:34",
+            "mechanic": "v-v-dps"
+        },
+        {
+            "t": "07:48",
+            "mechanic": "delta"
+        },
+        {
+            "t": "08:00",
+            "mechanic": "v-v-heal-to-tank"
+        },
+        {
+            "t": "08:13",
+            "mechanic": "d-shift"
+        },
+        {
+            "t": "08:22",
+            "mechanic": "p-b"
+        },
+        {
+            "t": "08:27",
+            "mechanic": "raid-beams"
+        },
+        {
+            "t": "08:43",
+            "mechanic": "p-l"
+        },
+        {
+            "t": "08:53",
+            "mechanic": "d-shift"
+        },
+        {
+            "t": "09:06",
+            "mechanic": "random"
+        },
+        {
+            "t": "9:39",
+            "mechanic": "random"
+        },
+        {
+            "t": "09:56",
+            "mechanic": "delta"
+        },
+        {
+            "t": "10:00",
+            "mechanic": "enrage"
+        }
+    ]
+}
