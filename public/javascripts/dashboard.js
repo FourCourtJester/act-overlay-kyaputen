@@ -23,7 +23,18 @@ class SonshoDashboard {
         this.options = {}
 
         // DOM Elements
-        this.elements = {}
+        this.elements = {
+            list: '.toasts',
+            mustache: {
+                tpl: '#mustache-toast',
+                fields: {
+                    ttl: '.mechanic-ttl',
+                },
+            },
+        }
+
+        // Supported Encounters
+        this.encounters = [`Eden's Gate: Resurrection (Savage)`]
 
         // Combat log
         this.combat = {
@@ -94,6 +105,9 @@ class SonshoDashboard {
      * @return {Boolean}
      */
     async update () {
+        // No support encounter was loaded
+        if (!this.combat.encounter) return true
+
         this.combat.encounter.elapsed++
 
         // Only proceed if there are any mechanics
@@ -106,8 +120,16 @@ class SonshoDashboard {
         // Do not create a message until you're within range of the cast time
         if (this.combat.encounter.elapsed < timestamp - this.combat.encounter.mechanics[entry.mechanic].ttl) return false
 
-        // Send msg
-        console.log(this.combat.encounter.mechanics[entry.mechanic].name, this.combat.encounter.mechanics[entry.mechanic].message)
+        const $tpl = this._createTemplate({
+            mechanic: this.combat.encounter.mechanics[entry.mechanic],
+            ttl_ms: () => {
+                return this.combat.encounter.mechanics[entry.mechanic].ttl * 1000
+            },
+            get_i: () => {
+                if (Utils.getObjValue(this.combat.encounter.mechanics[entry.mechanic], 'i')) return this.combat.encounter.mechanics[entry.mechanic].i
+                return this.combat.encounter.i
+            },
+        })
 
         // Remove entry to avoid repeats
         this.combat.encounter.script.shift()
@@ -119,11 +141,50 @@ class SonshoDashboard {
      * 
      * @param {String} zone 
      */
-    async encounter (slug) {
-        const json = await $.getJSON(`public/javascripts/encounters/${slug}.json`)
+    async encounter (zone) {
+        const slug = Utils.slugify(zone)
 
-        this.combat.encounter.script = json.script
-        this.combat.encounter.mechanics = json.mechanics
+        try {
+            if (!this.encounters.includes(zone)) throw new Error(`${zone} is not (yet) supported by Kyaputen.`)
+            const json = await $.getJSON(`public/javascripts/encounters/${slug}.json`)
+
+            this.combat.encounter = json
+            this.combat.encounter.elapsed = this.combat.time.t
+        } catch (err) {
+            console.log(err)
+
+            // this._createTemplate({
+            //     mechanic: {
+            //         name: 'Unsupported Encounter',
+            //         type: 'Warning',
+            //         message: `${zone} is not (yet) supported by Kyaputen`,
+            //         ttl: 0,
+            //     },
+            //     ttl_ms: 5000,
+            //     get_i: 'https://xivapi.com/i/061000/061804.png',
+            // })
+
+            this.combat.encounter = null
+        }
+    }
+
+    /**
+     * 
+     * @param {Object} opts 
+     * @return {Object}
+     */
+    _createTemplate (opts) {
+        try {
+            const $tpl = $(Mustache.render($(`${this.elements.mustache.tpl}`).html(), opts))
+
+            $tpl.toast()
+            $(this.elements.list).append($tpl)
+            $tpl.toast('show')
+
+            return $tpl
+        } catch (err) {
+            console.error(err)
+        }
     }
 
     /**
@@ -155,7 +216,7 @@ class SonshoDashboard {
             }
 
             // Load the script
-            this.encounter('edens-gate-resurection-savage' || Utils.slugify(encounter.CurrentZoneName))
+            this.encounter(encounter.CurrentZoneName)
 
             // Update the DOM every second
             this.timer = setInterval(() => {
@@ -169,13 +230,14 @@ class SonshoDashboard {
             t: +encounter.DURATION,
             formatted: encounter.duration,
         }
-        this.combat.encounter.elapsed = this.combat.time.t
 
         if (active == false) {
             console.log(`Combat ends: ${encounter.title}`)
 
             clearInterval(this.timer)
             this.timer = null
+
+            $(this.elements.list).empty()
         }
     }
 }

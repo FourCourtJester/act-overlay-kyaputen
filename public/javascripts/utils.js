@@ -76,7 +76,7 @@ class SonshoToolkit {
      * @return {String}
      */
     slugify (str) {
-        return str.toLowerCase().replace(/['()]/g, '').split(' ').join('-')
+        return str.toLowerCase().replace(/[':()]/g, '').split(' ').join('-')
     }
 }
 

@@ -1,0 +1,13 @@
+script#mustache-toast(type="x-tmpl-mustache")
+    div.toast.custom-toast.fade.p-1(data-delay="{{ttl_ms}}")
+        div.wrap.d-flex.flex-column
+            div.title.d-flex.flex-row.align-items-center.pl-2.pr-3.py-3
+                img.mr-2(src="{{get_i}}")
+                span.mr-auto {{mechanic.name}}
+                span.wrap-ttl.text-center
+                    span.mechanic-ttl(style="animation-duration:{{mechanic.ttl}}s;") {{mechanic.ttl}}
+                    svg #[circle(r="14" cx="16" cy="16", style="animation-duration:{{mechanic.ttl}}s;")]
+            div.content.d-block.px-2.py-3
+                ul.list-unstyled.p-0.m-0
+                    li.mechanic-title.mb-1 {{mechanic.type}}
+                    li.mechanic-action.m-0 {{mechanic.message}}

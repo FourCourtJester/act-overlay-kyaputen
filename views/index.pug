@@ -1,6 +1,8 @@
 doctype html
 html
   include tpl/head
-  body.container-fluid.debug.no-gutters
+  body.container-fluid.no-gutters.p-2
     div.row.h-100
-      
+      div.toasts.col-12.d-flex.flex-column.justify-content-end.align-items-center
+  //- Templates
+  include /views/mustache/toast

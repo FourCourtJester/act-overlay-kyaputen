@@ -1,105 +1,126 @@
 {
     "zone": "Eden's Gate: Ressurection",
+    "i": "http://xivapi.com/i/000000/000405.png",
     "mechanics": {
         "d-shift": {
             "name": "Dimensional Shift",
+            "type": "Raid Buster",
             "message": "",
-            "ttl": 5
+            "ttl": 4
         },
         "delta": {
             "name": "Delta Attack",
-            "message": "",
+            "type": "Spread",
+            "message": "Go to your designated position.",
             "ttl": 5
         },
         "enrage": {
             "name": "Fragor Maximus",
-            "message": "Enrage",
+            "type": "Enrage",
+            "message": "Defeat Eden or you will die.",
             "ttl": 5
         },
         "f-m": {
             "name": "Fragor Maximus",
-            "message": "Raid Buster",
+            "type": "Heal Check",
+            "message": "",
             "ttl": 5
         },
         "flare": {
             "name": "Eden's Flare",
+            "type": "Area of Effect",
             "message": "",
-            "ttl": 5
+            "ttl": 4
         },
         "gravity": {
             "name": "Eden's Gravity",
-            "message": "Raid Buster",
-            "ttl": 5
+            "type": "Raid Buster",
+            "message": "",
+            "ttl": 4
         },
         "m-boost": {
             "name": "Mana Boost",
-            "message": "Interruptable buff",
+            "type": "Buff",
+            "message": "Interrupt both enemies castings of this.",
             "ttl": 5
         },
         "m-burst": {
             "name": "Mana Burst",
-            "message": "Raid Buster",
-            "ttl": 5
+            "type": "Raid Buster",
+            "message": "",
+            "ttl": 3
         },
         "m-s": {
             "name": "Mana Slice",
-            "message": "Cleave",
+            "type": "Cleave",
+            "message": "Tanks must aim this enemy away from the raid.",
             "ttl": 5
         },
         "p-b": {
             "name": "Pure Beam",
-            "message": "Stand in front of an orb",
-            "ttl": 5
+            "type": "Linear Damage",
+            "message": "Stand in front of an orb.",
+            "ttl": 3
         },
         "p-l": {
             "name": "Pure Light",
-            "message": "Be behind Eden",
-            "ttl": 5
+            "type": "Positional",
+            "message": "Get behind Eden.",
+            "ttl": 11
         },
         "raid-beams": {
             "name": "Activate Beams",
-            "message": "Aim away from the center",
-            "ttl": 5
+            "type": "Raid Wipe",
+            "message": "Aim the telegraph away from the raid.",
+            "ttl": 3
         },
         "random": {
             "name": "Random Ability",
+            "type": "Random",
             "message": "Be alert",
             "ttl": 5
         },
         "spear": {
             "name": "Spear of Paradise",
-            "message": "Tank Buster",
+            "type": "Tank Buster",
+            "message": "",
             "ttl": 5
         },
         "v-v-dps": {
             "name": "Vice and Virtue",
-            "message": "DPS Puddles",
-            "ttl": 5
+            "type": "Positional",
+            "message": "DPS must position these away from the raid.",
+            "ttl": 6
         },
         "v-v-heal-to-dps": {
             "name": "Vice and Virtue",
-            "message": "Healer transfer to DPS",
-            "ttl": 5
+            "type": "Transfer",
+            "message": "Healers must transfer this debuff to DPS and then heal them.",
+            "ttl": 6
         },
         "v-v-heal-to-tank": {
             "name": "Vice and Virtue",
-            "message": "Healer transfer to Tank",
-            "ttl": 5
+            "type": "Transfer",
+            "message": "Healers must transfer this debuff to Tanks and then heal them.",
+            "ttl": 6
         },
         "v-v-stack-dps": {
             "name": "Vice and Virtue",
-            "message": "Pair up",
-            "ttl": 5
+            "type": "Positional",
+            "message": "Position yourself with your partner to mitigate damage.",
+            "ttl": 6
         },
         "v-v-stack-tank": {
             "name": "Vice and Virtue",
-            "message": "Stack with a Tank",
-            "ttl": 5
+            "type": "Tank Buster",
+            "message": "Stand in front of your Tanks to mitigate damage",
+            "ttl": 6
         },
         "v-v-tank": {
             "name": "Vice and Virtue",
-            "message": "Tank Buster",
-            "ttl": 5
+            "type": "Tank Buster",
+            "message": "Tanks will be hit by linear lasers. Do not stand in line with them.",
+            "ttl": 6
         }
     },
     "script": [
