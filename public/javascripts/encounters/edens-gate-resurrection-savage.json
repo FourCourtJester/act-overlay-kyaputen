@@ -5,13 +5,13 @@
         "d-shift": {
             "name": "Dimensional Shift",
             "type": "Raid Buster",
-            "message": "",
+            "message": "Will do 70% of max health as damage.",
             "ttl": 4
         },
         "delta": {
             "name": "Delta Attack",
             "type": "Spread",
-            "message": "Go to your designated position.",
+            "message": "Position yourself at your designated position.",
             "ttl": 5
         },
         "enrage": {
@@ -23,19 +23,19 @@
         "f-m": {
             "name": "Fragor Maximus",
             "type": "Heal Check",
-            "message": "",
+            "message": "Massive damage.",
             "ttl": 5
         },
         "flare": {
             "name": "Eden's Flare",
             "type": "Area of Effect",
-            "message": "",
+            "message": "Position yourself under Eden.",
             "ttl": 4
         },
         "gravity": {
             "name": "Eden's Gravity",
             "type": "Raid Buster",
-            "message": "",
+            "message": "Will do 70% of max health as damage.",
             "ttl": 4
         },
         "m-boost": {
@@ -47,7 +47,7 @@
         "m-burst": {
             "name": "Mana Burst",
             "type": "Raid Buster",
-            "message": "",
+            "message": "Will wipe the raid if Mana Boost was not interrupted.",
             "ttl": 3
         },
         "m-s": {
@@ -58,32 +58,32 @@
         },
         "p-b": {
             "name": "Pure Beam",
-            "type": "Linear Damage",
-            "message": "Stand in front of an orb.",
+            "type": "Positional",
+            "message": "Position yourself on the outside of an orb.",
             "ttl": 3
         },
         "p-l": {
             "name": "Pure Light",
             "type": "Positional",
-            "message": "Get behind Eden.",
+            "message": "Position yourself behind Eden.",
             "ttl": 11
         },
         "raid-beams": {
             "name": "Activate Beams",
-            "type": "Raid Wipe",
-            "message": "Aim the telegraph away from the raid.",
+            "type": "Positional",
+            "message": "Position yourself so the telegraph fires away from the raid.",
             "ttl": 3
         },
         "random": {
             "name": "Random Ability",
             "type": "Random",
-            "message": "Be alert",
+            "message": "Be alert, and listen for a callout from your raid leader.",
             "ttl": 5
         },
         "spear": {
             "name": "Spear of Paradise",
             "type": "Tank Buster",
-            "message": "",
+            "message": "2-Hit combo on the Tanks.",
             "ttl": 5
         },
         "v-v-dps": {
@@ -94,32 +94,32 @@
         },
         "v-v-heal-to-dps": {
             "name": "Vice and Virtue",
-            "type": "Transfer",
+            "type": "Prey",
             "message": "Healers must transfer this debuff to DPS and then heal them.",
             "ttl": 6
         },
         "v-v-heal-to-tank": {
             "name": "Vice and Virtue",
-            "type": "Transfer",
+            "type": "Prey",
             "message": "Healers must transfer this debuff to Tanks and then heal them.",
             "ttl": 6
         },
         "v-v-stack-dps": {
             "name": "Vice and Virtue",
             "type": "Positional",
-            "message": "Position yourself with your partner to mitigate damage.",
+            "message": "Position yourself with your partner to mitigate incoming damage.",
             "ttl": 6
         },
         "v-v-stack-tank": {
             "name": "Vice and Virtue",
             "type": "Tank Buster",
-            "message": "Stand in front of your Tanks to mitigate damage",
+            "message": "Position yourself infront of your Tanks to mitigate incoming damage.",
             "ttl": 6
         },
         "v-v-tank": {
             "name": "Vice and Virtue",
             "type": "Tank Buster",
-            "message": "Tanks will be hit by linear lasers. Do not stand in line with them.",
+            "message": "Tanks will be hit by linear lasers. Do not stand with them.",
             "ttl": 6
         }
     },

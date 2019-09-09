@@ -1,0 +1,366 @@
+{
+    "zone": "Eden's Gate: Ressurection",
+    "i": "http://xivapi.com/i/000000/000405.png",
+    "mechanics": {
+        "c-o-c": {
+            "name": "Cycle of Chaos",
+            "type": "Combo",
+            "message": "Voidwalker will either cast this or Cycle of Retribution.",
+            "ttl": 5
+        },
+        "c-o-r": {
+            "name": "Cycle of Retribution",
+            "type": "Combo",
+            "message": "Voidwalker will either cast this or Cycle of Chaos.",
+            "ttl": 5
+        },
+        "c-1": {
+            "name": "Doomvoid Slicer (CoR) or Doomvoid Guillotine (CoC)",
+            "type": "Combo",
+            "message": "Voidwalker will either one of these.",
+            "ttl": 5
+        },
+        "c-2": {
+            "name": "Doomvoid Cleaver (CoR) or Doomvoid Slicer (CoC)",
+            "type": "Combo",
+            "message": "Voidwalker will either one of these.",
+            "ttl": 5
+        },
+        "c-3": {
+            "name": "Doomvoid Guillotine (CoR) or Doomvoid Cleaver (CoC)",
+            "type": "Combo",
+            "message": "Voidwalker will either one of these.",
+            "ttl": 4
+        },
+        "d-f-3": {
+            "name": "Dark Fire III",
+            "type": "Spread",
+            "message": "If marked, position yourself away from other players and telegraphs.",
+            "ttl": 5
+        },
+        "d-c": {
+            "name": "Doomvoid Cleaver",
+            "type": "Positional",
+            "message": "Position yourself in your designated position.",
+            "ttl": 4
+        },
+        "d-g": {
+            "name": "Doomvoid Guillotine",
+            "type": "Positional",
+            "message": "Position yourself to the sides of Voidwalker.",
+            "ttl": 4
+        },
+        "d-s": {
+            "name": "Doomvoid Slicer",
+            "type": "Area of Effect",
+            "message": "Position yourself under Voidwalker.",
+            "ttl": 4
+        },
+        "enrage": {
+            "name": "Quietus",
+            "type": "Enrage",
+            "message": "Defeat Voidwalker or you will die.",
+            "ttl": 15
+        },
+        "entropy": {
+            "name": "Entropy",
+            "type": "Raid Buster",
+            "message": "Raid wide unavoidable damage.",
+            "ttl": 6
+        },
+        "e-h": {
+            "name": "Empty Hate",
+            "type": "Knockback",
+            "message": "The Hand of Erebos will do a raid knockback.",
+            "ttl": 6
+        },
+        "e-r": {
+            "name": "Empty Rage",
+            "type": "Cleave",
+            "message": "The Hand of Erebos will do a raid cleave.",
+            "ttl": 6
+        },
+        "equilibrium": {
+            "name": "Equilibrium",
+            "type": "Stack",
+            "message": "Position yourself with your partner to mitigate incoming damage.",
+            "ttl": 5
+        },
+        "flare": {
+            "name": "Flare",
+            "type": "Positional",
+            "message": "If marked, position yourself at your designated position.",
+            "ttl": 5
+        },
+        "h-w": {
+            "name": "Hell Wind",
+            "type": "Prey",
+            "message": "Marked players will be reduced to 1 health.",
+            "ttl": 5
+        },
+        "p-r": {
+            "name": "Punishing Ray",
+            "type": "Positional",
+            "message": "Position yourself at your designated position to mitigate incoming damage.",
+            "ttl": 5
+        },
+        "quietus": {
+            "name": "Quietus",
+            "type": "Raid Buster",
+            "message": "Stacking Enrage buff for Voidwalker.",
+            "ttl": 6
+        },
+        "shadoweye": {
+            "name": "Shadoweye",
+            "type": "Positional",
+            "message": "Turn your character away from the marked player.",
+            "ttl": 5
+        },
+        "shadowflame": {
+            "name": "Shadowflame",
+            "type": "Tank Buster",
+            "message": "Tanks will be hit with a targetted ability.",
+            "ttl": 4
+        },
+        "u-d": {
+            "name": "Unholy Darkness",
+            "type": "Stack",
+            "message": "Stack with the marked player to mitigate incoming damage.",
+            "ttl": 5
+        }
+    },
+    "script": [
+        {
+            "t": "00:10",
+            "mechanic": "d-c"
+        },
+        {
+            "t": "00:24",
+            "mechanic": "u-d"
+        },
+        {
+            "t": "00:31",
+            "mechanic": "d-g"
+        },
+        {
+            "t": "00:31",
+            "mechanic": "d-s"
+        },
+        {
+            "t": "00:42",
+            "mechanic": "d-f-3"
+        },
+        {
+            "t": "01:09",
+            "mechanic": "p-r"
+        },
+        {
+            "t": "01:34",
+            "mechanic": "d-f-3"
+        },
+        {
+            "t": "01:44",
+            "mechanic": "h-w"
+        },
+        {
+            "t": "01:47",
+            "mechanic": "shadoweye"
+        },
+        {
+            "t": "01:47",
+            "mechanic": "u-d"
+        },
+        {
+            "t": "02:01",
+            "mechanic": "shadowflame"
+        },
+        {
+            "t": "02:13",
+            "mechanic": "entropy"
+        },
+        {
+            "t": "02:23",
+            "mechanic": "e-r"
+        },
+        {
+            "t": "02:28",
+            "mechanic": "d-g"
+        },
+        {
+            "t": "02:36",
+            "mechanic": "d-s"
+        },
+        {
+            "t": "02:44",
+            "mechanic": "e-h"
+        },
+        {
+            "t": "02:55",
+            "mechanic": "d-c"
+        },
+        {
+            "t": "03:10",
+            "mechanic": "shadowflame"
+        },
+        {
+            "t": "03:22",
+            "mechanic": "entropy"
+        },
+        {
+            "t": "03:45",
+            "mechanic": "flare"
+        },
+        {
+            "t": "04:02",
+            "mechanic": "h-w"
+        },
+        {
+            "t": "04:07",
+            "mechanic": "p-r"
+        },
+        {
+            "t": "04:07",
+            "mechanic": "shadoweye"
+        },
+        {
+            "t": "04:20",
+            "mechanic": "shadowflame"
+        },
+        {
+            "t": "04:32",
+            "mechanic": "entropy"
+        },
+        {
+            "t": "04:41",
+            "mechanic": "equilibrium"
+        },
+        {
+            "t": "04:45",
+            "mechanic": "d-c"
+        },
+        {
+            "t": "04:55",
+            "mechanic": "u-d"
+        },
+        {
+            "t": "05:03",
+            "mechanic": "d-c"
+        },
+        {
+            "t": "5:29",
+            "mechanic": "shadowflame"
+        },
+        {
+            "t": "05:41",
+            "mechanic": "entropy"
+        },
+        {
+            "t": "05:56",
+            "mechanic": "e-h"
+        },
+        {
+            "t": "05:56",
+            "mechanic": "e-r"
+        },
+        {
+            "t": "6:20",
+            "mechanic": "flare"
+        },
+        {
+            "t": "06:26",
+            "mechanic": "u-d"
+        },
+        {
+            "t": "06:38",
+            "mechanic": "shadowflame"
+        },
+        {
+            "t": "07:08",
+            "mechanic": "flare"
+        },
+        {
+            "t": "07:08",
+            "mechanic": "shadoweye"
+        },
+        {
+            "t": "07:15",
+            "mechanic": "d-f-3"
+        },
+        {
+            "t": "07:22",
+            "mechanic": "equilibrium"
+        },
+        {
+            "t": "07:28",
+            "mechanic": "p-r"
+        },
+        {
+            "t": "07:32",
+            "mechanic": "d-c"
+        },
+        {
+            "t": "07:48",
+            "mechanic": "shadowflame"
+        },
+        {
+            "t": "08:17",
+            "mechanic": "quietus"
+        },
+        {
+            "t": "08:25",
+            "mechanic": "c-1"
+        },
+        {
+            "t": "08:28",
+            "mechanic": "c-2"
+        },
+        {
+            "t": "08:31",
+            "mechanic": "c-3"
+        },
+        {
+            "t": "08:50",
+            "mechanic": "c-1"
+        },
+        {
+            "t": "08:53",
+            "mechanic": "c-2"
+        },
+        {
+            "t": "08:56",
+            "mechanic": "c-3"
+        },
+        {
+            "t": "09:16",
+            "mechanic": "quietus"
+        },
+        {
+            "t": "09:27",
+            "mechanic": "c-1"
+        },
+        {
+            "t": "09:30",
+            "mechanic": "c-2"
+        },
+        {
+            "t": "09:33",
+            "mechanic": "c-3"
+        },
+        {
+            "t": "09:52",
+            "mechanic": "quietus"
+        },
+        {
+            "t": "10:00",
+            "mechanic": "quietus"
+        },
+        {
+            "t": "10:10",
+            "mechanic": "quietus"
+        },
+        {
+            "t": "10:12",
+            "mechanic": "enrage"
+        }
+    ]
+}

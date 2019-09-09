@@ -34,7 +34,10 @@ class SonshoDashboard {
         }
 
         // Supported Encounters
-        this.encounters = [`Eden's Gate: Resurrection (Savage)`]
+        this.encounters = [
+            `Eden's Gate: Resurrection (Savage)`,
+            `Eden's Gate: Descent (Savage)`,
+        ]
 
         // Combat log
         this.combat = {
@@ -108,31 +111,41 @@ class SonshoDashboard {
         // No support encounter was loaded
         if (!this.combat.encounter) return true
 
-        this.combat.encounter.elapsed++
-
         // Only proceed if there are any mechanics
         if (!this.combat.encounter.script.length) return true
 
-        const
-            entry = this.combat.encounter.script[0],
-            timestamp = this._convertTimestamp(entry.t)
+        let next_mechanic = true
 
-        // Do not create a message until you're within range of the cast time
-        if (this.combat.encounter.elapsed < timestamp - this.combat.encounter.mechanics[entry.mechanic].ttl) return false
+        this.combat.encounter.elapsed++
 
-        const $tpl = this._createTemplate({
-            mechanic: this.combat.encounter.mechanics[entry.mechanic],
-            ttl_ms: () => {
-                return this.combat.encounter.mechanics[entry.mechanic].ttl * 1000
-            },
-            get_i: () => {
-                if (Utils.getObjValue(this.combat.encounter.mechanics[entry.mechanic], 'i')) return this.combat.encounter.mechanics[entry.mechanic].i
-                return this.combat.encounter.i
-            },
-        })
+        while (next_mechanic) {
+            // Only proceed if there are any mechanics
+            if (!this.combat.encounter.script.length) break
 
-        // Remove entry to avoid repeats
-        this.combat.encounter.script.shift()
+            const
+                entry = this.combat.encounter.script[0],
+                timestamp = this._convertTimestamp(entry.t)
+
+            // Do not create a message until you're within range of the cast time
+            if (this.combat.encounter.elapsed < timestamp - this.combat.encounter.mechanics[entry.mechanic].ttl) {
+                next_mechanic = false
+                continue
+            }
+
+            const $tpl = this._createTemplate({
+                mechanic: this.combat.encounter.mechanics[entry.mechanic],
+                ttl_ms: () => {
+                    return this.combat.encounter.mechanics[entry.mechanic].ttl * 1000
+                },
+                get_i: () => {
+                    if (Utils.getObjValue(this.combat.encounter.mechanics[entry.mechanic], 'i')) return this.combat.encounter.mechanics[entry.mechanic].i
+                    return this.combat.encounter.i
+                },
+            })
+
+            // Remove entry to avoid repeats
+            this.combat.encounter.script.shift()
+        }
 
         return true
     }
