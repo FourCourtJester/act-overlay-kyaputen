@@ -110,6 +110,7 @@ img {
                 margin-top: $ul-offset !important;
 
                 .mechanic {
+                    height:20px;
                     line-height:20px;
                     margin-bottom: 1rem;
 
@@ -156,7 +157,7 @@ img {
                 }
 
                 // Animation
-                transition: transform ease 1.0s;
+                transition: transform ease 1.5s;
             }
         }
     }

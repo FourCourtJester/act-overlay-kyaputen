@@ -1,126 +1,125 @@
 {
     "zone": "Eden's Gate: Ressurection",
-    "i": "http://xivapi.com/i/000000/000405.png",
     "mechanics": {
-        "d-shift": {
+        "dimensional-shift": {
             "name": "Dimensional Shift",
             "type": "Raid Buster",
             "message": "Will do 70% of max health as damage.",
-            "ttl": 4
+            "cast": 4
         },
         "delta": {
             "name": "Delta Attack",
             "type": "Spread",
             "message": "Position yourself at your designated position.",
-            "ttl": 5
+            "cast": 5
         },
         "enrage": {
             "name": "Fragor Maximus",
             "type": "Enrage",
             "message": "Defeat Eden or you will die.",
-            "ttl": 5
+            "cast": 5
         },
-        "f-m": {
+        "fragor-maximus": {
             "name": "Fragor Maximus",
             "type": "Heal Check",
             "message": "Massive damage.",
-            "ttl": 5
+            "cast": 5
         },
         "flare": {
             "name": "Eden's Flare",
             "type": "Area of Effect",
             "message": "Position yourself under Eden.",
-            "ttl": 4
+            "cast": 4
         },
         "gravity": {
             "name": "Eden's Gravity",
             "type": "Raid Buster",
             "message": "Will do 70% of max health as damage.",
-            "ttl": 4
+            "cast": 4
         },
-        "m-boost": {
+        "mana-boost": {
             "name": "Mana Boost",
             "type": "Buff",
             "message": "Interrupt both enemies castings of this.",
-            "ttl": 5
+            "cast": 5
         },
-        "m-burst": {
+        "mana-burst": {
             "name": "Mana Burst",
             "type": "Raid Buster",
             "message": "Will wipe the raid if Mana Boost was not interrupted.",
-            "ttl": 3
+            "cast": 3
         },
-        "m-s": {
+        "mana-slice": {
             "name": "Mana Slice",
             "type": "Cleave",
             "message": "Tanks must aim this enemy away from the raid.",
-            "ttl": 5
+            "cast": 5
         },
-        "p-b": {
+        "pure-beam": {
             "name": "Pure Beam",
             "type": "Positional",
             "message": "Position yourself on the outside of an orb.",
-            "ttl": 3
+            "cast": 3
         },
-        "p-l": {
+        "pure-light": {
             "name": "Pure Light",
             "type": "Positional",
             "message": "Position yourself behind Eden.",
-            "ttl": 11
+            "cast": 11
         },
         "raid-beams": {
             "name": "Activate Beams",
             "type": "Positional",
             "message": "Position yourself so the telegraph fires away from the raid.",
-            "ttl": 3
+            "cast": 3
         },
         "random": {
             "name": "Random Ability",
             "type": "Random",
             "message": "Be alert.",
-            "ttl": 5
+            "cast": 5
         },
         "spear": {
             "name": "Spear of Paradise",
             "type": "Tank Buster",
             "message": "2-Hit combo on the Tanks.",
-            "ttl": 5
+            "cast": 5
         },
-        "v-v-dps": {
+        "vice-and-virtue-dps": {
             "name": "Vice and Virtue",
             "type": "Positional",
             "message": "DPS must position these away from the raid.",
-            "ttl": 6
+            "cast": 6
         },
-        "v-v-heal-to-dps": {
+        "vice-and-virtue-dps-prey": {
             "name": "Vice and Virtue",
             "type": "Prey",
             "message": "Healers must transfer this debuff to DPS and then heal them.",
-            "ttl": 6
+            "cast": 6
         },
-        "v-v-heal-to-tank": {
+        "vice-and-virtue-tank-prey": {
             "name": "Vice and Virtue",
             "type": "Prey",
             "message": "Healers must transfer this debuff to Tanks and then heal them.",
-            "ttl": 6
+            "cast": 6
         },
-        "v-v-stack-dps": {
+        "vice-and-virtue-dps-stack": {
             "name": "Vice and Virtue",
             "type": "Positional",
             "message": "Position yourself with your partner to mitigate incoming damage.",
-            "ttl": 6
+            "cast": 6
         },
-        "v-v-stack-tank": {
+        "vice-and-virtue-tank-stack": {
             "name": "Vice and Virtue",
             "type": "Tank Buster",
             "message": "Position yourself infront of your Tanks to mitigate incoming damage.",
-            "ttl": 6
+            "cast": 6
         },
-        "v-v-tank": {
+        "vice-and-virtue-tank": {
             "name": "Vice and Virtue",
             "type": "Tank Buster",
             "message": "Tanks will be hit by linear lasers. Do not stand with them.",
-            "ttl": 6
+            "cast": 6
         }
     },
     "script": [
@@ -130,7 +129,7 @@
         },
         {
             "t": "00:25",
-            "mechanic": "v-v-dps"
+            "mechanic": "vice-and-virtue-dps"
         },
         {
             "t": "00:30",
@@ -138,7 +137,7 @@
         },
         {
             "t": "00:51",
-            "mechanic": "v-v-tank"
+            "mechanic": "vice-and-virtue-tank"
         },
         {
             "t": "00:58",
@@ -146,11 +145,11 @@
         },
         {
             "t": "01:09",
-            "mechanic": "v-v-heal-to-tank"
+            "mechanic": "vice-and-virtue-tank-prey"
         },
         {
             "t": "01:20",
-            "mechanic": "p-l"
+            "mechanic": "pure-light"
         },
         {
             "t": "01:34",
@@ -158,55 +157,55 @@
         },
         {
             "t": "01:45",
-            "mechanic": "d-shift"
+            "mechanic": "dimensional-shift"
         },
         {
             "t": "02:05",
-            "mechanic": "p-b"
+            "mechanic": "pure-beam"
         },
         {
             "t": "02:12",
-            "mechanic": "p-l"
+            "mechanic": "pure-light"
         },
         {
             "t": "02:23",
-            "mechanic": "d-shift"
+            "mechanic": "dimensional-shift"
         },
         {
             "t": "02:32",
-            "mechanic": "f-m"
+            "mechanic": "fragor-maximus"
         },
         {
             "t": "03:00",
-            "mechanic": "m-boost"
+            "mechanic": "mana-boost"
         },
         {
             "t": "03:05",
-            "mechanic": "m-s"
+            "mechanic": "mana-slice"
         },
         {
             "t": "03:14",
-            "mechanic": "m-burst"
+            "mechanic": "mana-burst"
         },
         {
             "t": "03:19",
-            "mechanic": "m-s"
+            "mechanic": "mana-slice"
         },
         {
             "t": "03:29",
-            "mechanic": "m-burst"
+            "mechanic": "mana-burst"
         },
         {
             "t": "03:34",
-            "mechanic": "m-s"
+            "mechanic": "mana-slice"
         },
         {
             "t": "04:56",
-            "mechanic": "v-v-stack-tank"
+            "mechanic": "vice-and-virtue-tank-stack"
         },
         {
             "t": "05:09",
-            "mechanic": "v-v-stack-dps"
+            "mechanic": "vice-and-virtue-dps-stack"
         },
         {
             "t": "05:22",
@@ -214,7 +213,7 @@
         },
         {
             "t": "05:34",
-            "mechanic": "v-v-heal-to-dps"
+            "mechanic": "vice-and-virtue-dps-prey"
         },
         {
             "t": "05:42",
@@ -222,11 +221,11 @@
         },
         {
             "t": "05:55",
-            "mechanic": "d-shift"
+            "mechanic": "dimensional-shift"
         },
         {
             "t": "06:06",
-            "mechanic": "p-b"
+            "mechanic": "pure-beam"
         },
         {
             "t": "06:11",
@@ -234,11 +233,11 @@
         },
         {
             "t": "06:25",
-            "mechanic": "p-l"
+            "mechanic": "pure-light"
         },
         {
             "t": "06:36",
-            "mechanic": "d-shift"
+            "mechanic": "dimensional-shift"
         },
         {
             "t": "06:48",
@@ -250,7 +249,7 @@
         },
         {
             "t": "07:17",
-            "mechanic": "v-v-tank"
+            "mechanic": "vice-and-virtue-tank"
         },
         {
             "t": "07:23",
@@ -258,7 +257,7 @@
         },
         {
             "t": "07:34",
-            "mechanic": "v-v-dps"
+            "mechanic": "vice-and-virtue-dps"
         },
         {
             "t": "07:48",
@@ -266,15 +265,15 @@
         },
         {
             "t": "08:00",
-            "mechanic": "v-v-heal-to-tank"
+            "mechanic": "vice-and-virtue-tank-prey"
         },
         {
             "t": "08:13",
-            "mechanic": "d-shift"
+            "mechanic": "dimensional-shift"
         },
         {
             "t": "08:22",
-            "mechanic": "p-b"
+            "mechanic": "pure-beam"
         },
         {
             "t": "08:27",
@@ -282,11 +281,11 @@
         },
         {
             "t": "08:43",
-            "mechanic": "p-l"
+            "mechanic": "pure-light"
         },
         {
             "t": "08:53",
-            "mechanic": "d-shift"
+            "mechanic": "dimensional-shift"
         },
         {
             "t": "09:06",

@@ -1,7 +1,7 @@
 /**
 * @class
 */
-class SonshoToolkit {
+class KyaputenToolkit {
     /**
      * @constructor
      */
@@ -61,7 +61,7 @@ class SonshoToolkit {
      * Set the value (or text) of a JQuery Element
      * @param {jQuery} $element - The JQuery Element
      * @param {String} val - The value to set
-     * @return {SonshoToolkit}
+     * @return {KyaputenToolkit}
      */
     setElementValue ($element = $(), val = '') {
         // No element
@@ -81,4 +81,4 @@ class SonshoToolkit {
 }
 
 // Declare
-const Utils = new SonshoToolkit()
+const Utils = new KyaputenToolkit()

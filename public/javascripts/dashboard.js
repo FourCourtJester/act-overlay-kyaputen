@@ -1,8 +1,8 @@
 /**
- * SonshoDashboard
+ * KyaputenDashboard
  * @class
  */
-class SonshoDashboard {
+class KyaputenDashboard {
     /**
      * @constructor
      */
@@ -20,7 +20,13 @@ class SonshoDashboard {
      * Class initialization
      */
     init () {
-        this.options = {}
+        this.job = window.location.hash.length ? window.location.hash.toUpperCase().slice(1) : null
+
+        this.options = {
+            encounter: {
+                path: `public/javascripts/encounters/${this.job ? `jobs/${this.job}/` : ''}`,
+            },
+        }
 
         // DOM Elements
         this.elements = {
@@ -28,7 +34,7 @@ class SonshoDashboard {
             list: '.content ul',
             ttl: '.ttl',
             mustache: {
-                tpl: '#mustache-toast',
+                tpl: `#mustache-toast-${this.job ? 'job' : 'entry'}`,
             },
         }
 
@@ -123,8 +129,6 @@ class SonshoDashboard {
      * @return {Boolean}
      */
     async update () {
-        this.combat.encounter.elapsed++
-
         // No support encounter was loaded
         if (!this.combat.encounter) return true
 
@@ -132,6 +136,8 @@ class SonshoDashboard {
         if (!$(this.elements.list).children().length) return true
 
         const saves = []
+
+        this.combat.encounter.elapsed++
 
         for (const entry of $(this.elements.list).children('.show')) {
             saves.push(new Promise((resolve, reject) => {
@@ -169,7 +175,8 @@ class SonshoDashboard {
 
         try {
             if (!this.encounters.includes(zone)) throw new Error(`${zone} is not (yet) supported by Kyaputen.`)
-            const json = await $.getJSON(`public/javascripts/encounters/${slug}.json`)
+
+            const json = await $.getJSON(`${this.options.encounter.path}${slug}.json`)
 
             this.combat.encounter = json
             this.combat.encounter.elapsed = this.combat.time.t
@@ -226,7 +233,7 @@ class SonshoDashboard {
             console.log(`Combat begins: ${this.combat.title}`)
 
             // Load the script
-            this.encounter(encounter.CurrentZoneName)
+            this.encounter(`Eden's Gate: Descent (Savage)` || encounter.CurrentZoneName)
 
             // Update the DOM every second
             this.timer = setInterval(() => {
@@ -245,4 +252,4 @@ class SonshoDashboard {
     }
 }
 
-new SonshoDashboard()
+new KyaputenDashboard()
