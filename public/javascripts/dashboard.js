@@ -24,12 +24,11 @@ class SonshoDashboard {
 
         // DOM Elements
         this.elements = {
-            list: '.toasts',
+            container: '.toast',
+            list: '.content ul',
+            ttl: '.ttl',
             mustache: {
                 tpl: '#mustache-toast',
-                fields: {
-                    ttl: '.mechanic-ttl',
-                },
             },
         }
 
@@ -105,47 +104,58 @@ class SonshoDashboard {
 
     // Events
     /**
+     * 
+     */
+    createTimeline () {
+        for (const entry of this.combat.encounter.script) {
+            const $tpl = $(Mustache.render($(`${this.elements.mustache.tpl}`).html(), {
+                mechanic: this.combat.encounter.mechanics[entry.mechanic],
+                ttl: this._convertTTL(entry.t),
+            }))
+
+            $(this.elements.list).append($tpl)
+        }
+
+        $(this.elements.container).addClass('show')
+    }
+
+    /**
      * @return {Boolean}
      */
     async update () {
+        this.combat.encounter.elapsed++
+
         // No support encounter was loaded
         if (!this.combat.encounter) return true
 
         // Only proceed if there are any mechanics
-        if (!this.combat.encounter.script.length) return true
+        if (!$(this.elements.list).children().length) return true
 
-        let next_mechanic = true
+        const saves = []
 
-        this.combat.encounter.elapsed++
+        for (const entry of $(this.elements.list).children('.show')) {
+            saves.push(new Promise((resolve, reject) => {
+                const
+                    $list = $(this.elements.list),
+                    $entry = $(entry),
+                    $ttl = $(this.elements.ttl, $entry),
+                    ttl = +$ttl.text() - 1
+                if (ttl) {
+                    $ttl.text(ttl)
+                } else {
+                    const amt = $list.get(0).style.transform.length ?
+                        +$list.get(0).style.transform.slice(11, -3) :
+                        0
 
-        while (next_mechanic) {
-            // Only proceed if there are any mechanics
-            if (!this.combat.encounter.script.length) break
+                    $list.css('transform', `translateY(${amt - 32}px)`)
+                    $entry.toggleClass('show hide')
+                }
 
-            const
-                entry = this.combat.encounter.script[0],
-                timestamp = this._convertTimestamp(entry.t)
-
-            // Do not create a message until you're within range of the cast time
-            if (this.combat.encounter.elapsed < timestamp - this.combat.encounter.mechanics[entry.mechanic].ttl) {
-                next_mechanic = false
-                continue
-            }
-
-            const $tpl = this._createTemplate({
-                mechanic: this.combat.encounter.mechanics[entry.mechanic],
-                ttl_ms: () => {
-                    return this.combat.encounter.mechanics[entry.mechanic].ttl * 1000
-                },
-                get_i: () => {
-                    if (Utils.getObjValue(this.combat.encounter.mechanics[entry.mechanic], 'i')) return this.combat.encounter.mechanics[entry.mechanic].i
-                    return this.combat.encounter.i
-                },
-            })
-
-            // Remove entry to avoid repeats
-            this.combat.encounter.script.shift()
+                resolve()
+            }))
         }
+
+        await Promise.all(saves)
 
         return true
     }
@@ -163,40 +173,13 @@ class SonshoDashboard {
 
             this.combat.encounter = json
             this.combat.encounter.elapsed = this.combat.time.t
+
+            this.createTimeline()
         } catch (err) {
             console.log(err)
-
-            // this._createTemplate({
-            //     mechanic: {
-            //         name: 'Unsupported Encounter',
-            //         type: 'Warning',
-            //         message: `${zone} is not (yet) supported by Kyaputen`,
-            //         ttl: 0,
-            //     },
-            //     ttl_ms: 5000,
-            //     get_i: 'https://xivapi.com/i/061000/061804.png',
-            // })
-
             this.combat.encounter = null
-        }
-    }
 
-    /**
-     * 
-     * @param {Object} opts 
-     * @return {Object}
-     */
-    _createTemplate (opts) {
-        try {
-            const $tpl = $(Mustache.render($(`${this.elements.mustache.tpl}`).html(), opts))
-
-            $tpl.toast()
-            $(this.elements.list).append($tpl)
-            $tpl.toast('show')
-
-            return $tpl
-        } catch (err) {
-            console.error(err)
+            this._reset()
         }
     }
 
@@ -205,9 +188,22 @@ class SonshoDashboard {
      * @param {String} str 
      * @return {Number}
      */
-    _convertTimestamp (str) {
+    _convertTTL (str) {
         const [min, sec] = str.split(':')
         return (+min * 60) + +sec
+    }
+
+    /**
+     * 
+     */
+    _reset () {
+        console.log(`Combat ends: ${this.combat.title}`)
+
+        clearInterval(this.timer)
+        this.timer = null
+
+        $(this.elements.container).removeClass('show')
+        $(this.elements.list).empty().removeAttr('style')
     }
 
     /**
@@ -220,13 +216,14 @@ class SonshoDashboard {
 
         // TODO: Create history if new encounter
         if (!this.combat.active && active) {
-            console.log(`Combat begins: ${encounter.title}`)
-
             // Start new combat
             this.combat = {
                 active: active,
+                title: encounter.title,
                 encounter: {},
             }
+
+            console.log(`Combat begins: ${this.combat.title}`)
 
             // Load the script
             this.encounter(encounter.CurrentZoneName)
@@ -244,14 +241,7 @@ class SonshoDashboard {
             formatted: encounter.duration,
         }
 
-        if (active == false) {
-            console.log(`Combat ends: ${encounter.title}`)
-
-            clearInterval(this.timer)
-            this.timer = null
-
-            $(this.elements.list).empty()
-        }
+        if (active == false) this._reset()
     }
 }
 

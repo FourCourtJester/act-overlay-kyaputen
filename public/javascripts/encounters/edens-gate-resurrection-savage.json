@@ -77,7 +77,7 @@
         "random": {
             "name": "Random Ability",
             "type": "Random",
-            "message": "Be alert, and listen for a callout from your raid leader.",
+            "message": "Be alert.",
             "ttl": 5
         },
         "spear": {
