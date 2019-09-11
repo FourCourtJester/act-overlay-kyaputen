@@ -233,7 +233,7 @@ class KyaputenDashboard {
             console.log(`Combat begins: ${this.combat.title}`)
 
             // Load the script
-            this.encounter(`Eden's Gate: Descent (Savage)` || encounter.CurrentZoneName)
+            this.encounter(encounter.CurrentZoneName)
 
             // Update the DOM every second
             this.timer = setInterval(() => {
