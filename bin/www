@@ -1,34 +1,6 @@
 #!/usr/bin/env node
 
 /**
- * Module dependencies.
- */
-
-const
-    app = require('../app'),
-    http = require('http')
-
-/**
- * Get port from environment and store in Express.
- */
-
-const port = normalizePort(process.env.PORT || '3000')
-app.set('port', port)
-
-/**
- * Create HTTP server.
- */
-
-const server = http.createServer(app)
-
-/**
- * Listen on provided port, on all network interfaces.
- */
-
-server.listen(port)
-server.on('error', onError)
-
-/**
  * Normalize a port into a number, string, or false.
  * @param {Number|String} val 
  * @return {*}
@@ -46,10 +18,66 @@ function normalizePort (val) {
 }
 
 /**
+ * Module dependencies.
+ */
+
+const
+    app = require('../app'),
+    fs = require('fs-extra'),
+    http = require('http'),
+    port = normalizePort(process.env.PORT || '3000'),
+    files = []
+
+/**
+ * Save the dependencies for the static serving of this overlay
+ */
+try {
+    // related Node front end packages
+    for (const module of [
+        'jquery/dist/jquery.min.js',
+        'bootstrap/dist/js/bootstrap.bundle.min.js',
+        'bootstrap/dist/js/bootstrap.bundle.min.js.map',
+        'mustache/mustache.min.js',
+    ]) {
+        files.push(new Promise((resolve, reject) => {
+            fs.copy(`node_modules/${module}`, `public/javascripts/dist/${module}`)
+                .then(() => {
+                    resolve()
+                })
+                .catch((err) => {
+                    reject(err)
+                })
+        }))
+    }
+
+    Promise.all(files)
+} catch (err) {
+    console.error(err)
+}
+
+/**
+ * Get port from environment and store in Express.
+ */
+
+app.set('port', port)
+
+/**
+ * Create HTTP server.
+ */
+
+const server = http.createServer(app)
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+
+server.listen(port)
+
+/**
  * Event listener for HTTP server "error" event.
  * @param {Object} error 
  */
-function onError (error) {
+server.on('error', (error) => {
     if (error.syscall !== 'listen') throw error
 
     const bind = typeof port === 'string'
@@ -69,4 +97,4 @@ function onError (error) {
     default:
         throw error
     }
-}
+})

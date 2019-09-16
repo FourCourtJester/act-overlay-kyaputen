@@ -20,11 +20,9 @@ class KyaputenDashboard {
      * Class initialization
      */
     init () {
-        this.job = window.location.hash.length ? window.location.hash.toUpperCase().slice(1) : null
-
         this.options = {
             encounter: {
-                path: `public/javascripts/encounters/${this.job ? `jobs/${this.job}/` : ''}`,
+                path: `/public/javascripts/encounters/`,
             },
         }
 
@@ -34,7 +32,7 @@ class KyaputenDashboard {
             list: '.content ul',
             ttl: '.ttl',
             mustache: {
-                tpl: `#mustache-toast-${this.job ? 'job' : 'entry'}`,
+                tpl: `#mustache-toast`,
             },
         }
 
@@ -97,7 +95,6 @@ class KyaputenDashboard {
         // Connect
         this.socket.connect()
 
-        // this.socket.subscribe('SendCharName', this.events.onSendCharName)
         this.socket.subscribe('CombatData', this.events.onCombatData)
     }
 
@@ -110,11 +107,11 @@ class KyaputenDashboard {
 
     // Events
     /**
-     * 
+     * @param {String} tpl
      */
-    createTimeline () {
+    createTimeline (tpl) {
         for (const entry of this.combat.encounter.script) {
-            const $tpl = $(Mustache.render($(`${this.elements.mustache.tpl}`).html(), {
+            const $tpl = $(Mustache.render($(`${tpl}`).html(), {
                 mechanic: this.combat.encounter.mechanics[entry.mechanic],
                 ttl: this._convertTTL(entry.t),
             }))
@@ -171,17 +168,22 @@ class KyaputenDashboard {
      * @param {String} zone 
      */
     async encounter (zone) {
-        const slug = Utils.slugify(zone)
+        // zone = `Eden's Gate: Resurrection (Savage)` // Debug
+        const
+            slug = Utils.slugify(zone),
+            job = /(job\/\w{3})/.exec(window.location.href),
+            path = Array.isArray(job) ? `${this.options.encounter.path}${job[0]}/` : this.options.encounter.path,
+            tpl = `${this.elements.mustache.tpl}${Array.isArray(job) ? '-job' : '-timeline'}`
 
         try {
             if (!this.encounters.includes(zone)) throw new Error(`${zone} is not (yet) supported by Kyaputen.`)
 
-            const json = await $.getJSON(`${this.options.encounter.path}${slug}.json`)
+            const json = await $.getJSON(`${path}${slug}.json`)
 
             this.combat.encounter = json
             this.combat.encounter.elapsed = this.combat.time.t
 
-            this.createTimeline()
+            this.createTimeline(tpl)
         } catch (err) {
             console.log(err)
             this.combat.encounter = null

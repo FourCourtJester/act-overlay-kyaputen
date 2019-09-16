@@ -205,6 +205,10 @@
         },
         {
             "t": "03:09",
+            "mechanic": "excogitation"
+        },
+        {
+            "t": "03:12",
             "mechanic": "sacred-soil"
         },
         {
@@ -232,16 +236,16 @@
             "mechanic": "sacred-soil"
         },
         {
-            "t": "03:50",
+            "t": "03:52",
+            "mechanic": "lucid-dreaming"
+        },
+        {
+            "t": "04:00",
             "mechanic": "recitation"
         },
         {
-            "t": "03:51",
+            "t": "04:01",
             "mechanic": "excogitation"
-        },
-        {
-            "t": "03:52",
-            "mechanic": "lucid-dreaming"
         },
         {
             "t": "04:07",
@@ -257,7 +261,7 @@
         },
         {
             "t": "04:12",
-            "mechanic": "indom"
+            "mechanic": "indominability"
         },
         {
             "t": "04:11",
