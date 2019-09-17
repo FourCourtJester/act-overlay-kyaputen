@@ -1,7 +1,8 @@
 const
     express = require('express'),
     router = express.Router(),
-    fs = require('fs-extra')
+    fs = require('fs-extra'),
+    jobs = ['SCH']
 
 /* GET home page. */
 router.get(['/', '/job/:job'], function (req, res, next) {
@@ -12,11 +13,14 @@ router.get(['/', '/job/:job'], function (req, res, next) {
         res.setHeader('Pragma', 'no-cache') // HTTP 1.0
         res.setHeader('Expires', '0') // Proxies
 
+        // Public accessible page
+        fs.writeFileSync('index.html', html)
+
+        // Public accessible job pages
+        jobs.forEach((job) => fs.copySync('index.html', `job/${job}/index.html`))
+
         // Development page
         res.send(html)
-
-        // Public accessible page
-        fs.writeFile('index.html', html)
     })
 })
 
