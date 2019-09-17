@@ -1,0 +1,86 @@
+{
+    "adloquium": {
+        "name": "Adloquium",
+        "icon": "https://xivapi.com/i/002000/002801.png"
+    },
+    "aetherflow": {
+        "name": "Aetherflow",
+        "icon": "https://xivapi.com/i/000000/000510.png"
+    },
+    "biolysis": {
+        "name": "Biolysis",
+        "icon": "https://xivapi.com/i/002000/002820.png"
+    },
+    "chain-stratagem": {
+        "name": "Chain Stratagem",
+        "icon": "https://xivapi.com/i/002000/002815.png"
+    },
+    "consolation": {
+        "name": "Consolation",
+        "icon": "https://xivapi.com/i/002000/002851.png"
+    },
+    "deployment-tactics": {
+        "name": "Deployment Tactics",
+        "icon": "https://xivapi.com/i/002000/002808.png"
+    },
+    "dissipation": {
+        "name": "Dissipation",
+        "icon": "https://xivapi.com/i/002000/002810.png"
+    },
+    "emergency-tactics": {
+        "name": "Emergency Tactics",
+        "icon": "https://xivapi.com/i/002000/002809.png"
+    },
+    "energy-drain": {
+        "name": "Energy Drain",
+        "icon": "https://xivapi.com/i/000000/000514.png"
+    },
+    "excogitation": {
+        "name": "Excogitation",
+        "icon": "https://xivapi.com/i/002000/002813.png"
+    },
+    "fey-blessing": {
+        "name": "Fey Blessing",
+        "icon": "https://xivapi.com/i/002000/002854.png"
+    },
+    "fey-illumination": {
+        "name": "Fey Illumination",
+        "icon": "https://xivapi.com/i/002000/002853.png"
+    },
+    "indominability": {
+        "name": "Indominability",
+        "icon": "https://xivapi.com/i/002000/002806.png"
+    },
+    "lucid-dreaming": {
+        "name": "Lucid Dreaming",
+        "icon": "https://xivapi.com/i/000000/000865.png"
+    },
+    "recitation": {
+        "name": "Recitation",
+        "icon": "https://xivapi.com/i/002000/002822.png"
+    },
+    "sacred-soil": {
+        "name": "Sacred Soil",
+        "icon": "https://xivapi.com/i/002000/002804.png"
+    },
+    "succor": {
+        "name": "Succor",
+        "icon": "https://xivapi.com/i/002000/002802.png"
+    },
+    "summon-seraph": {
+        "name": "Summon Seraph",
+        "icon": "https://xivapi.com/i/002000/002850.png"
+    },
+    "surecast": {
+        "name": "Surecast",
+        "icon": "https://xivapi.com/i/000000/000869.png"
+    },
+    "swiftcast": {
+        "name": "Swiftcast",
+        "icon": "https://xivapi.com/i/000000/000866.png"
+    },
+    "whispering-dawn": {
+        "name": "Whispering Dawn",
+        "icon": "https://xivapi.com/i/002000/002852.png"
+    }
+}

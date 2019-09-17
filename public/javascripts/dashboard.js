@@ -20,7 +20,14 @@ class KyaputenDashboard {
      * Class initialization
      */
     init () {
+        this.actions = {}
+        this.jobs = ['ACN', 'ARC', 'AST', 'BLM', 'BLU', 'BRD', 'CNJ', 'DNC', 'DRG', 'DRK', 'GLA', 'GNB', 'LNC', 'MCH', 'MNK', 'MRD', 'NIN', 'PLD', 'PGL', 'RDM', 'ROG', 'SAM', 'SCH', 'SMN', 'THM', 'WAR', 'WHM']
+
         this.options = {
+            job: {
+                current: null,
+                regex: /(job\/\w{3})/,
+            },
             encounter: {
                 path: `/public/javascripts/encounters/`,
             },
@@ -56,11 +63,17 @@ class KyaputenDashboard {
             },
         }
 
-        this.timer = null
-
         // Socket Events
         this.events = {
             onCombatData: this._onCombatData.bind(this),
+        }
+
+        // The clock
+        this.timer = null
+
+        // Auto detect a job
+        if (this.options.job.regex.test(window.location.href)) {
+            this.options.job.current = this.options.job.regex.exec(window.location.href)[0]
         }
     }
 
@@ -102,6 +115,7 @@ class KyaputenDashboard {
      * Window Load
      */
     onLoad () {
+        if (this.options.job.current) this._preloadJobs()
         this.listeners()
     }
 
@@ -111,10 +125,12 @@ class KyaputenDashboard {
      */
     createTimeline (tpl) {
         for (const entry of this.combat.encounter.script) {
-            const $tpl = $(Mustache.render($(`${tpl}`).html(), {
-                mechanic: this.combat.encounter.mechanics[entry.mechanic],
-                ttl: this._convertTTL(entry.t),
-            }))
+            const
+                mechanic = this.options.job.current ? this.actions[this.options.job.current][entry.mechanic] : this.combat.encounter.mechanics[entry.mechanic],
+                $tpl = $(Mustache.render($(`${tpl}`).html(), {
+                    mechanic: mechanic,
+                    ttl: this._convertTTL(entry.t),
+                }))
 
             $(this.elements.list).append($tpl)
         }
@@ -171,9 +187,8 @@ class KyaputenDashboard {
         // zone = `Eden's Gate: Resurrection (Savage)` // Debug
         const
             slug = Utils.slugify(zone),
-            job = /(job\/\w{3})/.exec(window.location.href),
-            path = Array.isArray(job) ? `${this.options.encounter.path}${job[0]}/` : this.options.encounter.path,
-            tpl = `${this.elements.mustache.tpl}${Array.isArray(job) ? '-job' : '-timeline'}`
+            path = this.options.job.current ? `${this.options.encounter.path}${this.options.job.current}/` : this.options.encounter.path,
+            tpl = `${this.elements.mustache.tpl}${this.options.job.current ? '-job' : '-timeline'}`
 
         try {
             if (!this.encounters.includes(zone)) throw new Error(`${zone} is not (yet) supported by Kyaputen.`)
@@ -185,7 +200,7 @@ class KyaputenDashboard {
 
             this.createTimeline(tpl)
         } catch (err) {
-            console.log(err)
+            console.error(err)
             this.combat.encounter = null
 
             this._reset()
@@ -213,6 +228,28 @@ class KyaputenDashboard {
 
         $(this.elements.container).removeClass('show')
         $(this.elements.list).empty().removeAttr('style')
+    }
+
+    /**
+     * @return {Boolean}
+     */
+    _preloadJobs () {
+        try {
+            $.getJSON(`${this.options.encounter.path}${this.options.job.current}/actions.json`)
+                .then((a) => {
+                    this.actions[this.options.job.current] = a
+                })
+
+            // All Jobs (future)
+            // this.jobs.forEach((job) => {
+            //     this.actions[job] = $.getJSON(`${this.options.encounter.path}job/${job}/actions.json`)
+            // })
+
+            return true
+        } catch (err) {
+            console.error(err)
+            return false
+        }
     }
 
     /**
