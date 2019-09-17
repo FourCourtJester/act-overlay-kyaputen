@@ -14,7 +14,7 @@ router.get(['/', '/job/:job'], function (req, res, next) {
         res.setHeader('Pragma', 'no-cache') // HTTP 1.0
         res.setHeader('Expires', '0') // Proxies
 
-        html = html.replace('/public', '/act-overlay-kyaputen/public')
+        html = html.replace(/\/public/g, '/act-overlay-kyaputen/public')
 
         // Public accessible page
         fs.writeFileSync('index.html', html)
