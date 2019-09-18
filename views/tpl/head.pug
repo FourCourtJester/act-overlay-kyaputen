@@ -9,15 +9,15 @@ head
     //- Javascript
     script(type="application/javascript", integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=", crossorigin="anonymous", src="https://code.jquery.com/jquery-3.4.1.min.js", defer)
     script.
-      window.jQuery || document.write(`<script type="application/javascript" src="/public/javascripts/dist/jquery/dist/jquery.min.js" defer><\/script>`)
+      window.jQuery || document.write(`<script type="application/javascript" src='#{path}dist/jquery/dist/jquery.min.js' defer><\/script>`)
     //- Libraries
-    script(type="application/javascript", src="/public/javascripts/dist/bootstrap/dist/js/bootstrap.bundle.min.js", defer)
-    script(type="application/javascript", src="/public/javascripts/dist/mustache/mustache.min.js", defer)
+    script(type="application/javascript", src=`${path}dist/bootstrap/dist/js/bootstrap.bundle.min.js`, defer)
+    script(type="application/javascript", src=`${path}dist/mustache/mustache.min.js`, defer)
     //- Global variables
     script(type="application/javascript").
-      const path = `#{path}`
+      const path = "#{path}"
     //- Scripts
-    script(type="application/javascript", src="/public/javascripts/utils.js", defer)
-    script(type="application/javascript", src="/public/javascripts/ws.js", defer)
+    script(type="application/javascript", src=`${path}utils.js`, defer)
+    script(type="application/javascript", src=`${path}ws.js`, defer)
     //- Dashboard
-    script(type="application/javascript", src="/public/javascripts/dashboard.js", defer)
+    script(type="application/javascript", src=`${path}dashboard.js`, defer)
