@@ -1,11 +1,13 @@
 {
     "adloquium": {
         "name": "Adloquium",
-        "icon": "https://xivapi.com/i/002000/002801.png"
+        "icon": "https://xivapi.com/i/002000/002801.png",
+        "cooldown": "2.5s"
     },
     "aetherflow": {
         "name": "Aetherflow",
-        "icon": "https://xivapi.com/i/000000/000510.png"
+        "icon": "https://xivapi.com/i/000000/000510.png",
+        "cooldown": "60s"
     },
     "biolysis": {
         "name": "Biolysis",
@@ -13,7 +15,8 @@
     },
     "chain-stratagem": {
         "name": "Chain Stratagem",
-        "icon": "https://xivapi.com/i/002000/002815.png"
+        "icon": "https://xivapi.com/i/002000/002815.png",
+        "cooldown": "120s"
     },
     "consolation": {
         "name": "Consolation",
@@ -21,15 +24,18 @@
     },
     "deployment-tactics": {
         "name": "Deployment Tactics",
-        "icon": "https://xivapi.com/i/002000/002808.png"
+        "icon": "https://xivapi.com/i/002000/002808.png",
+        "cooldown": "120s"
     },
     "dissipation": {
         "name": "Dissipation",
-        "icon": "https://xivapi.com/i/002000/002810.png"
+        "icon": "https://xivapi.com/i/002000/002810.png",
+        "cooldown": "180s"
     },
     "emergency-tactics": {
         "name": "Emergency Tactics",
-        "icon": "https://xivapi.com/i/002000/002809.png"
+        "icon": "https://xivapi.com/i/002000/002809.png",
+        "cooldown": "15s"
     },
     "energy-drain": {
         "name": "Energy Drain",
@@ -37,31 +43,38 @@
     },
     "excogitation": {
         "name": "Excogitation",
-        "icon": "https://xivapi.com/i/002000/002813.png"
+        "icon": "https://xivapi.com/i/002000/002813.png",
+        "cooldown": "45s"
     },
     "fey-blessing": {
         "name": "Fey Blessing",
-        "icon": "https://xivapi.com/i/002000/002854.png"
+        "icon": "https://xivapi.com/i/002000/002854.png",
+        "cooldown": "60s"
     },
     "fey-illumination": {
         "name": "Fey Illumination",
-        "icon": "https://xivapi.com/i/002000/002853.png"
+        "icon": "https://xivapi.com/i/002000/002853.png",
+        "cooldown": "120s"
     },
     "indominability": {
         "name": "Indominability",
-        "icon": "https://xivapi.com/i/002000/002806.png"
+        "icon": "https://xivapi.com/i/002000/002806.png",
+        "cooldown": "30s"
     },
     "lucid-dreaming": {
         "name": "Lucid Dreaming",
-        "icon": "https://xivapi.com/i/000000/000865.png"
+        "icon": "https://xivapi.com/i/000000/000865.png",
+        "cooldown": "60s"
     },
     "recitation": {
         "name": "Recitation",
-        "icon": "https://xivapi.com/i/002000/002822.png"
+        "icon": "https://xivapi.com/i/002000/002822.png",
+        "cooldown": "90s"
     },
     "sacred-soil": {
         "name": "Sacred Soil",
-        "icon": "https://xivapi.com/i/002000/002804.png"
+        "icon": "https://xivapi.com/i/002000/002804.png",
+        "cooldown": "30s"
     },
     "succor": {
         "name": "Succor",
@@ -69,7 +82,8 @@
     },
     "summon-seraph": {
         "name": "Summon Seraph",
-        "icon": "https://xivapi.com/i/002000/002850.png"
+        "icon": "https://xivapi.com/i/002000/002850.png",
+        "cooldown": "120s"
     },
     "surecast": {
         "name": "Surecast",
@@ -77,10 +91,12 @@
     },
     "swiftcast": {
         "name": "Swiftcast",
-        "icon": "https://xivapi.com/i/000000/000866.png"
+        "icon": "https://xivapi.com/i/000000/000866.png",
+        "cooldown": "60s"
     },
     "whispering-dawn": {
         "name": "Whispering Dawn",
-        "icon": "https://xivapi.com/i/002000/002852.png"
+        "icon": "https://xivapi.com/i/002000/002852.png",
+        "cooldown": "60s"
     }
 }

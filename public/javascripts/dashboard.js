@@ -20,6 +20,7 @@ class KyaputenDashboard {
      * Class initialization
      */
     init () {
+        this.debug = false
         this.actions = {}
         this.jobs = ['ACN', 'ARC', 'AST', 'BLM', 'BLU', 'BRD', 'CNJ', 'DNC', 'DRG', 'DRK', 'GLA', 'GNB', 'LNC', 'MCH', 'MNK', 'MRD', 'NIN', 'PLD', 'PGL', 'RDM', 'ROG', 'SAM', 'SCH', 'SMN', 'THM', 'WAR', 'WHM']
 
@@ -37,6 +38,7 @@ class KyaputenDashboard {
         this.elements = {
             container: '.toast',
             list: '.content ul',
+            buttons: '.btn-wrap',
             ttl: '.ttl',
             mustache: {
                 tpl: `#mustache-toast`,
@@ -71,7 +73,7 @@ class KyaputenDashboard {
         // The clock
         this.timer = null
 
-        // Auto detect a job
+        // Auto assign a job
         if (this.options.job.regex.test(window.location.href)) {
             this.options.job.current = this.options.job.regex.exec(window.location.href)[0]
         }
@@ -99,6 +101,12 @@ class KyaputenDashboard {
             .on('onOverlayDataUpdate', (e) => {
                 if (!this.socket.ready) this.events.onCombatData(e.detail)
             })
+
+        $('button').on('click', function () {
+            $(this).toggleClass('d-inline-block d-none')
+            that.adjustTimes()
+            that.showPhase(Utils.getObjValue($(this).data('kyaputen'), 'phase'))
+        })
     }
 
     /**
@@ -115,8 +123,25 @@ class KyaputenDashboard {
      * Window Load
      */
     onLoad () {
-        if (this.options.job.current) this._preloadJobs()
+        // Assign listeners
         this.listeners()
+
+        // Preload job actions
+        if (this.options.job.current) this._preloadJobs()
+
+        // Debug test
+        if (this.debug) {
+            this._onCombatData({
+                Combatant: {},
+                Encounter: {
+                    DURATION: 0,
+                    CurrentZoneName: `Eden's Gate: Resurrection (Savage)`,
+                    duration: '00:00',
+                    title: 'Debug Test Fight',
+                },
+                isActive: true,
+            })
+        }
     }
 
     // Events
@@ -124,17 +149,29 @@ class KyaputenDashboard {
      * @param {String} tpl
      */
     createTimeline (tpl) {
+        // Create all entries of this encounter
         for (const entry of this.combat.encounter.script) {
             const
                 mechanic = this.options.job.current ? this.actions[this.options.job.current][entry.mechanic] : this.combat.encounter.mechanics[entry.mechanic],
                 $tpl = $(Mustache.render($(`${tpl}`).html(), {
                     mechanic: mechanic,
                     ttl: this._convertTTL(entry.t),
+                    phase: Utils.getObjValue(entry, 'phase') || 1,
                 }))
 
             $(this.elements.list).append($tpl)
         }
 
+        // If this encounter is phased, dynamically hide all other phases than the first
+        if (!Utils.getObjValue(this.combat.encounter, 'default.transition')) {
+            $(this.elements.buttons).hide()
+            $(this.elements.list).children().removeClass('d-none')
+        }
+
+        // Activate phase 1
+        this.showPhase(1)
+
+        // Show the timeline
         $(this.elements.container).addClass('show')
     }
 
@@ -150,7 +187,14 @@ class KyaputenDashboard {
 
         const saves = []
 
+        // Increase the encounter time
         this.combat.encounter.elapsed++
+
+        if (Utils.getObjValue(this.combat.encounter, '.default.transition')) {
+            if (this.combat.encounter.elapsed - this._convertTTL(this.combat.encounter.default.transition) == 0) {
+                $(this.elements.buttons).children(':visible').eq(0).trigger('click')
+            }
+        }
 
         for (const entry of $(this.elements.list).children('.show')) {
             saves.push(new Promise((resolve, reject) => {
@@ -159,14 +203,20 @@ class KyaputenDashboard {
                     $entry = $(entry),
                     $ttl = $(this.elements.ttl, $entry),
                     ttl = +$ttl.text() - 1
-                if (ttl) {
+
+                if (ttl >= 0) {
+                    // Update the Time to Live
                     $ttl.text(ttl)
                 } else {
+                    // Hide the mechanic
                     const amt = $list.get(0).style.transform.length ?
                         +$list.get(0).style.transform.slice(11, -3) :
                         0
 
-                    $list.css('transform', `translateY(${amt - 32}px)`)
+                    // Only animate if this mechanic hasn't been skipped
+                    if (!$entry.hasClass('d-none')) $list.css('transform', `translateY(${amt - 32}px)`)
+
+                    // Remove the entry from future consideration
                     $entry.toggleClass('show hide')
                 }
 
@@ -184,7 +234,8 @@ class KyaputenDashboard {
      * @param {String} zone 
      */
     async encounter (zone) {
-        // zone = `Eden's Gate: Resurrection (Savage)` // Debug
+        // zone = `Eden's Gate: Descent (Savage)`
+
         const
             slug = Utils.slugify(zone),
             path = this.options.job.current ? `${this.options.encounter.path}${this.options.job.current}/` : this.options.encounter.path,
@@ -209,6 +260,44 @@ class KyaputenDashboard {
 
     /**
      * 
+     */
+    async adjustTimes () {
+        const
+            saves = [],
+            diff = this.combat.encounter.elapsed - this._convertTTL(this.combat.encounter.default.transition)
+
+        // Get every remaining mechanic and adjust the time by the differential listed in the encounter
+        for (const entry of $(this.elements.list).children('.show')) {
+            saves.push(new Promise((resolve, reject) => {
+                const
+                    $entry = $(entry),
+                    $ttl = $(this.elements.ttl, $entry),
+                    ttl = +$ttl.text() + diff
+
+                $ttl.text(ttl)
+
+                resolve()
+            }))
+        }
+
+        await Promise.all(saves)
+
+        return true
+    }
+
+    /**
+     * 
+     * @param {Number} ph 
+     */
+    showPhase (ph) {
+        $(this.elements.list)
+            .removeAttr('style')
+            .children().addClass('d-none')
+            .filter(`.phase-${ph}`).removeClass('d-none')
+    }
+
+    /**
+     * 
      * @param {String} str 
      * @return {Number}
      */
@@ -228,6 +317,7 @@ class KyaputenDashboard {
 
         $(this.elements.container).removeClass('show')
         $(this.elements.list).empty().removeAttr('style')
+        $(this.elements.buttons).show().children().addClass('d-inline-block').removeClass('d-none')
     }
 
     /**

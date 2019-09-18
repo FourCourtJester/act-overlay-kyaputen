@@ -122,6 +122,9 @@
             "cast": 6
         }
     },
+    "default": {
+        "transition": "03:37"
+    },
     "script": [
         {
             "t": "00:12",
@@ -132,7 +135,7 @@
             "mechanic": "vice-and-virtue-dps"
         },
         {
-            "t": "00:30",
+            "t": "00:32",
             "mechanic": "flare"
         },
         {
@@ -152,7 +155,7 @@
             "mechanic": "pure-light"
         },
         {
-            "t": "01:34",
+            "t": "01:33",
             "mechanic": "delta"
         },
         {
@@ -164,7 +167,7 @@
             "mechanic": "pure-beam"
         },
         {
-            "t": "02:12",
+            "t": "02:13",
             "mechanic": "pure-light"
         },
         {
@@ -172,7 +175,7 @@
             "mechanic": "dimensional-shift"
         },
         {
-            "t": "02:32",
+            "t": "02:33",
             "mechanic": "fragor-maximus"
         },
         {
@@ -188,7 +191,7 @@
             "mechanic": "mana-burst"
         },
         {
-            "t": "03:19",
+            "t": "03:20",
             "mechanic": "mana-slice"
         },
         {
@@ -201,107 +204,133 @@
         },
         {
             "t": "04:56",
-            "mechanic": "vice-and-virtue-tank-stack"
+            "mechanic": "vice-and-virtue-tank-stack",
+            "phase": 2
         },
         {
             "t": "05:10",
-            "mechanic": "vice-and-virtue-dps-stack"
+            "mechanic": "vice-and-virtue-dps-stack",
+            "phase": 2
         },
         {
             "t": "05:23",
-            "mechanic": "delta"
+            "mechanic": "delta",
+            "phase": 2
         },
         {
             "t": "05:34",
-            "mechanic": "vice-and-virtue-dps-prey"
+            "mechanic": "vice-and-virtue-dps-prey",
+            "phase": 2
         },
         {
             "t": "05:42",
-            "mechanic": "spear"
+            "mechanic": "spear",
+            "phase": 2
         },
         {
             "t": "05:55",
-            "mechanic": "dimensional-shift"
+            "mechanic": "dimensional-shift",
+            "phase": 2
         },
         {
             "t": "06:06",
-            "mechanic": "pure-beam"
+            "mechanic": "pure-beam",
+            "phase": 2
         },
         {
             "t": "06:11",
-            "mechanic": "raid-beams"
+            "mechanic": "raid-beams",
+            "phase": 2
         },
         {
             "t": "06:25",
-            "mechanic": "pure-light"
+            "mechanic": "pure-light",
+            "phase": 2
         },
         {
             "t": "06:36",
-            "mechanic": "dimensional-shift"
+            "mechanic": "dimensional-shift",
+            "phase": 2
         },
         {
             "t": "06:48",
-            "mechanic": "gravity"
+            "mechanic": "gravity",
+            "phase": 2
         },
         {
             "t": "06:59",
-            "mechanic": "flare"
+            "mechanic": "flare",
+            "phase": 2
         },
         {
             "t": "07:17",
-            "mechanic": "vice-and-virtue-tank"
+            "mechanic": "vice-and-virtue-tank",
+            "phase": 2
         },
         {
             "t": "07:23",
-            "mechanic": "spear"
+            "mechanic": "spear",
+            "phase": 2
         },
         {
             "t": "07:34",
-            "mechanic": "vice-and-virtue-dps"
+            "mechanic": "vice-and-virtue-dps",
+            "phase": 2
         },
         {
             "t": "07:48",
-            "mechanic": "delta"
+            "mechanic": "delta",
+            "phase": 2
         },
         {
             "t": "08:00",
-            "mechanic": "vice-and-virtue-tank-prey"
+            "mechanic": "vice-and-virtue-tank-prey",
+            "phase": 2
         },
         {
             "t": "08:13",
-            "mechanic": "dimensional-shift"
+            "mechanic": "dimensional-shift",
+            "phase": 2
         },
         {
             "t": "08:22",
-            "mechanic": "pure-beam"
+            "mechanic": "pure-beam",
+            "phase": 2
         },
         {
             "t": "08:27",
-            "mechanic": "raid-beams"
+            "mechanic": "raid-beams",
+            "phase": 2
         },
         {
             "t": "08:43",
-            "mechanic": "pure-light"
+            "mechanic": "pure-light",
+            "phase": 2
         },
         {
             "t": "08:53",
-            "mechanic": "dimensional-shift"
+            "mechanic": "dimensional-shift",
+            "phase": 2
         },
         {
             "t": "09:06",
-            "mechanic": "random"
+            "mechanic": "random",
+            "phase": 2
         },
         {
             "t": "9:39",
-            "mechanic": "random"
+            "mechanic": "random",
+            "phase": 2
         },
         {
             "t": "09:56",
-            "mechanic": "delta"
+            "mechanic": "delta",
+            "phase": 2
         },
         {
             "t": "10:00",
-            "mechanic": "enrage"
+            "mechanic": "enrage",
+            "phase": 2
         }
     ]
 }

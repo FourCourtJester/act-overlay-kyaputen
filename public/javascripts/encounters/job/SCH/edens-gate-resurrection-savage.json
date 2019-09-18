@@ -4,10 +4,13 @@
         "name": "Scholar",
         "abbr": "SCH"
     },
+    "default": {
+        "transition": "03:37"
+    },
     "script": [
         {
             "t": "00:01",
-            "mechanic": "dissipate"
+            "mechanic": "dissipation"
         },
         {
             "t": "00:06",
@@ -155,155 +158,193 @@
         },
         {
             "t": "4:35",
-            "mechanic": "recitation"
+            "mechanic": "recitation",
+            "phase": 2
         },
         {
             "t": "4:36",
-            "mechanic": "adloquium"
+            "mechanic": "adloquium",
+            "phase": 2
         },
         {
             "t": "4:39",
-            "mechanic": "deployment-tactics"
+            "mechanic": "deployment-tactics",
+            "phase": 2
         },
         {
             "t": "4:42",
-            "mechanic": "biolysis"
+            "mechanic": "biolysis",
+            "phase": 2
         },
         {
             "t": "4:43",
-            "mechanic": "aetherflow"
+            "mechanic": "aetherflow",
+            "phase": 2
         },
         {
             "t": "4:43",
-            "mechanic": "chain-stratagem"
+            "mechanic": "chain-stratagem",
+            "phase": 2
         },
         {
             "t": "4:52",
-            "mechanic": "fey-illumination"
+            "mechanic": "fey-illumination",
+            "phase": 2
         },
         {
             "t": "5:00",
-            "mechanic": "whispering-dawn"
+            "mechanic": "whispering-dawn",
+            "phase": 2
         },
         {
             "t": "5:12",
-            "mechanic": "biolysis"
+            "mechanic": "biolysis",
+            "phase": 2
         },
         {
             "t": "5:15",
-            "mechanic": "fey-blessing"
+            "mechanic": "fey-blessing",
+            "phase": 2
         },
         {
             "t": "5:18",
-            "mechanic": "summon-seraph"
+            "mechanic": "summon-seraph",
+            "phase": 2
         },
         {
             "t": "5:19",
-            "mechanic": "consolation"
+            "mechanic": "consolation",
+            "phase": 2
         },
         {
             "t": "05:22",
-            "mechanic": "sacred-soil"
+            "mechanic": "sacred-soil",
+            "phase": 2
         },
         {
             "t": "05:35",
-            "mechanic": "consolation"
+            "mechanic": "consolation",
+            "phase": 2
         },
         {
             "t": "05:42",
-            "mechanic": "biolysis"
+            "mechanic": "biolysis",
+            "phase": 2
         },
         {
             "t": "05:43",
-            "mechanic": "aetherflow"
+            "mechanic": "aetherflow",
+            "phase": 2
         },
         {
             "t": "5:57",
-            "mechanic": "indominability"
+            "mechanic": "indominability",
+            "phase": 2
         },
         {
             "t": "6:09",
-            "mechanic": "dissipation"
+            "mechanic": "dissipation",
+            "phase": 2
         },
         {
             "t": "06:13",
-            "mechanic": "biolysis"
+            "mechanic": "biolysis",
+            "phase": 2
         },
         {
             "t": "06:33",
-            "mechanic": "sacred-soil"
+            "mechanic": "sacred-soil",
+            "phase": 2
         },
         {
             "t": "06:34",
-            "mechanic": "indominability"
+            "mechanic": "indominability",
+            "phase": 2
         },
         {
             "t": "06:43",
-            "mechanic": "biolysis"
+            "mechanic": "biolysis",
+            "phase": 2
         },
         {
             "t": "06:44",
-            "mechanic": "aetherflow"
+            "mechanic": "aetherflow",
+            "phase": 2
         },
         {
             "t": "06:51",
-            "mechanic": "whispering-dawn"
+            "mechanic": "whispering-dawn",
+            "phase": 2
         },
         {
             "t": "07:14",
-            "mechanic": "biolysis"
+            "mechanic": "biolysis",
+            "phase": 2
         },
         {
             "t": "7:37",
-            "mechanic": "fey-illumination"
+            "mechanic": "fey-illumination",
+            "phase": 2
         },
         {
             "t": "7:40",
-            "mechanic": "fey-blessing"
+            "mechanic": "fey-blessing",
+            "phase": 2
         },
         {
             "t": "07:44",
-            "mechanic": "biolysis"
+            "mechanic": "biolysis",
+            "phase": 2
         },
         {
             "t": "07:45",
-            "mechanic": "aetherflow"
+            "mechanic": "aetherflow",
+            "phase": 2
         },
         {
             "t": "07:57",
-            "mechanic": "excogitation"
+            "mechanic": "excogitation",
+            "phase": 2
         },
         {
             "t": "08:03",
-            "mechanic": "sacred-soil"
+            "mechanic": "sacred-soil",
+            "phase": 2
         },
         {
             "t": "08:14",
-            "mechanic": "biolysis"
+            "mechanic": "biolysis",
+            "phase": 2
         },
         {
             "t": "8:15",
-            "mechanic": "recitation"
+            "mechanic": "recitation",
+            "phase": 2
         },
         {
             "t": "08:16",
-            "mechanic": "indominability"
+            "mechanic": "indominability",
+            "phase": 2
         },
         {
             "t": "08:45",
-            "mechanic": "biolysis"
+            "mechanic": "biolysis",
+            "phase": 2
         },
         {
             "t": "08:46",
-            "mechanic": "aetherflow"
+            "mechanic": "aetherflow",
+            "phase": 2
         },
         {
             "t": "08:50",
-            "mechanic": "sacred-soil"
+            "mechanic": "sacred-soil",
+            "phase": 2
         },
         {
             "t": "08:53",
-            "mechanic": "indominability"
+            "mechanic": "indominability",
+            "phase": 2
         }
     ]
 }

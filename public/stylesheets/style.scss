@@ -80,9 +80,29 @@ body {
     }
 }
 
+button {
+    background: linear-gradient(180deg,#474747,#474747 45%,#2b2b2b 55%,#2b2b2b);
+    box-sizing: border-box;
+    box-shadow: 0 0 3px 1px #000;
+    border-radius: 2rem;
+    border:none;
+    border-top: 1px solid hsla(0,0%,100%,.5);
+    color:$text-color;
+    line-height:20px;
+    text-align: center;
+    text-shadow: 0 1px rgba(0,0,0,.8);
+    outline: none;
+}
+
 img {
     max-height:$default-img-size;
     max-width:$default-img-size;
+}
+
+.btn-wrap {
+    bottom:3px;
+    right:3px;
+    z-index: $zindex-dropdown - 1;
 }
 
 .custom-toast {
@@ -151,9 +171,9 @@ img {
                         }
                     }
 
-                    // &:not(:last-child) {
-                    //     margin-bottom: 1rem;
-                    // }
+                    &.d-none {
+                        display: none !important;
+                    }
                 }
 
                 // Animation

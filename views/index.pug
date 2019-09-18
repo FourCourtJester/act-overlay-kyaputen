@@ -1,13 +1,16 @@
 doctype html
 html
   include tpl/head
-  body.container-fluid.no-gutters.p-2
+  body.container-fluid.no-gutters.p-2(style="overflow:hidden")
     div.row.h-100
       div.toasts.col-12.d-flex.flex-column.justify-content-end.align-items-center.mh-100
-        div.toast.custom-toast.p-1
-          div.wrap.d-flex.flex-column.px-2.py-3
+        div.toast.custom-toast.h-100.p-1
+          div.wrap.d-flex.flex-column.h-100.px-2.py-3
             //- div.title-bar.d-flex.flex-row.py-3
-            div.content.d-block
+            div.content.d-block.position-relative.h-100
+              div.btn-wrap.position-absolute.p-0.m-0
+                button.d-inline-block.px-3(data-kyaputen={ phase: 2 })
+                  | Phase 2
               ul.list-unstyled.p-0.m-0
   //- Templates
   include /views/mustache/toast-timeline
