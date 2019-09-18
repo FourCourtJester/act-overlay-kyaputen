@@ -30,7 +30,7 @@ class KyaputenDashboard {
                 regex: /(job\/\w{3})/,
             },
             encounter: {
-                path: `/public/javascripts/encounters/`,
+                path: `${path}encounters/`,
             },
         }
 

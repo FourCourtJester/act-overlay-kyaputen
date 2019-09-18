@@ -1,3 +1,4 @@
+- var path = is_development ? '/public/javascripts/' : '/act-overlay-kyaputen/public/javascripts/'
 head
     title Kyaputen
     meta(charset="UTF-8")
@@ -12,6 +13,9 @@ head
     //- Libraries
     script(type="application/javascript", src="/public/javascripts/dist/bootstrap/dist/js/bootstrap.bundle.min.js", defer)
     script(type="application/javascript", src="/public/javascripts/dist/mustache/mustache.min.js", defer)
+    //- Global variables
+    script(type="application/javascript").
+      const path = `#{path}`
     //- Scripts
     script(type="application/javascript", src="/public/javascripts/utils.js", defer)
     script(type="application/javascript", src="/public/javascripts/ws.js", defer)

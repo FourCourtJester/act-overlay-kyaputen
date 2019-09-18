@@ -6,8 +6,8 @@ const
 
 /* GET home page. */
 router.get(['/', '/job/:job'], function (req, res, next) {
-    // Render the page
-    res.render('index', (err, html) => {
+    // Render the development page
+    res.render('index', { is_development: true }, (err, html) => {
         // Disable caching
         res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate') // HTTP 1.1
         res.setHeader('Pragma', 'no-cache') // HTTP 1.0
@@ -15,10 +15,9 @@ router.get(['/', '/job/:job'], function (req, res, next) {
 
         // Development page
         res.send(html)
+    })
 
-        // Create relative path for Github
-        html = html.replace(/\/public/g, '/act-overlay-kyaputen/public')
-
+    res.render('index', { is_development: false }, (err, html) => {
         // Public accessible page
         fs.writeFileSync('index.html', html)
 
