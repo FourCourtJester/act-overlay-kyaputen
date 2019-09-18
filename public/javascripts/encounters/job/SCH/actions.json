@@ -61,6 +61,10 @@
         "icon": "https://xivapi.com/i/002000/002806.png",
         "cooldown": "30s"
     },
+    "fey-union": {
+        "name": "Fey Union",
+        "icon": "https://xivapi.com/i/002000/002818.png"
+    },
     "lucid-dreaming": {
         "name": "Lucid Dreaming",
         "icon": "https://xivapi.com/i/000000/000865.png",

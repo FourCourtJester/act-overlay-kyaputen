@@ -234,7 +234,7 @@ class KyaputenDashboard {
      * @param {String} zone 
      */
     async encounter (zone) {
-        // zone = `Eden's Gate: Descent (Savage)`
+        zone = `Eden's Gate: Descent (Savage)`
 
         const
             slug = Utils.slugify(zone),
