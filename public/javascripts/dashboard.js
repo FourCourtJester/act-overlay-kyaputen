@@ -66,6 +66,7 @@ class KyaputenDashboard {
         // Combat log
         this.combat = {
             active: null,
+            zone: null,
             encounter: {
                 script: null,
                 mechanics: [],
@@ -107,9 +108,11 @@ class KyaputenDashboard {
             })
 
         $('button').on('click', function () {
-            $(this).toggleClass('d-inline-block d-none')
-            that.adjustTimes()
             that.showPhase(Utils.getObjValue($(this).data('kyaputen'), 'phase'))
+        })
+
+        window.addEventListener('storage', (e) => {
+            this.showPhase(e.newValue)
         })
     }
 
@@ -235,12 +238,10 @@ class KyaputenDashboard {
 
     /**
      * 
-     * @param {String} zone 
      */
-    async encounter (zone) {
-        if (this.encounter.override) zone = this.encounters[this.encounter.override]
-
+    async encounter () {
         const
+            zone = this.encounter.override ? this.encounters[this.encounter.override] : this.combat.zone,
             slug = Utils.slugify(zone),
             path = this.options.job.current ? `${this.options.encounter.path}${this.options.job.current}/` : this.options.encounter.path,
             tpl = `${this.elements.mustache.tpl}${this.options.job.current ? '-job' : '-timeline'}`
@@ -294,6 +295,20 @@ class KyaputenDashboard {
      * @param {Number} ph 
      */
     showPhase (ph) {
+        const
+            zone = this.encounter.override ? this.encounters[this.encounter.override] : this.combat.zone,
+            $btns = $(this.elements.buttons).children(),
+            fight = Object.entries(this.encounters).filter(([key, val]) => val == zone).pop()[0]
+
+        console.log('Show Phase ' + ph)
+
+        $btns.eq(ph - 1).prevAll().addBack().removeClass('d-inline-block').addClass('d-none')
+        if (ph < this.combat.encounter.default.phases) $btns.eq(ph - 1).next().removeClass('d-none').addClass('d-inline-block')
+
+        localStorage.setItem(`kyaputen.${fight}`, ph)
+
+        if (ph > 1) this.adjustTimes()
+
         $(this.elements.list)
             .removeAttr('style')
             .children().addClass('d-none')
@@ -314,14 +329,18 @@ class KyaputenDashboard {
      * 
      */
     _reset () {
+        const zone = this.encounter.override ? this.encounters[this.encounter.override] : this.combat.zone
+
         console.log(`Combat ends: ${this.combat.title}`)
 
         clearInterval(this.timer)
         this.timer = null
 
+        localStorage.removeItem(`kyaputen.${Object.entries(this.encounters).filter(([key, val]) => val == zone).pop()[0]}`)
+
         $(this.elements.container).removeClass('show')
         $(this.elements.list).empty().removeAttr('style')
-        $(this.elements.buttons).show().children().addClass('d-inline-block').removeClass('d-none')
+        $(this.elements.buttons).show().children().removeClass('d-inline-block').addClass('d-none')
     }
 
     /**
@@ -363,6 +382,7 @@ class KyaputenDashboard {
             // Start new combat
             this.combat = {
                 active: active,
+                zone: encounter.CurrentZoneName,
                 title: encounter.title,
                 encounter: {},
             }
@@ -370,7 +390,7 @@ class KyaputenDashboard {
             console.log(`Combat begins: ${this.combat.title}`)
 
             // Load the script
-            this.encounter(encounter.CurrentZoneName)
+            this.encounter()
 
             // Update the DOM every second
             this.timer = setInterval(() => {

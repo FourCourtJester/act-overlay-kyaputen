@@ -158,6 +158,9 @@
             "cast": 5
         }
     },
+    "default": {
+        "phases": 1
+    },
     "script": [
         {
             "t": "00:10",

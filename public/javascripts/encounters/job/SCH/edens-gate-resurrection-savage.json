@@ -5,6 +5,7 @@
         "abbr": "SCH"
     },
     "default": {
+        "phases": 2,
         "transition": "03:37"
     },
     "script": [
@@ -21,7 +22,7 @@
             "mechanic": "whispering-dawn"
         },
         {
-            "t": "00:15",
+            "t": "00:12",
             "mechanic": "summon-seraph"
         },
         {

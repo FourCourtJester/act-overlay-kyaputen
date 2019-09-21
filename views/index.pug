@@ -9,8 +9,12 @@ html
             //- div.title-bar.d-flex.flex-row.py-3
             div.content.d-block.position-relative.h-100
               div.btn-wrap.position-absolute.p-0.m-0
-                button.d-inline-block.px-3(data-kyaputen={ phase: 2 })
+                button.d-none.px-3(data-kyaputen={ phase: 1 })
+                  | Phase 1
+                button.d-none.px-3(data-kyaputen={ phase: 2 })
                   | Phase 2
+                button.d-none.px-3(data-kyaputen={ phase: 3 })
+                  | Phase 3
               ul.list-unstyled.p-0.m-0
   //- Templates
   include /views/mustache/toast-timeline

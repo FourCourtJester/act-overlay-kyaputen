@@ -4,6 +4,9 @@
         "name": "Scholar",
         "abbr": "SCH"
     },
+    "default": {
+        "phases": 1
+    },
     "script": [
         {
             "t": "00:06",

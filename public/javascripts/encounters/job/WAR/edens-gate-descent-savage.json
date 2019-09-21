@@ -4,6 +4,9 @@
         "name": "Warrior",
         "abbr": "WAR"
     },
+    "default": {
+        "phases": 1
+    },
     "script": [
         {
             "t": "00:03",
