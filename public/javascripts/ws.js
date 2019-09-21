@@ -146,11 +146,16 @@ class WS {
      * @return {String}
      */
     _url () {
-        for (const q of location.search.substr(1).split('&')) {
-            const parts = q.split('=')
+        const q_string = new URLSearchParams(location.search)
 
-            if (parts[0] !== 'HOST_PORT') continue
-            return `${decodeURIComponent(parts[1].replace('[::1]', '[0000:0000:0000:0000:0000:0000:0000:0001]'))}${this.route}`
-        }
+        if (!q_string.has('HOST_PORT')) throw new Error('HOST_PORT is missing from connection information')
+        return `${decodeURIComponent(q_string.get('HOST_PORT').replace('[::1]', '[0000:0000:0000:0000:0000:0000:0000:0001]'))}${this.route}`
+
+        // for (const q of location.search.substr(1).split('&')) {
+        //     const parts = q.split('=')
+
+        //     if (parts[0] !== 'HOST_PORT') continue
+        //     return `${decodeURIComponent(parts[1].replace('[::1]', '[0000:0000:0000:0000:0000:0000:0000:0001]'))}${this.route}`
+        // }
     }
 }

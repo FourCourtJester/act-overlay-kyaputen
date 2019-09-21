@@ -31,8 +31,17 @@ class KyaputenDashboard {
             },
             encounter: {
                 path: `${path}/javascripts/encounters/`,
+                override: null,
             },
         }
+
+        // Auto assign a job
+        if (this.options.job.regex.test(window.location.href)) {
+            this.options.job.current = this.options.job.regex.exec(window.location.href)[0]
+        }
+
+        // Auto assign a test encounter based upon querystring
+        this.encounter.override = (new URLSearchParams(location.search)).get('z')
 
         // DOM Elements
         this.elements = {
@@ -45,11 +54,14 @@ class KyaputenDashboard {
             },
         }
 
+        // The clock
+        this.timer = null
+
         // Supported Encounters
-        this.encounters = [
-            `Eden's Gate: Resurrection (Savage)`,
-            `Eden's Gate: Descent (Savage)`,
-        ]
+        this.encounters = {
+            E1S: `Eden's Gate: Resurrection (Savage)`,
+            E2S: `Eden's Gate: Descent (Savage)`,
+        }
 
         // Combat log
         this.combat = {
@@ -68,14 +80,6 @@ class KyaputenDashboard {
         // Socket Events
         this.events = {
             onCombatData: this._onCombatData.bind(this),
-        }
-
-        // The clock
-        this.timer = null
-
-        // Auto assign a job
-        if (this.options.job.regex.test(window.location.href)) {
-            this.options.job.current = this.options.job.regex.exec(window.location.href)[0]
         }
     }
 
@@ -234,7 +238,7 @@ class KyaputenDashboard {
      * @param {String} zone 
      */
     async encounter (zone) {
-        // zone = `Eden's Gate: Descent (Savage)`
+        if (this.encounter.override) zone = this.encounters[this.encounter.override]
 
         const
             slug = Utils.slugify(zone),
@@ -242,7 +246,7 @@ class KyaputenDashboard {
             tpl = `${this.elements.mustache.tpl}${this.options.job.current ? '-job' : '-timeline'}`
 
         try {
-            if (!this.encounters.includes(zone)) throw new Error(`${zone} is not (yet) supported by Kyaputen.`)
+            if (!Object.values(this.encounters).includes(zone)) throw new Error(`${zone} is not (yet) supported by Kyaputen.`)
 
             const json = await $.getJSON(`${path}${slug}.json`)
 
@@ -328,6 +332,10 @@ class KyaputenDashboard {
             $.getJSON(`${this.options.encounter.path}${this.options.job.current}/actions.json`)
                 .then((a) => {
                     this.actions[this.options.job.current] = a
+                })
+                .catch((err) => {
+                    console.log(err)
+                    return false
                 })
 
             // All Jobs (future)
