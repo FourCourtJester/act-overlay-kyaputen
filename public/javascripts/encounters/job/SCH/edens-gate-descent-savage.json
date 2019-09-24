@@ -57,7 +57,7 @@
             "mechanic": "aetherflow"
         },
         {
-            "t": "01:03",
+            "t": "01:11",
             "mechanic": "succor"
         },
         {
@@ -81,16 +81,16 @@
             "mechanic": "indominability"
         },
         {
+            "t": "01:59",
+            "mechanic": "sacred-soil"
+        },
+        {
             "t": "02:00",
             "mechanic": "biolysis"
         },
         {
             "t": "02:00",
             "mechanic": "aetherflow"
-        },
-        {
-            "t": "02:03",
-            "mechanic": "sacred-soil"
         },
         {
             "t": "02:06",
