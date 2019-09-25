@@ -187,7 +187,7 @@ class KyaputenDashboard {
      */
     async getAuthors (job) {
         try {
-            this.cache.authors = this.cache.authors ? this.cache.authors : await $.getJSON(`${this.path.encounters}/_manifest.json`)
+            this.cache.authors = this.cache.authors ? this.cache.authors : await $.getJSON(`${this.path.encounters}/manifest.json`)
 
             $(this.elements.authors).empty()
 
