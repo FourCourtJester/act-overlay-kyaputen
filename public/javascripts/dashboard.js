@@ -20,45 +20,41 @@ class KyaputenDashboard {
      * Class initialization
      */
     init () {
-        this.debug = false
-        this.actions = {}
-        this.jobs = ['ACN', 'ARC', 'AST', 'BLM', 'BLU', 'BRD', 'CNJ', 'DNC', 'DRG', 'DRK', 'GLA', 'GNB', 'LNC', 'MCH', 'MNK', 'MRD', 'NIN', 'PLD', 'PGL', 'RDM', 'ROG', 'SAM', 'SCH', 'SMN', 'THM', 'WAR', 'WHM']
+        // Window ID
+        this.id = location.hash ? location.hash.slice(1) : '1'
+
+        this.cache = {}
 
         this.options = {
-            job: {
-                current: null,
-                regex: /(job\/\w{3})/,
-            },
-            encounter: {
-                path: `${path}/javascripts/encounters/`,
-                override: null,
-            },
+            authors: {},
+            style: '',
+            job: '',
         }
 
-        // Auto assign a job
-        if (this.options.job.regex.test(window.location.href)) {
-            this.options.job.current = this.options.job.regex.exec(window.location.href)[0]
+        this.path = {
+            encounters: `${path}/javascripts/encounters`,
+            jobs: `${path}/javascripts/jobs`,
         }
-
-        // Auto assign a test encounter based upon querystring
-        this.encounter.override = (new URLSearchParams(location.search)).get('z')
 
         // DOM Elements
         this.elements = {
-            container: '.toast',
-            list: '.content ul',
+            carousel: '.carousel',
+            authors: '.job-authors',
             buttons: '.btn-wrap',
+            timeline: '.timeline ul',
             ttl: '.ttl',
             mustache: {
-                tpl: `#mustache-toast`,
+                author: '#mustache-entry-job-author',
+                job: '#mustache-toast-job',
+                boss: '#mustache-toast-boss',
             },
         }
 
         // The clock
         this.timer = null
 
-        // Supported Encounters
-        this.encounters = {
+        // Encounters
+        this.supported_encounters = {
             E1S: `Eden's Gate: Resurrection (Savage)`,
             E2S: `Eden's Gate: Descent (Savage)`,
         }
@@ -67,16 +63,16 @@ class KyaputenDashboard {
         this.combat = {
             active: null,
             zone: null,
-            encounter: {
-                script: null,
-                mechanics: [],
-                elapsed: 0,
-            },
+            encounter: {},
             time: {
                 t: 0,
                 formatted: '00:00',
             },
         }
+
+        // Debug
+        // Zone Override
+        this.zone = { override: (new URLSearchParams(location.search)).get('z') }
 
         // Socket Events
         this.events = {
@@ -86,33 +82,68 @@ class KyaputenDashboard {
 
     /**
      * DOM Event Listeners
-     * @return {Boolean}
      */
     listeners () {
-        // Prevent reassigning duplicate listeners
-        if (!this.socket.settings.first_connect) return false
-
         const that = this
 
         $(document)
             // OverlayPlugin
             .on('onOverlayStateUpdate', (e) => {
-                $('body').removeClass('debug')
+                if (e.detail.isLocked) {
+                    $('body').removeClass('resize')
+                } else {
+                    if (!this.combat.active) {
+                        $(this.elements.carousel).carousel(0)
+                        $('body').addClass('active').removeClass('inactive')
+                    }
 
-                if (e.detail.isLocked) $('body').removeClass('resize')
-                else $('body').addClass('resize')
+                    $('body').addClass('resize')
+                }
             })
             // Overlay Plugin
             .on('onOverlayDataUpdate', (e) => {
                 if (!this.socket.ready) this.events.onCombatData(e.detail)
             })
+            // Option Change
+            .on('click', `.dropdown a`, (e) => {
+                e.preventDefault()
 
-        $('button').on('click', function () {
-            that.showPhase(Utils.getObjValue($(this).data('kyaputen'), 'phase'))
-        })
+                const
+                    $a = $(e.target),
+                    $select = $('form').find(`[name='${$a.parents('.dropdown-menu').data('target')}']`)
+
+                $(e.target).parents('.dropdown').find('button').text($a.text())
+
+                $select.val($(e.target).attr('href').slice(1))
+                $select.trigger('change')
+            })
+            // Option Change - Job
+            .on('change', `[name='job']`, (e) => {
+                // Setup encounter authors
+                this.getAuthors(e.target.value)
+            })
+            // Phase Change
+            .on('click', '.btn-wrap button', (e) => {
+                const phase = Utils.getObjValue($(e.target).data('kyaputen'), 'phase')
+
+                localStorage.setItem(`kyaputen.${this.id}.phase`, phase)
+                this.phase(phase)
+            })
+            // Options Submit
+            .on('submit', 'form', (e) => {
+                e.preventDefault()
+
+                const d = JSON.stringify($(e.target).serializeArray())
+
+                localStorage.setItem(`kyaputen.${this.id}.options`, d)
+                this.setOptions(d)
+
+                return false
+            })
 
         window.addEventListener('storage', (e) => {
-            this.showPhase(e.newValue)
+            if (/kyaputen.\d.phase/.test(e.key)) this.phase(+e.newValue)
+            return true
         })
     }
 
@@ -130,98 +161,220 @@ class KyaputenDashboard {
      * Window Load
      */
     onLoad () {
+        // Assign user defined saved options
+        this.setOptions()
+
         // Assign listeners
         this.listeners()
 
-        // Preload job actions
-        if (this.options.job.current) this._preloadJobs()
+        // setTimeout(() => {
+        //     this._onCombatData({
+        //         Combatant: {},
+        //         Encounter: {
+        //             DURATION: 0,
+        //             CurrentZoneName: `Eden's Gate: Descent (Savage)`,
+        //             duration: '00:00',
+        //             title: 'Debug Test Fight',
+        //         },
+        //         isActive: true,
+        //     })
+        // }, 2000)
+    }
 
-        // Debug test
-        if (this.debug) {
-            this._onCombatData({
-                Combatant: {},
-                Encounter: {
-                    DURATION: 0,
-                    CurrentZoneName: `Eden's Gate: Resurrection (Savage)`,
-                    duration: '00:00',
-                    title: 'Debug Test Fight',
-                },
-                isActive: true,
-            })
+    /**
+     * Sets all authors for all encounters
+     * @param {String} job
+     */
+    async getAuthors (job) {
+        try {
+            this.cache.authors = this.cache.authors ? this.cache.authors : await $.getJSON(`${this.path.encounters}/_manifest.json`)
+
+            $(this.elements.authors).empty()
+
+            for (const [encounter, scripts] of Object.entries(this.cache.authors)) {
+                if (!Object.keys(scripts)) continue
+                if (!Object.keys(scripts).includes(job)) continue
+
+                for (const [, authors] of Object.entries(scripts[job])) {
+                    const $tpl = $(Mustache.render($(`${this.elements.mustache.author}`).html(), {
+                        job: job,
+                        encounter: encounter,
+                        authors: authors,
+                    }))
+
+                    $tpl.find('select').val(Utils.getObjValue(this.options.authors, encounter))
+
+                    $(this.elements.authors).append($tpl)
+                }
+            }
+        } catch (err) {
+            console.error(err)
         }
     }
 
-    // Events
     /**
-     * @param {String} tpl
+     * Sets user defined options
+     * @param {String} [d=null]
+     * @return {Boolean}
      */
-    createTimeline (tpl) {
-        // Create all entries of this encounter
-        for (const entry of this.combat.encounter.script) {
+    setOptions (d = null) {
+        if (!d) d = localStorage.getItem(`kyaputen.${this.id}.options`)
+        if (!d) return false
+
+        // Save the user options
+        for (const { name: name, value: value } of JSON.parse(d)) {
+            Utils.setObjValue(this.options, name, value)
+            Utils.setElementValue($('form').find(`[name='${name}']`), value)
+        }
+
+        // Option: Style
+        const styles = ['small-icons', 'medium-icons', 'large-icons']
+        $('body').removeClass(styles).addClass(`${this.options.style}-icons`)
+
+        if (Object.keys(this.options.authors)) this.getAuthors(this.options.job)
+
+        // $(this.elements.carousel).carousel(1)
+        this.unloadEncounter()
+
+        return true
+    }
+
+    // Encounter Events
+
+    /**
+     * Loads a FFXIV Encounter
+     */
+    async loadEncounter () {
+        try {
             const
-                mechanic = this.options.job.current ? this.actions[this.options.job.current][entry.mechanic] : this.combat.encounter.mechanics[entry.mechanic],
+                zone_slug = Utils.slugify(this.combat.zone),
+                zone_abbr = Utils.getObjKey(this.supported_encounters, this.combat.zone),
+                files = []
+
+            if (!this.supported_encounters[zone_abbr]) throw new Error(`${this.combat.zone} is not (yet) supported by Kyaputen.`)
+
+            // Load encounter info
+            files.push($.getJSON(`${this.path.encounters}/${zone_slug}/info.json`))
+
+            // Either load the encounter actions or job actions
+            if (this.options.job) {
+                files.push($.getJSON(`${this.path.jobs}/${this.options.job}.json`))
+                files.push($.getJSON(`${this.path.encounters}/${zone_slug}/job/${this.options.job}/${Utils.slugify(this.options.authors[zone_abbr])}.json`))
+            } else {
+                files.push($.getJSON(`${this.path.encounters}/${zone_slug}/fight.json`))
+            }
+
+            Promise
+                .all(files)
+                .then((loaded_files) => {
+                    loaded_files.forEach((f) => {
+                        switch (f._id) {
+                        case 'encounter_mechanics':
+                            Utils.setObjValue(this.combat, 'encounter.mechanics', f.mechanics)
+                            Utils.setObjValue(this.combat, 'encounter.phases', f.phases)
+                            break
+
+                        case 'encounter_timeline':
+                            Utils.setObjValue(this.combat, 'encounter.timeline', f.script)
+                            break
+
+                        case 'job_actions':
+                            Utils.setObjValue(this.combat, 'encounter.mechanics', f)
+                            break
+
+                        case 'job_timeline':
+                            Utils.setObjValue(this.combat, 'encounter.timeline', f.script)
+                            break
+                        }
+                    })
+
+                    this.createTimeline()
+                })
+                .catch((err) => {
+                    throw err
+                })
+        } catch (err) {
+            console.error(err)
+        }
+    }
+
+    /**
+     * Unloads a FFXIV Encounter
+     * @return {Boolean}
+     */
+    unloadEncounter () {
+        // if (this.combat.title === undefined) return false
+
+        console.log(`Combat ends: ${this.combat.title}`)
+
+        clearInterval(this.timer)
+        this.timer = null
+
+        localStorage.removeItem(`kyaputen.${this.id}.phase`)
+
+        $('body').addClass('inactive').removeClass('active')
+        $(this.elements.timeline).empty().removeAttr('style')
+
+        return true
+    }
+
+    /**
+     * Creates a timeline of events
+     */
+    createTimeline () {
+        // Create all entries of this encounter
+        for (const entry of this.combat.encounter.timeline) {
+            const
+                mechanic = this.combat.encounter.mechanics[entry.mechanic],
+                tpl = this.elements.mustache[this.options.job ? 'job' : 'boss'],
                 $tpl = $(Mustache.render($(`${tpl}`).html(), {
                     mechanic: mechanic,
                     ttl: this._convertTTL(entry.t),
                     phase: Utils.getObjValue(entry, 'phase') || 1,
                 }))
 
-            $(this.elements.list).append($tpl)
+            $(this.elements.timeline).append($tpl)
         }
 
-        // If this encounter is phased, dynamically hide all other phases than the first
-        if (!Utils.getObjValue(this.combat.encounter, 'default.transition')) {
-            $(this.elements.buttons).hide()
-            $(this.elements.list).children().removeClass('d-none')
-        }
-
-        // Activate phase 1
-        this.showPhase(1)
-
-        // Show the timeline
-        $(this.elements.container).addClass('show')
+        this.phase(1)
+        $(this.elements.carousel).carousel(1)
+        $('body').removeClass('inactive').addClass('active')
     }
 
     /**
+     * Updates the timeline of events
      * @return {Boolean}
      */
-    async update () {
-        // No support encounter was loaded
-        if (!this.combat.encounter) return true
-
+    async updateTimeline () {
         // Only proceed if there are any mechanics
-        if (!$(this.elements.list).children().length) return true
+        if (!$(this.elements.timeline).children().length) return false
 
         const saves = []
 
         // Increase the encounter time
         this.combat.encounter.elapsed++
 
-        if (Utils.getObjValue(this.combat.encounter, '.default.transition')) {
-            if (this.combat.encounter.elapsed - this._convertTTL(this.combat.encounter.default.transition) == 0) {
-                $(this.elements.buttons).children(':visible').eq(0).trigger('click')
-            }
-        }
-
-        for (const entry of $(this.elements.list).children('.show')) {
+        for (const entry of $(this.elements.timeline).children('.show')) {
             saves.push(new Promise((resolve, reject) => {
                 const
-                    $list = $(this.elements.list),
+                    $list = $(this.elements.timeline),
                     $entry = $(entry),
                     $ttl = $(this.elements.ttl, $entry),
                     ttl = +$ttl.text() - 1
 
                 if (ttl >= 0) {
                     // Update the Time to Live
-                    $ttl.text(ttl)
+                    Utils.setElementValue($ttl, ttl)
                 } else {
                     // Hide the mechanic
-                    const amt = $list.get(0).style.transform.length ?
-                        +$list.get(0).style.transform.slice(11, -3) :
-                        0
+                    const
+                        amt = $list.get(0).style.transform.length ?
+                            +$list.get(0).style.transform.slice(11, -3) :
+                            0,
+                        y = amt - $entry.outerHeight() - 12
 
                     // Only animate if this mechanic hasn't been skipped
-                    if (!$entry.hasClass('d-none')) $list.css('transform', `translateY(${amt - 32}px)`)
+                    if (!$entry.hasClass('d-none')) $list.css('transform', `translateY(${y}px)`)
 
                     // Remove the entry from future consideration
                     $entry.toggleClass('show hide')
@@ -237,38 +390,16 @@ class KyaputenDashboard {
     }
 
     /**
-     * 
+     * Adjust phase timings
+     * @param {Number} ph 
      */
-    async encounter () {
-        const
-            slug = Utils.slugify(this.combat.zone),
-            path = this.options.job.current ? `${this.options.encounter.path}${this.options.job.current}/` : this.options.encounter.path,
-            tpl = `${this.elements.mustache.tpl}${this.options.job.current ? '-job' : '-timeline'}`
+    async adjust (ph) {
+        if (!this.combat.encounter.phases.length) return true
+        if (!this.combat.encounter.phases[ph]) return false
 
-        try {
-            if (!Object.values(this.encounters).includes(this.combat.zone)) throw new Error(`${this.combat.zone} is not (yet) supported by Kyaputen.`)
-
-            const json = await $.getJSON(`${path}${slug}.json`)
-
-            this.combat.encounter = json
-            this.combat.encounter.elapsed = this.combat.time.t
-
-            this.createTimeline(tpl)
-        } catch (err) {
-            console.error(err)
-            this.combat.encounter = null
-
-            this._reset()
-        }
-    }
-
-    /**
-     * 
-     */
-    async adjustTimes () {
         const
             saves = [],
-            diff = this.combat.encounter.elapsed - this._convertTTL(this.combat.encounter.default.transition)
+            diff = this.combat.encounter.elapsed - this._convertTTL(this.combat.encounter.phases[ph])
 
         // Get every remaining mechanic and adjust the time by the differential listed in the encounter
         for (const entry of $(this.elements.list).children('.show')) {
@@ -290,22 +421,20 @@ class KyaputenDashboard {
     }
 
     /**
-     * 
+     * Activates an encounter phase
      * @param {Number} ph 
      */
-    showPhase (ph) {
-        const $btns = $(this.elements.buttons).children()
+    phase (ph) {
+        const $buttons = $(this.elements.buttons).children()
 
-        console.log('Show Phase ' + ph)
+        console.log(`Phase ${ph}`)
 
-        $btns.eq(ph - 1).prevAll().addBack().removeClass('d-inline-block').addClass('d-none')
-        if (ph < this.combat.encounter.default.phases) $btns.eq(ph - 1).next().removeClass('d-none').addClass('d-inline-block')
+        $buttons.eq(ph - 1).prevAll().addBack().removeClass('d-inline-block').addClass('d-none')
+        if (ph < this.combat.encounter.phases.length) $buttons.eq(ph - 1).next().removeClass('d-none').addClass('d-inline-block')
 
-        localStorage.setItem(`kyaputen.${Object.keys(this.encounters).find((key) => this.encounters[key] == this.combat.zone)}`, ph)
+        this.adjust(ph - 1)
 
-        if (ph > 1) this.adjustTimes()
-
-        $(this.elements.list)
+        $(this.elements.timeline)
             .removeAttr('style')
             .children().addClass('d-none')
             .filter(`.phase-${ph}`).removeClass('d-none')
@@ -322,48 +451,6 @@ class KyaputenDashboard {
     }
 
     /**
-     * 
-     */
-    _reset () {
-        console.log(`Combat ends: ${this.combat.title}`)
-
-        clearInterval(this.timer)
-        this.timer = null
-
-        localStorage.removeItem(`kyaputen.${Object.keys(this.encounters).find((key) => this.encounters[key] == this.combat.zone)}`)
-
-        $(this.elements.container).removeClass('show')
-        $(this.elements.list).empty().removeAttr('style')
-        $(this.elements.buttons).show().children().removeClass('d-inline-block').addClass('d-none')
-    }
-
-    /**
-     * @return {Boolean}
-     */
-    _preloadJobs () {
-        try {
-            $.getJSON(`${this.options.encounter.path}${this.options.job.current}/actions.json`)
-                .then((a) => {
-                    this.actions[this.options.job.current] = a
-                })
-                .catch((err) => {
-                    console.log(err)
-                    return false
-                })
-
-            // All Jobs (future)
-            // this.jobs.forEach((job) => {
-            //     this.actions[job] = $.getJSON(`${this.options.encounter.path}job/${job}/actions.json`)
-            // })
-
-            return true
-        } catch (err) {
-            console.error(err)
-            return false
-        }
-    }
-
-    /**
      * Handles a CombatData event
      * @param {Object} data 
      */
@@ -371,35 +458,32 @@ class KyaputenDashboard {
         // Convert all types to Boolean
         active = String(active).toString().toLowerCase() == 'true'
 
-        // TODO: Create history if new encounter
+        // Start new combat
         if (!this.combat.active && active) {
-            // Start new combat
             this.combat = {
                 active: active,
-                zone: this.encounter.override ? this.encounters[this.encounter.override] : encounter.CurrentZoneName,
+                zone: this.zone.override ? this.supported_encounters[this.zone.override] : encounter.CurrentZoneName,
                 title: encounter.title,
-                encounter: {},
             }
 
             console.log(`Combat begins: ${this.combat.title}`)
 
             // Load the script
-            this.encounter()
+            this.loadEncounter()
 
             // Update the DOM every second
             this.timer = setInterval(() => {
-                this.update()
+                this.updateTimeline()
             }, 1000)
         }
 
-        // Start new combat
+        // Continue combat
         this.combat.active = active,
         this.combat.time = {
             t: +encounter.DURATION,
-            formatted: encounter.duration,
         }
 
-        if (active == false) this._reset()
+        if (active == false) this.unloadEncounter()
     }
 }
 

@@ -1,0 +1,214 @@
+{
+    "_id": "encounter_timeline",
+    "zone": "Eden's Gate: Descent (Savage)",
+    "script": [
+        {
+            "t": "00:10",
+            "mechanic": "doomvoid-cleaver"
+        },
+        {
+            "t": "00:24",
+            "mechanic": "unholy-darkness"
+        },
+        {
+            "t": "00:31",
+            "mechanic": "doomvoid-guillotine-or-doomvoid-slicer"
+        },
+        {
+            "t": "00:43",
+            "mechanic": "dark-fire-3"
+        },
+        {
+            "t": "01:08",
+            "mechanic": "punishing-ray"
+        },
+        {
+            "t": "01:35",
+            "mechanic": "dark-fire-3"
+        },
+        {
+            "t": "01:46",
+            "mechanic": "shadoweye-and-hell-wind-and-unholy-darkness"
+        },
+        {
+            "t": "02:01",
+            "mechanic": "shadowflame"
+        },
+        {
+            "t": "02:13",
+            "mechanic": "entropy"
+        },
+        {
+            "t": "02:22",
+            "mechanic": "empty-rage"
+        },
+        {
+            "t": "02:28",
+            "mechanic": "doomvoid-guillotine"
+        },
+        {
+            "t": "02:36",
+            "mechanic": "doomvoid-slicer"
+        },
+        {
+            "t": "02:44",
+            "mechanic": "empty-hate"
+        },
+        {
+            "t": "02:55",
+            "mechanic": "doomvoid-cleaver"
+        },
+        {
+            "t": "03:10",
+            "mechanic": "shadowflame"
+        },
+        {
+            "t": "03:22",
+            "mechanic": "entropy"
+        },
+        {
+            "t": "03:44",
+            "mechanic": "flare"
+        },
+        {
+            "t": "04:01",
+            "mechanic": "hell-wind"
+        },
+        {
+            "t": "04:07",
+            "mechanic": "shadoweye-and-punishing-ray"
+        },
+        {
+            "t": "04:20",
+            "mechanic": "shadowflame"
+        },
+        {
+            "t": "04:31",
+            "mechanic": "entropy"
+        },
+        {
+            "t": "04:41",
+            "mechanic": "equilibrium"
+        },
+        {
+            "t": "04:44",
+            "mechanic": "doomvoid-cleaver"
+        },
+        {
+            "t": "04:55",
+            "mechanic": "unholy-darkness"
+        },
+        {
+            "t": "05:03",
+            "mechanic": "doomvoid-guillotine-or-doomvoid-slicer"
+        },
+        {
+            "t": "5:29",
+            "mechanic": "shadowflame"
+        },
+        {
+            "t": "05:41",
+            "mechanic": "entropy"
+        },
+        {
+            "t": "05:57",
+            "mechanic": "empty-hate-or-empty-rage"
+        },
+        {
+            "t": "6:20",
+            "mechanic": "flare"
+        },
+        {
+            "t": "06:25",
+            "mechanic": "unholy-darkness"
+        },
+        {
+            "t": "06:38",
+            "mechanic": "shadowflame"
+        },
+        {
+            "t": "07:08",
+            "mechanic": "shadoweye-and-flare"
+        },
+        {
+            "t": "07:16",
+            "mechanic": "dark-fire-3"
+        },
+        {
+            "t": "07:22",
+            "mechanic": "equilibrium"
+        },
+        {
+            "t": "07:28",
+            "mechanic": "punishing-ray"
+        },
+        {
+            "t": "07:33",
+            "mechanic": "doomvoid-cleaver"
+        },
+        {
+            "t": "07:48",
+            "mechanic": "shadowflame"
+        },
+        {
+            "t": "08:17",
+            "mechanic": "quietus"
+        },
+        {
+            "t": "08:25",
+            "mechanic": "c-1"
+        },
+        {
+            "t": "08:28",
+            "mechanic": "c-2"
+        },
+        {
+            "t": "08:31",
+            "mechanic": "c-3"
+        },
+        {
+            "t": "08:50",
+            "mechanic": "c-1"
+        },
+        {
+            "t": "08:53",
+            "mechanic": "c-2"
+        },
+        {
+            "t": "08:56",
+            "mechanic": "c-3"
+        },
+        {
+            "t": "09:16",
+            "mechanic": "quietus"
+        },
+        {
+            "t": "09:27",
+            "mechanic": "c-1"
+        },
+        {
+            "t": "09:30",
+            "mechanic": "c-2"
+        },
+        {
+            "t": "09:33",
+            "mechanic": "c-3"
+        },
+        {
+            "t": "09:52",
+            "mechanic": "quietus"
+        },
+        {
+            "t": "10:00",
+            "mechanic": "quietus"
+        },
+        {
+            "t": "10:10",
+            "mechanic": "quietus"
+        },
+        {
+            "t": "10:12",
+            "mechanic": "enrage"
+        }
+    ]
+}

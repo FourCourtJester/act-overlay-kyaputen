@@ -1,0 +1,13 @@
+script#mustache-entry-job-author(type="x-tmpl-mustache")
+    div.form-group.col-12.col-sm-3.m-0(class="{{job}}")
+        label {{encounter}}
+        div.dropdown.w-100
+            button.btn.btn-secondary.dropdown-toggle.w-100(data-toggle="dropdown") {{encounter}}
+            div.dropdown-menu.w-100(data-target="authors.{{encounter}}")
+                | {{#authors}}
+                a.dropdown-item(href="#{{.}}") {{.}}
+                | {{/authors}}
+        select.form-control.d-none(name="authors.{{encounter}}")
+            | {{#authors}}
+            option {{.}}
+            | {{/authors}}

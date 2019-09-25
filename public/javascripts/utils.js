@@ -33,6 +33,20 @@ class KyaputenToolkit {
     }
 
     /**
+     * Gets the key of the value in an Object
+     * @param {Object} obj 
+     * @param {*} val 
+     * @return {*}
+     */
+    getObjKey (obj = {}, val = '') {
+        return Object
+            .keys(obj)
+            .find((k) => {
+                return obj[k] == val
+            })
+    }
+
+    /**
      * Get the value of the path in an Object
      * @param {Object} obj - The object to traverse
      * @param {String} path - The path to the value
@@ -58,6 +72,58 @@ class KyaputenToolkit {
     }
 
     /**
+     * Set the value of the path in an Object
+     * @param {Object} obj - The object to traverse
+     * @param {Array|string} [path] - The path to the value
+     * @param {*} val - The value to store
+     * @return {Object}
+     */
+    setObjValue (obj = {}, path = [], val = undefined) {
+        // Convert the path to an Array if it is already not
+        if (!Array.isArray(path)) path = path.split('.')
+
+        // Edge case: No path length. Just return
+        if (!path.length) return obj
+
+        // Get the prop
+        const field = path.shift()
+
+        // Array, not an Object
+        if (this.in(field, '[')) {
+            const [short_field, key] = field.match(/\w+\b/g)
+
+            // If the prop does not exist, create it
+            if (!obj.hasOwnProperty(short_field)) {
+                obj[short_field] = []
+            }
+
+            // Instantiate the array index
+            obj[short_field][key ? key : 0] = {}
+
+            // When there is no more depth to recurse, assign the value
+            if (!path.length) {
+                obj[short_field][key] = val
+                return obj
+            }
+
+            // Recurse and return
+            return this.setObjValue(obj[short_field][key], path, val)
+        }
+
+        // If the prop does not exist, create it
+        if (!obj.hasOwnProperty(field)) obj[field] = {}
+
+        // When there is no more depth to recurse, assign the value
+        if (!path.length) {
+            obj[field] = val
+            return obj
+        }
+
+        // Recurse and return
+        return this.setObjValue(obj[field], path, val)
+    }
+
+    /**
      * Set the value (or text) of a JQuery Element
      * @param {jQuery} $element - The JQuery Element
      * @param {String} val - The value to set
@@ -66,7 +132,24 @@ class KyaputenToolkit {
     setElementValue ($element = $(), val = '') {
         // No element
         if (!$element.length) return this
-        $element.text(val)
+
+        // Do something based upon tagName
+        switch ($element.prop('tagName').toLowerCase()) {
+        // Inputs
+        case 'input':
+            if ($element.is(':checkbox')) $element.prop('checked', val)
+            else $element.val(val)
+            break
+
+        case 'select':
+        case 'textarea':
+            $element.val(val)
+            break
+
+        default:
+            $element.text(val)
+        }
+
         return this
     }
 

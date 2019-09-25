@@ -1,11 +1,11 @@
 {
+    "_id": "job_timeline",
     "zone": "Eden's Gate: Descent (Savage)",
     "job": {
-        "name": "Scholar",
-        "abbr": "SCH"
-    },
-    "default": {
-        "phases": 1
+        "author": "Roslyn Ryuko",
+        "server": "Zalera (Crystal)",
+        "name": "White Mage",
+        "abbr": "WHM"
     },
     "script": [
         {

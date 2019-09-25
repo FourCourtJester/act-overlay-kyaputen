@@ -1,12 +1,11 @@
 {
+    "_id": "job_timeline",
     "zone": "Eden's Gate: Resurrection (Savage)",
     "job": {
+        "author": "Shekawa Phen",
+        "server": "Zalera (Crystal)",
         "name": "Scholar",
         "abbr": "SCH"
-    },
-    "default": {
-        "phases": 2,
-        "transition": "03:37"
     },
     "script": [
         {

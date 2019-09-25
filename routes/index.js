@@ -5,7 +5,7 @@ const
     jobs = ['ACN', 'ARC', 'AST', 'BLM', 'BLU', 'BRD', 'CNJ', 'DNC', 'DRG', 'DRK', 'GLA', 'GNB', 'LNC', 'MCH', 'MNK', 'MRD', 'NIN', 'PLD', 'PGL', 'RDM', 'ROG', 'SAM', 'SCH', 'SMN', 'THM', 'WAR', 'WHM']
 
 /* GET home page. */
-router.get(['/', '/job/:job'], function (req, res, next) {
+router.get(['/'], function (req, res, next) {
     // Render the development page
     res.render('index', { is_development: true }, (err, html) => {
         // Disable caching
@@ -15,14 +15,6 @@ router.get(['/', '/job/:job'], function (req, res, next) {
 
         // Development page
         res.send(html)
-    })
-
-    res.render('index', { is_development: false }, (err, html) => {
-        // Public accessible page
-        fs.writeFileSync('index.html', html)
-
-        // Public accessible job pages
-        jobs.forEach((job) => fs.copySync('index.html', `job/${job}/index.html`))
     })
 })
 

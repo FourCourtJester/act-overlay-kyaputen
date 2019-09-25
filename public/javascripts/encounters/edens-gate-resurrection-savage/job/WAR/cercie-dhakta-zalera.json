@@ -1,12 +1,11 @@
 {
+    "_id": "job_timeline",
     "zone": "Eden's Gate: Resurrection (Savage)",
     "job": {
+        "author": "Cercie Dhakta",
+        "server": "Zalera (Crystal)",
         "name": "Warrior",
         "abbr": "WAR"
-    },
-    "default": {
-        "phases": 2,
-        "transition": "03:37"
     },
     "script": [
         {
@@ -27,7 +26,7 @@
         },
         {
             "t": "00:40",
-            "mechanic": "nascent-flash"
+            "mechanic": "raw-intuition"
         },
         {
             "t": "00:45",

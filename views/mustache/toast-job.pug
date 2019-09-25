@@ -1,9 +1,8 @@
 script#mustache-toast-job(type="x-tmpl-mustache")
     li.mechanic.d-flex.show(class="phase-{{phase}}")
-        //- span.type.d-inline-block.text-right {{mechanic.name}}
         span.ttl-wrap.position-relative.d-inline-block.text-center
             span.ttl {{ttl}}
             svg.position-absolute #[circle(r="12" cx="16" cy="16", style="animation-duration:{{ttl}}s;")]
-        span.message.flex-grow-1.text-left.text-nowrap
-            span.mr-2 #[img(src="{{mechanic.icon}}")]
-            span.text-white.mr-2 {{mechanic.name}}
+        span.message-wrap.flex-grow-1.text-left.text-nowrap
+            span.icon.mr-2 #[img(src="{{mechanic.icon}}")]
+            span.message.text-white.mr-2 {{mechanic.name}}

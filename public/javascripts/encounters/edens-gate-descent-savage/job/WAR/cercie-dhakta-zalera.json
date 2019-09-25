@@ -1,11 +1,11 @@
 {
+    "_id": "job_timeline",
     "zone": "Eden's Gate: Descent (Savage)",
     "job": {
+        "author": "Cercie Dhakta",
+        "server": "Zalera (Crystal)",
         "name": "Warrior",
         "abbr": "WAR"
-    },
-    "default": {
-        "phases": 1
     },
     "script": [
         {

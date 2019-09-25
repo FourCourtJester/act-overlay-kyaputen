@@ -1,0 +1,53 @@
+{
+    "_id": "job_actions",
+    "rough-divide": {
+        "name": "Rough Divide",
+        "icon": "https://xivapi.com/i/003000/003418.png",
+        "cooldown": "30s"
+    },
+    "heart-of-stone": {
+        "name": "Heart of Stone",
+        "icon": "https://xivapi.com/i/003000/003425.png",
+        "cooldown": "25s"
+    },
+    "no-mercy": {
+        "name": "No Mercy",
+        "icon": "https://xivapi.com/i/003000/003402.png",
+        "cooldown": "60s"
+    },
+    "rampart": {
+        "name": "Rampart",
+        "icon": "https://xivapi.com/i/000000/000801.png",
+        "cooldown": "90s"
+    },
+    "bow-shock": {
+        "name": "Bow Shock",
+        "icon": "https://xivapi.com/i/003000/003423.png",
+        "cooldown": "60s"
+    },
+    "heart-of-light": {
+        "name": "Heart of Light",
+        "icon": "https://xivapi.com/i/003000/003424.png",
+        "cooldown": "90s"
+    },
+    "bloodfest": {
+        "name": "Bloodfest",
+        "icon": "https://xivapi.com/i/003000/003428.png",
+        "cooldown": "90s"
+    },
+    "reprisal": {
+        "name": "Reprisal",
+        "icon": "https://xivapi.com/i/000000/000806.png",
+        "cooldown": "60s"
+    },
+    "arms-length": {
+        "name": "Arm's Length",
+        "icon": "https://xivapi.com/i/000000/000822.png",
+        "cooldown": "120s"
+    },
+    "nebula": {
+        "name": "Nebula",
+        "icon": "https://xivapi.com/i/003000/003412.png",
+        "cooldown": "120s"
+    }
+}

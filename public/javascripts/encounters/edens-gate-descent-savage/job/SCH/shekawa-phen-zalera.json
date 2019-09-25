@@ -1,11 +1,11 @@
 {
+    "_id": "job_timeline",
     "zone": "Eden's Gate: Descent (Savage)",
     "job": {
+        "author": "Shekawa Phen",
+        "server": "Zalera (Crystal)",
         "name": "Scholar",
         "abbr": "SCH"
-    },
-    "default": {
-        "phases": 1
     },
     "script": [
         {

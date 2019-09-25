@@ -1,21 +1,70 @@
 doctype html
 html
   include tpl/head
-  body.container-fluid.no-gutters.p-2(style="overflow:hidden")
-    div.row.h-100
-      div.toasts.col-12.d-flex.flex-column.justify-content-end.align-items-center.mh-100
-        div.toast.custom-toast.h-100.p-1
-          div.wrap.d-flex.flex-column.h-100.px-2.py-3
-            //- div.title-bar.d-flex.flex-row.py-3
-            div.content.d-block.position-relative.h-100
-              div.btn-wrap.position-absolute.p-0.m-0
-                button.d-none.px-3(data-kyaputen={ phase: 1 })
-                  | Phase 1
-                button.d-none.px-3(data-kyaputen={ phase: 2 })
-                  | Phase 2
-                button.d-none.px-3(data-kyaputen={ phase: 3 })
-                  | Phase 3
-              ul.list-unstyled.p-0.m-0
+  body.container-fluid.p-2.active.resize
+    div.row.no-gutters.h-100.w-100
+      //- Decorative wrap
+      div.wrap-viewport.col-12.mh-100.p-1
+        //- Decorative inner wrap
+        div.inner-wrap-viewport.h-100.w-100.p-2
+          //- Carousel for options
+          div.carousel.h-100.w-100(data-interval="false", data-keyboard="false", data-pause="false", data-touch="false")
+            div.carousel-inner.h-100.w-100
+              //- Options
+              div.options.carousel-item.h-100.w-100.active
+                div.d-flex.flex-column.align-items-center.justify-content-center.w-100
+                  form.w-100
+                    fieldset
+                      div.form-row
+                        //- Style
+                        div.form-group.col-12.col-sm-6.m-0
+                          label Style
+                          div.dropdown.w-100
+                            button.btn.btn-secondary.dropdown-toggle.w-100(data-toggle="dropdown") Style
+                            div.dropdown-menu.w-100(data-target="style")
+                              a.dropdown-item(href='#small') Small Icons
+                              a.dropdown-item(href='#medium') Medium Icons
+                              a.dropdown-item(href='#large') Large Icons (No Text)
+                          select.form-control.d-none(name="style")
+                            option(value="small") Small Icons
+                            option(value="medium") Medium Icons
+                            option(value="large") Large Icons (No Text)
+                          p.form-text Change the style of the alerts.
+                        //- Job
+                        div.form-group.col-12.col-sm-6.m-0
+                          label Job
+                          div.dropdown.w-100
+                            button.btn.btn-secondary.dropdown-toggle.w-100(data-toggle="dropdown") Job
+                            div.dropdown-menu.w-100(data-target="job")
+                              a.dropdown-item(href='#') No Job
+                              a.dropdown-item(href='#GNB') Gunbreaker
+                              a.dropdown-item(href='#SCH') Scholar
+                              a.dropdown-item(href='#WAR') Warrior
+                              a.dropdown-item(href='#WHM') White Mage
+                          select.form-control.d-none(name="job")
+                            option(value="") None
+                            option(value="GNB") Gunbreaker
+                            option(value="SCH") Scholar
+                            option(value="WAR") Warrior
+                            option(value="WHM") White Mage
+                          p.form-text Receive job specific actions.
+                      div.job-authors.form-row
+                      div.form-row.d-flex.mt-1
+                        span.ml-auto
+                          span.mr-2 Kyaputen
+                          img.logo.mr-2
+                          button.px-3.mr-2(type="submit") Save
+              //- Timeline
+              div.timeline.carousel-item.h-100.w-100
+                //- Phase buttons
+                div.btn-wrap.position-absolute.p-0.m-0
+                  button.d-none.px-3(data-kyaputen={ phase: 1 }) Phase 1
+                  button.d-none.px-3(data-kyaputen={ phase: 2 }) Phase 2
+                  button.d-none.px-3(data-kyaputen={ phase: 3 }) Phase 3
+                //- Timeline entries
+                div.toasts.h-100.w-100
+                  ul.list-unstyled.p-0.m-0
   //- Templates
-  include /views/mustache/toast-timeline
+  include /views/mustache/entry-job-author
+  include /views/mustache/toast-boss
   include /views/mustache/toast-job
