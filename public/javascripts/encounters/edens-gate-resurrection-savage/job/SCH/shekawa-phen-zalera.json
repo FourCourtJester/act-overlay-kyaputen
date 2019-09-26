@@ -145,6 +145,14 @@
             "mechanic": "lucid-dreaming"
         },
         {
+            "t": "02:49",
+            "mechanic": "fey-union"
+        },
+        {
+            "t": "02:57",
+            "mechanic": "excogitation"
+        },
+        {
             "t": "03:00",
             "mechanic": "aetherflow"
         },
@@ -249,6 +257,10 @@
             "phase": 2
         },
         {
+            "t": "05:28",
+            "mechanic": "excogitation"
+        },
+        {
             "t": "05:45",
             "mechanic": "biolysis",
             "phase": 2
@@ -322,6 +334,10 @@
             "t": "06:48",
             "mechanic": "fey-blessing",
             "phase": 2
+        },
+        {
+            "t": "06:49",
+            "mechanic": "excogitation"
         },
         {
             "t": "07:15",

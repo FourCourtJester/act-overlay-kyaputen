@@ -15,19 +15,19 @@
             "cast": 5
         },
         "c-1": {
-            "name": "Doomvoid Slicer (CoR) or Doomvoid Guillotine (CoC)",
+            "name": "Doomvoid Guillotine (CoC) or Doomvoid Slicer (CoR)",
             "type": "Combo",
             "message": "Voidwalker will either one of these.",
             "cast": 5
         },
         "c-2": {
-            "name": "Doomvoid Cleaver (CoR) or Doomvoid Slicer (CoC)",
+            "name": "Doomvoid Slicer (CoC) or Doomvoid Cleaver (CoR)",
             "type": "Combo",
             "message": "Voidwalker will either one of these.",
             "cast": 5
         },
         "c-3": {
-            "name": "Doomvoid Guillotine (CoR) or Doomvoid Cleaver (CoC)",
+            "name": "Doomvoid Cleaver (CoC) or Doomvoid Guillotine (CoR)",
             "type": "Combo",
             "message": "Voidwalker will either one of these.",
             "cast": 4

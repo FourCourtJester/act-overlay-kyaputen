@@ -141,6 +141,10 @@
             "mechanic": "excogitation"
         },
         {
+            "t": "03:07",
+            "mechanic": "fey-union"
+        },
+        {
             "t": "03:09",
             "mechanic": "sacred-soil"
         },
@@ -207,6 +211,10 @@
         {
             "t": "04:09",
             "mechanic": "indominability"
+        },
+        {
+            "t": "04:15",
+            "mechanic": "fey-union"
         },
         {
             "t": "04:18",
@@ -329,6 +337,10 @@
             "mechanic": "excogitation"
         },
         {
+            "t": "06:37",
+            "mechanic": "fey-union"
+        },
+        {
             "t": "06:48",
             "mechanic": "fey-illumination"
         },
@@ -391,6 +403,10 @@
         {
             "t": "07:42",
             "mechanic": "excogitation"
+        },
+        {
+            "t": "07:47",
+            "mechanic": "fey-union"
         },
         {
             "t": "08:00",
