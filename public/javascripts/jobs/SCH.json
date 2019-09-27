@@ -42,6 +42,14 @@
         "name": "Energy Drain",
         "icon": "https://xivapi.com/i/000000/000514.png"
     },
+    "energy-drain-2": {
+        "name": "2x Energy Drain",
+        "icon": "https://xivapi.com/i/000000/000514.png"
+    },
+    "energy-drain-3": {
+        "name": "3x Energy Drain",
+        "icon": "https://xivapi.com/i/000000/000514.png"
+    },
     "excogitation": {
         "name": "Excogitation",
         "icon": "https://xivapi.com/i/002000/002813.png",

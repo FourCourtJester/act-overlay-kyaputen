@@ -9,6 +9,10 @@
     },
     "script": [
         {
+            "t": "00:03",
+            "mechanic": "energy-drain-3"
+        },
+        {
             "t": "00:06",
             "mechanic": "swiftcast"
         },
@@ -49,12 +53,20 @@
             "mechanic": "dissipation"
         },
         {
+            "t": "00:51",
+            "mechanic": "energy-drain-3"
+        },
+        {
             "t": "01:00",
             "mechanic": "biolysis"
         },
         {
             "t": "01:00",
             "mechanic": "aetherflow"
+        },
+        {
+            "t": "01:03",
+            "mechanic": "energy-drain-2"
         },
         {
             "t": "01:11",
@@ -91,6 +103,10 @@
         {
             "t": "02:00",
             "mechanic": "aetherflow"
+        },
+        {
+            "t": "02:03",
+            "mechanic": "energy-drain-3"
         },
         {
             "t": "02:06",
@@ -135,6 +151,10 @@
         {
             "t": "03:00",
             "mechanic": "aetherflow"
+        },
+        {
+            "t": "03:03",
+            "mechanic": "energy-drain-1"
         },
         {
             "t": "03:06",
@@ -182,6 +202,10 @@
         },
         {
             "t": "03:51",
+            "mechanic": "energy-drain-3"
+        },
+        {
+            "t": "03:51",
             "mechanic": "emergency-tactics"
         },
         {
@@ -207,10 +231,6 @@
         {
             "t": "04:06",
             "mechanic": "adloquium"
-        },
-        {
-            "t": "04:09",
-            "mechanic": "indominability"
         },
         {
             "t": "04:15",
@@ -241,7 +261,7 @@
             "mechanic": "whispering-dawn"
         },
         {
-            "t": "04:45",
+            "t": "04:48",
             "mechanic": "sacred-soil"
         },
         {
@@ -267,6 +287,10 @@
         {
             "t": "05:00",
             "mechanic": "aetherflow"
+        },
+        {
+            "t": "05:03",
+            "mechanic": "energy-drain-2"
         },
         {
             "t": "05:27",
@@ -365,6 +389,10 @@
             "mechanic": "aetherflow"
         },
         {
+            "t": "07:03",
+            "mechanic": "energy-drain-2"
+        },
+        {
             "t": "07:06",
             "mechanic": "sacred-soil"
         },
@@ -398,6 +426,10 @@
         },
         {
             "t": "07:33",
+            "mechanic": "energy-drain"
+        },
+        {
+            "t": "07:33",
             "mechanic": "indominability"
         },
         {
@@ -415,6 +447,10 @@
         {
             "t": "08:00",
             "mechanic": "aetherflow"
+        },
+        {
+            "t": "08:03",
+            "mechanic": "energy-drain"
         },
         {
             "t": "08:06",
@@ -523,6 +559,10 @@
         {
             "t": "10:00",
             "mechanic": "aetherflow"
+        },
+        {
+            "t": "10:03",
+            "mechanic": "energy-drain-2"
         },
         {
             "t": "10:03",

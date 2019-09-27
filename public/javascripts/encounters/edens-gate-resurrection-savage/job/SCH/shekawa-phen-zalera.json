@@ -9,6 +9,10 @@
     },
     "script": [
         {
+            "t": "00:03",
+            "mechanic": "energy-drain-2"
+        },
+        {
             "t": "00:06",
             "mechanic": "swiftcast"
         },
@@ -49,12 +53,20 @@
             "mechanic": "dissipation"
         },
         {
+            "t": "00:36",
+            "mechanic": "energy-drain-3"
+        },
+        {
             "t": "01:00",
             "mechanic": "biolysis"
         },
         {
             "t": "01:00",
             "mechanic": "aetherflow"
+        },
+        {
+            "t": "01:03",
+            "mechanic": "energy-drain"
         },
         {
             "t": "01:06",
@@ -158,6 +170,10 @@
         },
         {
             "t": "03:03",
+            "mechanic": "energy-drain"
+        },
+        {
+            "t": "03:03",
             "mechanic": "whispering-dawn"
         },
         {
@@ -195,6 +211,10 @@
             "t": "04:45",
             "mechanic": "aetherflow",
             "phase": 2
+        },
+        {
+            "t": "04:48",
+            "mechanic": "energy-drain"
         },
         {
             "t": "04:51",
@@ -255,6 +275,10 @@
             "t": "05:27",
             "mechanic": "dissipation",
             "phase": 2
+        },
+        {
+            "t": "05:28",
+            "mechanic": "energy-drain-2"
         },
         {
             "t": "05:28",
@@ -329,6 +353,10 @@
             "t": "06:45",
             "mechanic": "aetherflow",
             "phase": 2
+        },
+        {
+            "t": "06:48",
+            "mechanic": "energy-drain-2"
         },
         {
             "t": "06:48",
@@ -440,6 +468,10 @@
             "phase": 2
         },
         {
+            "t": "08:33",
+            "mechanic": "energy-drain-3"
+        },
+        {
             "t": "08:42",
             "mechanic": "chain-stratagem",
             "phase": 2
@@ -518,6 +550,10 @@
             "t": "09:45",
             "mechanic": "aetherflow",
             "phase": 2
+        },
+        {
+            "t": "09:48",
+            "mechanic": "energy-drain-2"
         },
         {
             "t": "09:54",
