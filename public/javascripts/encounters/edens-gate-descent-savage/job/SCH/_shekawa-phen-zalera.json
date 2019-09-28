@@ -10,10 +10,6 @@
     "script": [
         {
             "t": "00:03",
-            "mechanic": "dissipation"
-        },
-        {
-            "t": "00:03",
             "mechanic": "energy-drain-3"
         },
         {
@@ -26,87 +22,91 @@
         },
         {
             "t": "00:15",
-            "mechanic": "aetherflow"
+            "mechanic": "summon-seraph"
         },
         {
-            "t": "00:18",
-            "mechanic": "energy-drain-3"
+            "t": "00:21",
+            "mechanic": "consolation"
+        },
+        {
+            "t": "00:21",
+            "mechanic": "whispering-dawn"
+        },
+        {
+            "t": "00:24",
+            "mechanic": "consolation"
         },
         {
             "t": "00:30",
             "mechanic": "biolysis"
         },
         {
-            "t": "00:36",
-            "mechanic": "fey-illumination"
-        },
-        {
             "t": "00:39",
-            "mechanic": "whispering-dawn"
+            "mechanic": "fey-illumination"
         },
         {
             "t": "00:45",
             "mechanic": "fey-blessing"
         },
         {
+            "t": "00:48",
+            "mechanic": "dissipation"
+        },
+        {
+            "t": "00:51",
+            "mechanic": "energy-drain-3"
+        },
+        {
             "t": "01:00",
             "mechanic": "biolysis"
         },
         {
-            "t": "01:03",
-            "mechanic": "summon-seraph"
-        },
-        {
-            "t": "01:04",
-            "mechanic": "consolation"
-        },
-        {
-            "t": "01:15",
+            "t": "01:00",
             "mechanic": "aetherflow"
         },
         {
-            "t": "01:19",
-            "mechanic": "consolation"
+            "t": "01:03",
+            "mechanic": "energy-drain-2"
+        },
+        {
+            "t": "01:11",
+            "mechanic": "succor"
         },
         {
             "t": "01:30",
             "mechanic": "biolysis"
         },
         {
-            "t": "01:31",
+            "t": "01:30",
             "mechanic": "lucid-dreaming"
         },
         {
-            "t": "01:33",
-            "mechanic": "sacred-soil"
-        },
-        {
-            "t": "01:38",
-            "mechanic": "recitation"
-        },
-        {
             "t": "01:39",
-            "mechanic": "whispering-dawn"
+            "mechanic": "succor"
+        },
+        {
+            "t": "01:42",
+            "mechanic": "recitation"
         },
         {
             "t": "01:48",
             "mechanic": "indominability"
         },
         {
-            "t": "01:51",
-            "mechanic": "excogitation"
-        },
-        {
             "t": "01:59",
-            "mechanic": "fey-union"
+            "mechanic": "sacred-soil"
         },
         {
             "t": "02:00",
             "mechanic": "biolysis"
         },
         {
+            "t": "02:00",
+            "mechanic": "aetherflow"
+        },
+        {
             "t": "02:03",
-            "mechanic": "sacred-soil"
+            "mechanic": "energy-drain-3"
         },
         {
             "t": "02:06",
@@ -118,11 +118,7 @@
         },
         {
             "t": "02:15",
-            "mechanic": "aetherflow"
-        },
-        {
-            "t": "02:18",
-            "mechanic": "energy-drain-3"
+            "mechanic": "whispering-dawn"
         },
         {
             "t": "02:30",
@@ -130,58 +126,66 @@
         },
         {
             "t": "02:39",
-            "mechanic": "fey-illumination"
+            "mechanic": "summon-seraph"
+        },
+        {
+            "t": "02:39",
+            "mechanic": "consolation"
         },
         {
             "t": "02:42",
-            "mechanic": "whispering-dawn"
+            "mechanic": "surecast"
         },
         {
-            "t": "02:43",
-            "mechanic": "surecast"
+            "t": "02:45",
+            "mechanic": "fey-illumination"
+        },
+        {
+            "t": "02:48",
+            "mechanic": "consolation"
         },
         {
             "t": "03:00",
             "mechanic": "biolysis"
         },
         {
-            "t": "03:01",
-            "mechanic": "dissipation"
-        },
-        {
-            "t": "03:02",
-            "mechanic": "energy-drain"
+            "t": "03:00",
+            "mechanic": "aetherflow"
         },
         {
             "t": "03:03",
+            "mechanic": "energy-drain"
+        },
+        {
+            "t": "03:06",
             "mechanic": "excogitation"
+        },
+        {
+            "t": "03:07",
+            "mechanic": "fey-union"
         },
         {
             "t": "03:09",
             "mechanic": "sacred-soil"
         },
         {
-            "t": "03:15",
-            "mechanic": "aetherflow"
-        },
-        {
-            "t": "03:18",
-            "mechanic": "energy-drain-2"
-        },
-        {
             "t": "03:24",
             "mechanic": "recitation"
         },
         {
-            "t": "03:25",
+            "t": "03:24",
             "mechanic": "indominability"
+        },
+        {
+            "t": "03:27",
+            "mechanic": "whispering-dawn"
         },
         {
             "t": "03:30",
             "mechanic": "biolysis"
         },
         {
-            "t": "03:31",
+            "t": "03:30",
             "mechanic": "lucid-dreaming"
         },
         {
@@ -193,79 +197,87 @@
             "mechanic": "deployment-tactics"
         },
         {
-            "t": "03:46",
-            "mechanic": "fey-blessing"
+            "t": "03:48",
+            "mechanic": "dissipation"
         },
         {
-            "t": "03:49",
-            "mechanic": "whispering-dawn"
+            "t": "03:51",
+            "mechanic": "energy-drain-3"
+        },
+        {
+            "t": "03:51",
+            "mechanic": "emergency-tactics"
+        },
+        {
+            "t": "03:51",
+            "mechanic": "succor"
         },
         {
             "t": "04:00",
             "mechanic": "biolysis"
         },
         {
-            "t": "04:03",
-            "mechanic": "adloquium"
-        },
-        {
-            "t": "04:06",
-            "mechanic": "excogitation"
-        },
-        {
-            "t": "04:09",
-            "mechanic": "chain-stratagem"
-        },
-        {
-            "t": "04:12",
-            "mechanic": "adloquium"
-        },
-        {
-            "t": "04:13",
-            "mechanic": "fey-union"
-        },
-        {
-            "t": "04:15",
+            "t": "04:00",
             "mechanic": "aetherflow"
         },
         {
-            "t": "04:18",
-            "mechanic": "energy-drain"
+            "t": "04:03",
+            "mechanic": "excogitation"
+        },
+        {
+            "t": "04:06",
+            "mechanic": "chain-stratagem"
+        },
+        {
+            "t": "04:06",
+            "mechanic": "adloquium"
+        },
+        {
+            "t": "04:15",
+            "mechanic": "fey-union"
         },
         {
             "t": "04:18",
             "mechanic": "sacred-soil"
+        },
+        {
+            "t": "04:21",
+            "mechanic": "adloquium"
         },
         {
             "t": "04:30",
             "mechanic": "biolysis"
         },
         {
-            "t": "04:39",
-            "mechanic": "fey-illumination"
-        },
-        {
-            "t": "04:46",
+            "t": "04:33",
             "mechanic": "fey-blessing"
         },
         {
-            "t": "04:49",
-            "mechanic": "sacred-soil"
+            "t": "04:36",
+            "mechanic": "succor"
         },
         {
-            "t": "04:50",
+            "t": "04:45",
             "mechanic": "whispering-dawn"
         },
         {
-            "t": "04:52",
+            "t": "04:48",
+            "mechanic": "sacred-soil"
+        },
+        {
+            "t": "04:48",
+            "mechanic": "fey-illumination"
+        },
+        {
+            "t": "04:51",
             "mechanic": "summon-seraph"
         },
         {
-            "t": "04:53",
+            "t": "04:51",
             "mechanic": "consolation"
         },
         {
-            "t": "04:58",
+            "t": "04:57",
             "mechanic": "consolation"
         },
         {
@@ -273,16 +285,12 @@
             "mechanic": "biolysis"
         },
         {
-            "t": "05:15",
+            "t": "05:00",
             "mechanic": "aetherflow"
         },
         {
-            "t": "05:18",
+            "t": "05:03",
             "mechanic": "energy-drain-2"
-        },
-        {
-            "t": "05:24",
-            "mechanic": "fey-union"
         },
         {
             "t": "05:27",
@@ -293,7 +301,7 @@
             "mechanic": "biolysis"
         },
         {
-            "t": "05:31",
+            "t": "05:30",
             "mechanic": "lucid-dreaming"
         },
         {
@@ -305,7 +313,7 @@
             "mechanic": "indominability"
         },
         {
-            "t": "05:52",
+            "t": "05:51",
             "mechanic": "surecast"
         },
         {
@@ -313,7 +321,19 @@
             "mechanic": "biolysis"
         },
         {
+            "t": "06:00",
+            "mechanic": "aetherflow"
+        },
+        {
+            "t": "06:03",
+            "mechanic": "whispering-dawn"
+        },
+        {
             "t": "06:06",
+            "mechanic": "chain-stratagem"
+        },
+        {
+            "t": "06:09",
             "mechanic": "adloquium"
         },
         {
@@ -321,19 +341,7 @@
             "mechanic": "deployment-tactics"
         },
         {
-            "t": "06:10",
-            "mechanic": "chain-stratagem"
-        },
-        {
-            "t": "06:12",
-            "mechanic": "whispering-dawn"
-        },
-        {
-            "t": "06:15",
-            "mechanic": "aetherflow"
-        },
-        {
-            "t": "06:19",
+            "t": "06:18",
             "mechanic": "sacred-soil"
         },
         {
@@ -349,12 +357,12 @@
             "mechanic": "biolysis"
         },
         {
-            "t": "06:37",
-            "mechanic": "fey-union"
+            "t": "06:36",
+            "mechanic": "excogitation"
         },
         {
-            "t": "06:39",
-            "mechanic": "adloquium"
+            "t": "06:37",
+            "mechanic": "fey-union"
         },
         {
             "t": "06:48",
@@ -377,6 +385,14 @@
             "mechanic": "biolysis"
         },
         {
+            "t": "07:00",
+            "mechanic": "aetherflow"
+        },
+        {
+            "t": "07:03",
+            "mechanic": "energy-drain-2"
+        },
+        {
             "t": "07:06",
             "mechanic": "sacred-soil"
         },
@@ -385,52 +401,60 @@
             "mechanic": "consolation"
         },
         {
-            "t": "07:10",
-            "mechanic": "succor"
-        },
-        {
-            "t": "07:15",
+            "t": "07:12",
             "mechanic": "whispering-dawn"
         },
         {
-            "t": "07:15",
-            "mechanic": "aetherflow"
+            "t": "07:12",
+            "mechanic": "succor"
         },
         {
-            "t": "07:18",
-            "mechanic": "energy-drain-3"
-        },
-        {
-            "t": "07:18",
-            "mechanic": "recitation"
-        },
-        {
-            "t": "07:19",
-            "mechanic": "indominability"
+            "t": "07:27",
+            "mechanic": "succor"
         },
         {
             "t": "07:30",
             "mechanic": "biolysis"
         },
         {
-            "t": "07:31",
+            "t": "07:30",
             "mechanic": "lucid-dreaming"
         },
         {
-            "t": "07:36",
-            "mechanic": "fey-blessing"
-        },
-        {
-            "t": "07:39",
+            "t": "07:30",
             "mechanic": "dissipation"
         },
         {
+            "t": "07:33",
+            "mechanic": "energy-drain"
+        },
+        {
+            "t": "07:33",
+            "mechanic": "indominability"
+        },
+        {
             "t": "07:42",
-            "mechanic": "energy-drain-2"
+            "mechanic": "excogitation"
+        },
+        {
+            "t": "07:47",
+            "mechanic": "fey-union"
         },
         {
             "t": "08:00",
             "mechanic": "biolysis"
+        },
+        {
+            "t": "08:00",
+            "mechanic": "aetherflow"
+        },
+        {
+            "t": "08:03",
+            "mechanic": "energy-drain"
+        },
+        {
+            "t": "08:06",
+            "mechanic": "chain-stratagem"
         },
         {
             "t": "08:09",
@@ -441,27 +465,15 @@
             "mechanic": "deployment-tactics"
         },
         {
-            "t": "08:12",
-            "mechanic": "chain-stratagem"
-        },
-        {
             "t": "08:15",
             "mechanic": "sacred-soil"
-        },
-        {
-            "t": "08:15",
-            "mechanic": "aetherflow"
-        },
-        {
-            "t": "08:18",
-            "mechanic": "energy-drain"
         },
         {
             "t": "08:18",
             "mechanic": "indominability"
         },
         {
-            "t": "08:19",
+            "t": "08:18",
             "mechanic": "whispering-dawn"
         },
         {
@@ -473,11 +485,11 @@
             "mechanic": "biolysis"
         },
         {
-            "t": "08:36",
+            "t": "08:33",
             "mechanic": "fey-blessing"
         },
         {
-            "t": "08:46",
+            "t": "08:42",
             "mechanic": "succor"
         },
         {
@@ -485,11 +497,15 @@
             "mechanic": "biolysis"
         },
         {
+            "t": "09:00",
+            "mechanic": "aetherflow"
+        },
+        {
             "t": "09:03",
             "mechanic": "fey-illumination"
         },
         {
-            "t": "09:04",
+            "t": "09:03",
             "mechanic": "succor"
         },
         {
@@ -497,11 +513,7 @@
             "mechanic": "sacred-soil"
         },
         {
-            "t": "09:15",
-            "mechanic": "aetherflow"
-        },
-        {
-            "t": "09:19",
+            "t": "09:18",
             "mechanic": "indominability"
         },
         {
@@ -509,23 +521,23 @@
             "mechanic": "biolysis"
         },
         {
-            "t": "09:31",
+            "t": "09:30",
             "mechanic": "lucid-dreaming"
         },
         {
-            "t": "09:33",
-            "mechanic": "whispering-dawn"
-        },
-        {
-            "t": "09:45",
+            "t": "09:48",
             "mechanic": "succor"
         },
         {
-            "t": "09:48",
+            "t": "09:51",
             "mechanic": "sacred-soil"
         },
         {
-            "t": "09:53",
+            "t": "09:51",
+            "mechanic": "whispering-dawn"
+        },
+        {
+            "t": "09:54",
             "mechanic": "recitation"
         },
         {
@@ -537,7 +549,7 @@
             "mechanic": "summon-seraph"
         },
         {
-            "t": "09:58",
+            "t": "09:57",
             "mechanic": "consolation"
         },
         {
@@ -545,19 +557,27 @@
             "mechanic": "biolysis"
         },
         {
-            "t": "10:03",
-            "mechanic": "consolation"
+            "t": "10:00",
+            "mechanic": "aetherflow"
         },
         {
-            "t": "10:04",
+            "t": "10:03",
+            "mechanic": "energy-drain-2"
+        },
+        {
+            "t": "10:03",
             "mechanic": "indominability"
         },
         {
-            "t": "10:06",
-            "mechanic": "fey-blessing"
+            "t": "10:03",
+            "mechanic": "succor"
         },
         {
-            "t": "10:07",
+            "t": "10:06",
+            "mechanic": "emergency-tactics"
+        },
+        {
+            "t": "10:06",
             "mechanic": "succor"
         }
     ]
