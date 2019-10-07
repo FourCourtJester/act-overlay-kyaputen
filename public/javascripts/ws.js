@@ -9,7 +9,7 @@ class WS {
      */
     constructor (route = undefined) {
         this.ws = undefined
-        this.route = route || 'MiniParse'
+        this.route = route || 'ws'
         this.events = {}
         this.ready = false
 
@@ -80,6 +80,14 @@ class WS {
      * @return {Boolean}
      */
     subscribe (evt, cb) {
+        if (!this.ready) {
+            setTimeout(() => {
+                this.subscribe(evt, cb)
+            }, 500)
+
+            return false
+        }
+
         if (!Object.prototype.hasOwnProperty.call(this.events, evt)) this.events[evt] = []
 
         // Duplicate event
@@ -87,6 +95,12 @@ class WS {
 
         // Save the execution of this callback for this Web Socket
         this.events[evt].push(cb)
+
+        // Subscribe to the socket
+        this._send(`Subscribe to ${evt}`, JSON.stringify({
+            call: 'subscribe',
+            events: [evt],
+        }))
 
         return true
     }
@@ -105,9 +119,9 @@ class WS {
 
         packet = JSON.parse(packet)
 
-        if (Utils.in(Object.keys(this.events), packet.msgtype)) {
-            for (const cb of this.events[packet.msgtype]) {
-                cb(packet.msg)
+        if (Utils.in(Object.keys(this.events), packet.type)) {
+            for (const cb of this.events[packet.type]) {
+                cb(packet)
             }
         } else {
             console.log('Received', packet)
@@ -150,12 +164,5 @@ class WS {
 
         if (!q_string.has('HOST_PORT')) throw new Error('HOST_PORT is missing from connection information')
         return `${decodeURIComponent(q_string.get('HOST_PORT').replace('[::1]', '[0000:0000:0000:0000:0000:0000:0000:0001]'))}${this.route}`
-
-        // for (const q of location.search.substr(1).split('&')) {
-        //     const parts = q.split('=')
-
-        //     if (parts[0] !== 'HOST_PORT') continue
-        //     return `${decodeURIComponent(parts[1].replace('[::1]', '[0000:0000:0000:0000:0000:0000:0000:0001]'))}${this.route}`
-        // }
     }
 }

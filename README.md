@@ -1,5 +1,16 @@
 # act-overlay-kyaputen
-A light weight Boss Mods overlay that will load in the encounter script (if supported) and give reminders to the player on mechanics and how to execute them in a timely manner.
+
+<p align="center">
+  <img src="./docs/full_screen_example.jpg" height="225" width="400" />
+  <img src="./docs/boss_example.jpg" height="225" width="632" />
+  <img src="./docs/job_example.jpg" height="225" width="176" />
+</p>
+
+A lightweight Boss Mods overlay that allows users to choose encounter scripts (if supported) by authors and give reminders to the player on mechanics and how to execute them in a timely manner.
+
+# How to Use
+
+Upon successful installation of Kyaputen into ACT, upon load you will be presented with some combo boxes. You may select your style of log entries (Small Icons, Medium Icons, Large Icons with no text), and a possible job. If you select no job, you will get boss timeline entries. If you choose a job cooldown map, you can then select maps authored by members of the community for each encounter.
 
 # Dependencies
 

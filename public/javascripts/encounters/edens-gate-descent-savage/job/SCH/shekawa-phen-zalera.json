@@ -33,6 +33,10 @@
             "mechanic": "energy-drain-3"
         },
         {
+            "t": "00:24",
+            "mechanic": "succor"
+        },
+        {
             "t": "00:30",
             "mechanic": "biolysis"
         },
@@ -133,12 +137,12 @@
             "mechanic": "fey-illumination"
         },
         {
-            "t": "02:42",
-            "mechanic": "whispering-dawn"
+            "t": "02:40",
+            "mechanic": "surecast"
         },
         {
-            "t": "02:43",
-            "mechanic": "surecast"
+            "t": "02:42",
+            "mechanic": "whispering-dawn"
         },
         {
             "t": "03:00",
@@ -150,7 +154,7 @@
         },
         {
             "t": "03:02",
-            "mechanic": "energy-drain"
+            "mechanic": "energy-drain-1"
         },
         {
             "t": "03:03",
@@ -230,7 +234,7 @@
         },
         {
             "t": "04:18",
-            "mechanic": "energy-drain"
+            "mechanic": "energy-drain-1"
         },
         {
             "t": "04:18",
@@ -305,7 +309,7 @@
             "mechanic": "indominability"
         },
         {
-            "t": "05:52",
+            "t": "05:50",
             "mechanic": "surecast"
         },
         {
@@ -454,7 +458,7 @@
         },
         {
             "t": "08:18",
-            "mechanic": "energy-drain"
+            "mechanic": "energy-drain-1"
         },
         {
             "t": "08:18",

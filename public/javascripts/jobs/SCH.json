@@ -42,6 +42,10 @@
         "name": "Energy Drain",
         "icon": "https://xivapi.com/i/000000/000514.png"
     },
+    "energy-drain-1": {
+        "name": "1x Energy Drain",
+        "icon": "https://xivapi.com/i/000000/000514.png"
+    },
     "energy-drain-2": {
         "name": "2x Energy Drain",
         "icon": "https://xivapi.com/i/000000/000514.png"

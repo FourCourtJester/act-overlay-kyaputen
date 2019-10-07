@@ -83,13 +83,13 @@
         "empty-hate": {
             "name": "Empty Hate",
             "type": "Knockback",
-            "message": "The Hand of Erebos will do a raid knockback.",
+            "message": "The Hand of Erebos will do a party knockback.",
             "cast": 6
         },
         "empty-rage": {
             "name": "Empty Rage",
-            "type": "Cleave",
-            "message": "The Hand of Erebos will do a raid cleave.",
+            "type": "Area of Effect",
+            "message": "The Hand of Erebos will do a party cleave.",
             "cast": 6
         },
         "equilibrium": {

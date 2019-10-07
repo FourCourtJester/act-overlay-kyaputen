@@ -79,132 +79,132 @@
             "mechanic": "mana-slice"
         },
         {
-            "t": "00:28",
+            "t": "04:56",
             "mechanic": "vice-and-virtue-tank-stack",
             "phase": 2
         },
         {
-            "t": "00:42",
+            "t": "05:10",
             "mechanic": "vice-and-virtue-dps-stack",
             "phase": 2
         },
         {
-            "t": "00:55",
-            "mechanic": "delta",
-            "phase": 2
-        },
-        {
-            "t": "01:09",
-            "mechanic": "vice-and-virtue-dps-prey",
-            "phase": 2
-        },
-        {
-            "t": "01:16",
-            "mechanic": "spear",
-            "phase": 2
-        },
-        {
-            "t": "01:29",
-            "mechanic": "dimensional-shift",
-            "phase": 2
-        },
-        {
-            "t": "01:40",
-            "mechanic": "pure-beam",
-            "phase": 2
-        },
-        {
-            "t": "01:45",
-            "mechanic": "raid-beams",
-            "phase": 2
-        },
-        {
-            "t": "01:59",
-            "mechanic": "pure-light",
-            "phase": 2
-        },
-        {
-            "t": "02:09",
-            "mechanic": "dimensional-shift",
-            "phase": 2
-        },
-        {
-            "t": "02:21",
-            "mechanic": "gravity",
-            "phase": 2
-        },
-        {
-            "t": "02:33",
-            "mechanic": "flare",
-            "phase": 2
-        },
-        {
-            "t": "02:49",
-            "mechanic": "vice-and-virtue-tank",
-            "phase": 2
-        },
-        {
-            "t": "02:56",
-            "mechanic": "spear",
-            "phase": 2
-        },
-        {
-            "t": "03:08",
-            "mechanic": "vice-and-virtue-dps",
-            "phase": 2
-        },
-        {
-            "t": "03:21",
-            "mechanic": "delta",
-            "phase": 2
-        },
-        {
-            "t": "03:34",
-            "mechanic": "vice-and-virtue-tank-prey",
-            "phase": 2
-        },
-        {
-            "t": "03:46",
-            "mechanic": "dimensional-shift",
-            "phase": 2
-        },
-        {
-            "t": "03:56",
-            "mechanic": "pure-beam",
-            "phase": 2
-        },
-        {
-            "t": "04:01",
-            "mechanic": "raid-beams",
-            "phase": 2
-        },
-        {
-            "t": "04:17",
-            "mechanic": "pure-light",
-            "phase": 2
-        },
-        {
-            "t": "04:27",
-            "mechanic": "dimensional-shift",
-            "phase": 2
-        },
-        {
-            "t": "04:40",
-            "mechanic": "random",
-            "phase": 2
-        },
-        {
-            "t": "05:13",
-            "mechanic": "random",
-            "phase": 2
-        },
-        {
-            "t": "05:30",
+            "t": "05:23",
             "mechanic": "delta",
             "phase": 2
         },
         {
             "t": "05:34",
+            "mechanic": "vice-and-virtue-dps-prey",
+            "phase": 2
+        },
+        {
+            "t": "05:42",
+            "mechanic": "spear",
+            "phase": 2
+        },
+        {
+            "t": "05:55",
+            "mechanic": "dimensional-shift",
+            "phase": 2
+        },
+        {
+            "t": "06:06",
+            "mechanic": "pure-beam",
+            "phase": 2
+        },
+        {
+            "t": "06:11",
+            "mechanic": "raid-beams",
+            "phase": 2
+        },
+        {
+            "t": "06:25",
+            "mechanic": "pure-light",
+            "phase": 2
+        },
+        {
+            "t": "06:36",
+            "mechanic": "dimensional-shift",
+            "phase": 2
+        },
+        {
+            "t": "06:48",
+            "mechanic": "gravity",
+            "phase": 2
+        },
+        {
+            "t": "06:59",
+            "mechanic": "flare",
+            "phase": 2
+        },
+        {
+            "t": "07:17",
+            "mechanic": "vice-and-virtue-tank",
+            "phase": 2
+        },
+        {
+            "t": "07:23",
+            "mechanic": "spear",
+            "phase": 2
+        },
+        {
+            "t": "07:34",
+            "mechanic": "vice-and-virtue-dps",
+            "phase": 2
+        },
+        {
+            "t": "07:48",
+            "mechanic": "delta",
+            "phase": 2
+        },
+        {
+            "t": "08:00",
+            "mechanic": "vice-and-virtue-tank-prey",
+            "phase": 2
+        },
+        {
+            "t": "08:13",
+            "mechanic": "dimensional-shift",
+            "phase": 2
+        },
+        {
+            "t": "08:22",
+            "mechanic": "pure-beam",
+            "phase": 2
+        },
+        {
+            "t": "08:27",
+            "mechanic": "raid-beams",
+            "phase": 2
+        },
+        {
+            "t": "08:43",
+            "mechanic": "pure-light",
+            "phase": 2
+        },
+        {
+            "t": "08:53",
+            "mechanic": "dimensional-shift",
+            "phase": 2
+        },
+        {
+            "t": "09:06",
+            "mechanic": "random",
+            "phase": 2
+        },
+        {
+            "t": "9:39",
+            "mechanic": "random",
+            "phase": 2
+        },
+        {
+            "t": "09:56",
+            "mechanic": "delta",
+            "phase": 2
+        },
+        {
+            "t": "10:00",
             "mechanic": "enrage",
             "phase": 2
         }

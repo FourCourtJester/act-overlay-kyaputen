@@ -221,7 +221,6 @@ button {
                                     stroke-width:2px;
                                     stroke:$text-color;
                                     fill:none;
-                                    animation-name:countdown-svg;
                                     // animation-duration:10s;
                                     animation-iteration-count:1;
                                     animation-timing-function:linear;
@@ -229,13 +228,26 @@ button {
                             }
                         }
 
-                        &.d-none {
-                            display:none !important;
-                        }
-                    }
+                        &.show {
+                            display:flex;
 
-                    // Animation
-                    transition:transform ease 1.5s;
+                            .ttl-wrap {
+                                svg {
+                                    circle {
+                                        animation-name:countdown-svg;
+                                    }
+                                }
+                            }
+                        }
+
+                        &.hide {
+                            opacity:0;
+                            margin-top:-32px;
+                        }
+
+                        // Animation
+                        transition:margin-top ease 1.5s, opacity ease 1.0s;
+                    }
                 }
             }
         }

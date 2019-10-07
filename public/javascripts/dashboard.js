@@ -40,7 +40,6 @@ class KyaputenDashboard {
         this.elements = {
             carousel: '.carousel',
             authors: '.job-authors',
-            buttons: '.btn-wrap',
             timeline: '.timeline ul',
             ttl: '.ttl',
             mustache: {
@@ -57,6 +56,7 @@ class KyaputenDashboard {
         this.supported_encounters = {
             E1S: `Eden's Gate: Resurrection (Savage)`,
             E2S: `Eden's Gate: Descent (Savage)`,
+            E3S: `Eden's Gate: Inundation (Savage)`,
         }
 
         // Combat log
@@ -77,6 +77,7 @@ class KyaputenDashboard {
         // Socket Events
         this.events = {
             onCombatData: this._onCombatData.bind(this),
+            onChat: this._onChat.bind(this),
         }
     }
 
@@ -122,13 +123,6 @@ class KyaputenDashboard {
                 // Setup encounter authors
                 this.getAuthors(e.target.value)
             })
-            // Phase Change
-            .on('click', '.btn-wrap button', (e) => {
-                const phase = Utils.getObjValue($(e.target).data('kyaputen'), 'phase')
-
-                localStorage.setItem(`kyaputen.${this.id}.phase`, phase)
-                this.phase(phase)
-            })
             // Options Submit
             .on('submit', 'form', (e) => {
                 e.preventDefault()
@@ -140,11 +134,6 @@ class KyaputenDashboard {
 
                 return false
             })
-
-        window.addEventListener('storage', (e) => {
-            if (/kyaputen.\d.phase/.test(e.key)) this.phase(+e.newValue)
-            return true
-        })
     }
 
     /**
@@ -155,6 +144,7 @@ class KyaputenDashboard {
         this.socket.connect()
 
         this.socket.subscribe('CombatData', this.events.onCombatData)
+        this.socket.subscribe('LogLine', this.events.onChat)
     }
 
     /**
@@ -167,6 +157,7 @@ class KyaputenDashboard {
         // Assign listeners
         this.listeners()
 
+        // Testing Combat out of Game
         // setTimeout(() => {
         //     this._onCombatData({
         //         Combatant: {},
@@ -233,7 +224,6 @@ class KyaputenDashboard {
 
         if (Object.keys(this.options.authors)) this.getAuthors(this.options.job)
 
-        // $(this.elements.carousel).carousel(1)
         this.unloadEncounter()
 
         return true
@@ -271,7 +261,7 @@ class KyaputenDashboard {
                         switch (f._id) {
                         case 'encounter_mechanics':
                             Utils.setObjValue(this.combat, 'encounter.mechanics', f.mechanics)
-                            Utils.setObjValue(this.combat, 'encounter.phases', f.phases)
+                            Utils.setObjValue(this.combat, 'encounter.phases', f.phases.map((p) => p == null ? null : new RegExp(p)))
                             break
 
                         case 'encounter_timeline':
@@ -310,7 +300,7 @@ class KyaputenDashboard {
         clearInterval(this.timer)
         this.timer = null
 
-        localStorage.removeItem(`kyaputen.${this.id}.phase`)
+        // localStorage.removeItem(`kyaputen.${this.id}.phase`)
 
         $('body').addClass('inactive').removeClass('active')
         $(this.elements.timeline).empty().removeAttr('style')
@@ -349,12 +339,14 @@ class KyaputenDashboard {
         // Only proceed if there are any mechanics
         if (!$(this.elements.timeline).children().length) return false
 
-        const saves = []
+        const
+            phase = Utils.getObjValue(this.combat, 'encounter.phase'),
+            saves = []
 
         // Increase the encounter time
         this.combat.encounter.elapsed++
 
-        for (const entry of $(this.elements.timeline).children('.show')) {
+        for (const entry of $(this.elements.timeline).children(`.phase-${phase}.show`)) {
             saves.push(new Promise((resolve, reject) => {
                 const
                     $list = $(this.elements.timeline),
@@ -374,7 +366,7 @@ class KyaputenDashboard {
                         y = amt - $entry.outerHeight() - 12
 
                     // Only animate if this mechanic hasn't been skipped
-                    if (!$entry.hasClass('d-none')) $list.css('transform', `translateY(${y}px)`)
+                    // $list.css('transform', `translateY(${y}px)`)
 
                     // Remove the entry from future consideration
                     $entry.toggleClass('show hide')
@@ -390,54 +382,17 @@ class KyaputenDashboard {
     }
 
     /**
-     * Adjust phase timings
-     * @param {Number} ph 
-     */
-    async adjust (ph) {
-        if (!this.combat.encounter.phases.length) return true
-        if (!this.combat.encounter.phases[ph]) return false
-
-        const
-            saves = [],
-            diff = this.combat.encounter.elapsed - this._convertTTL(this.combat.encounter.phases[ph])
-
-        // Get every remaining mechanic and adjust the time by the differential listed in the encounter
-        for (const entry of $(this.elements.list).children('.show')) {
-            saves.push(new Promise((resolve, reject) => {
-                const
-                    $entry = $(entry),
-                    $ttl = $(this.elements.ttl, $entry),
-                    ttl = +$ttl.text() + diff
-
-                $ttl.text(ttl)
-
-                resolve()
-            }))
-        }
-
-        await Promise.all(saves)
-
-        return true
-    }
-
-    /**
      * Activates an encounter phase
      * @param {Number} ph 
      */
     phase (ph) {
-        const $buttons = $(this.elements.buttons).children()
-
         console.log(`Phase ${ph}`)
-
-        $buttons.eq(ph - 1).prevAll().addBack().removeClass('d-inline-block').addClass('d-none')
-        if (ph < this.combat.encounter.phases.length) $buttons.eq(ph - 1).next().removeClass('d-none').addClass('d-inline-block')
-
-        this.adjust(ph - 1)
+        Utils.setObjValue(this.combat, 'encounter.phase', ph)
 
         $(this.elements.timeline)
             .removeAttr('style')
-            .children().addClass('d-none')
-            .filter(`.phase-${ph}`).removeClass('d-none')
+            .children().addClass('hide').removeClass('show')
+            .filter(`.phase-${ph}`).removeClass('hide').addClass('show')
     }
 
     /**
@@ -452,9 +407,8 @@ class KyaputenDashboard {
 
     /**
      * Handles a CombatData event
-     * @param {Object} data 
      */
-    _onCombatData ({ Combatant: combatants, Encounter: encounter, isActive: active }) {
+    _onCombatData ({ type: type, Encounter: encounter, Combatant: combatants, isActive: active }) {
         // Convert all types to Boolean
         active = String(active).toString().toLowerCase() == 'true'
 
@@ -484,6 +438,20 @@ class KyaputenDashboard {
         }
 
         if (active == false) this.unloadEncounter()
+    }
+
+    /**
+     * Handles a Chat event
+     * @return {Boolean}
+     */
+    _onChat ({ type: type, line: line, rawLine: raw }) {
+        if (!Utils.getObjValue(this.combat, 'encounter.phases')) return false
+
+        this.combat.encounter.phases.forEach((p, i) => {
+            if (p !== null && p.test(raw)) this.phase(i + 1)
+        })
+
+        return true
     }
 }
 
