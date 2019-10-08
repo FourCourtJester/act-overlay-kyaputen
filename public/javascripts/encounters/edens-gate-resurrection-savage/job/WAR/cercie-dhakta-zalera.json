@@ -137,212 +137,212 @@
             "mechanic": "raw-intuition"
         },
         {
-            "t": "04:50",
+            "t": "00:22",
             "mechanic": "inner-release",
             "phase": 2
         },
         {
-            "t": "04:52",
+            "t": "00:24",
             "mechanic": "rampart",
             "phase": 2
         },
         {
-            "t": "04:55",
+            "t": "00:27",
             "mechanic": "nascent-flash",
             "phase": 2
         },
         {
-            "t": "04:55",
+            "t": "00:27",
             "mechanic": "upheaval",
             "phase": 2
         },
         {
-            "t": "05:20",
+            "t": "00:52",
             "mechanic": "raw-intuition",
             "phase": 2
         },
         {
-            "t": "05:21",
+            "t": "00:53",
             "mechanic": "reprisal",
             "phase": 2
         },
         {
-            "t": "05:22",
+            "t": "00:54",
             "mechanic": "vengeance",
+            "phase": 2
+        },
+        {
+            "t": "00:57",
+            "mechanic": "upheaval",
+            "phase": 2
+        },
+        {
+            "t": "01:16",
+            "mechanic": "thrill-of-battle",
+            "phase": 2
+        },
+        {
+            "t": "01:17",
+            "mechanic": "nascent-flash",
+            "phase": 2
+        },
+        {
+            "t": "01:18",
+            "mechanic": "equilibrium",
+            "phase": 2
+        },
+        {
+            "t": "01:27",
+            "mechanic": "upheaval",
+            "phase": 2
+        },
+        {
+            "t": "02:01",
+            "mechanic": "rampart",
+            "phase": 2
+        },
+        {
+            "t": "02:02",
+            "mechanic": "inner-release",
+            "phase": 2
+        },
+        {
+            "t": "02:05",
+            "mechanic": "reprisal",
+            "phase": 2
+        },
+        {
+            "t": "02:06",
+            "mechanic": "raw-intuition",
+            "phase": 2
+        },
+        {
+            "t": "02:07",
+            "mechanic": "upheaval",
+            "phase": 2
+        },
+        {
+            "t": "02:13",
+            "mechanic": "shake-it-off",
+            "phase": 2
+        },
+        {
+            "t": "02:21",
+            "mechanic": "equilibrium",
+            "phase": 2
+        },
+        {
+            "t": "02:37",
+            "mechanic": "upheaval",
+            "phase": 2
+        },
+        {
+            "t": "02:50",
+            "mechanic": "nascent-flash",
+            "phase": 2
+        },
+        {
+            "t": "03:07",
+            "mechanic": "upheaval",
+            "phase": 2
+        },
+        {
+            "t": "03:29",
+            "mechanic": "reprisal",
+            "phase": 2
+        },
+        {
+            "t": "03:30",
+            "mechanic": "vengeance",
+            "phase": 2
+        },
+        {
+            "t": "03:31",
+            "mechanic": "thrill-of-battle",
+            "phase": 2
+        },
+        {
+            "t": "03:32",
+            "mechanic": "inner-release",
+            "phase": 2
+        },
+        {
+            "t": "03:35",
+            "mechanic": "nascent-flash",
+            "phase": 2
+        },
+        {
+            "t": "03:37",
+            "mechanic": "upheaval",
+            "phase": 2
+        },
+        {
+            "t": "03:39",
+            "mechanic": "rampart",
+            "phase": 2
+        },
+        {
+            "t": "03:41",
+            "mechanic": "equilibrium",
+            "phase": 2
+        },
+        {
+            "t": "03:43",
+            "mechanic": "shake-it-off",
+            "phase": 2
+        },
+        {
+            "t": "04:07",
+            "mechanic": "upheaval",
+            "phase": 2
+        },
+        {
+            "t": "04:24",
+            "mechanic": "raw-intuition",
+            "phase": 2
+        },
+        {
+            "t": "04:37",
+            "mechanic": "upheaval",
+            "phase": 2
+        },
+        {
+            "t": "05:02",
+            "mechanic": "inner-release",
+            "phase": 2
+        },
+        {
+            "t": "05:07",
+            "mechanic": "upheaval",
+            "phase": 2
+        },
+        {
+            "t": "05:09",
+            "mechanic": "rampart",
+            "phase": 2
+        },
+        {
+            "t": "05:10",
+            "mechanic": "raw-intuition",
+            "phase": 2
+        },
+        {
+            "t": "05:11",
+            "mechanic": "thrill-of-battle",
+            "phase": 2
+        },
+        {
+            "t": "05:14",
+            "mechanic": "shake-it-off",
             "phase": 2
         },
         {
             "t": "05:25",
-            "mechanic": "upheaval",
-            "phase": 2
-        },
-        {
-            "t": "05:44",
-            "mechanic": "thrill-of-battle",
-            "phase": 2
-        },
-        {
-            "t": "05:45",
-            "mechanic": "nascent-flash",
-            "phase": 2
-        },
-        {
-            "t": "05:46",
-            "mechanic": "equilibrium",
-            "phase": 2
-        },
-        {
-            "t": "05:55",
-            "mechanic": "upheaval",
-            "phase": 2
-        },
-        {
-            "t": "06:29",
-            "mechanic": "rampart",
-            "phase": 2
-        },
-        {
-            "t": "06:30",
-            "mechanic": "inner-release",
-            "phase": 2
-        },
-        {
-            "t": "06:33",
             "mechanic": "reprisal",
             "phase": 2
         },
         {
-            "t": "06:34",
-            "mechanic": "raw-intuition",
-            "phase": 2
-        },
-        {
-            "t": "06:35",
-            "mechanic": "upheaval",
-            "phase": 2
-        },
-        {
-            "t": "06:41",
-            "mechanic": "shake-it-off",
-            "phase": 2
-        },
-        {
-            "t": "06:49",
-            "mechanic": "equilibrium",
-            "phase": 2
-        },
-        {
-            "t": "07:05",
-            "mechanic": "upheaval",
-            "phase": 2
-        },
-        {
-            "t": "07:18",
-            "mechanic": "nascent-flash",
-            "phase": 2
-        },
-        {
-            "t": "07:35",
-            "mechanic": "upheaval",
-            "phase": 2
-        },
-        {
-            "t": "07:57",
-            "mechanic": "reprisal",
-            "phase": 2
-        },
-        {
-            "t": "07:58",
-            "mechanic": "vengeance",
-            "phase": 2
-        },
-        {
-            "t": "07:59",
-            "mechanic": "thrill-of-battle",
-            "phase": 2
-        },
-        {
-            "t": "08:00",
-            "mechanic": "inner-release",
-            "phase": 2
-        },
-        {
-            "t": "08:03",
-            "mechanic": "nascent-flash",
-            "phase": 2
-        },
-        {
-            "t": "08:05",
-            "mechanic": "upheaval",
-            "phase": 2
-        },
-        {
-            "t": "08:07",
-            "mechanic": "rampart",
-            "phase": 2
-        },
-        {
-            "t": "08:09",
-            "mechanic": "equilibrium",
-            "phase": 2
-        },
-        {
-            "t": "08:11",
-            "mechanic": "shake-it-off",
-            "phase": 2
-        },
-        {
-            "t": "08:35",
-            "mechanic": "upheaval",
-            "phase": 2
-        },
-        {
-            "t": "08:52",
-            "mechanic": "raw-intuition",
-            "phase": 2
-        },
-        {
-            "t": "09:05",
-            "mechanic": "upheaval",
-            "phase": 2
-        },
-        {
-            "t": "09:30",
-            "mechanic": "inner-release",
-            "phase": 2
-        },
-        {
-            "t": "09:35",
-            "mechanic": "upheaval",
-            "phase": 2
-        },
-        {
-            "t": "09:37",
-            "mechanic": "rampart",
-            "phase": 2
-        },
-        {
-            "t": "09:38",
-            "mechanic": "raw-intuition",
-            "phase": 2
-        },
-        {
-            "t": "09:39",
-            "mechanic": "thrill-of-battle",
-            "phase": 2
-        },
-        {
-            "t": "09:42",
-            "mechanic": "shake-it-off",
-            "phase": 2
-        },
-        {
-            "t": "09:53",
-            "mechanic": "reprisal",
-            "phase": 2
-        },
-        {
-            "t": "09:53",
+            "t": "05:25",
             "mechanic": "equilibrium",
             "phase": 2
         }

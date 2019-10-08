@@ -12,16 +12,19 @@
     },
     "biolysis": {
         "name": "Biolysis",
-        "icon": "https://xivapi.com/i/002000/002820.png"
+        "icon": "https://xivapi.com/i/002000/002820.png",
+        "duration": "30s"
     },
     "chain-stratagem": {
         "name": "Chain Stratagem",
         "icon": "https://xivapi.com/i/002000/002815.png",
-        "cooldown": "120s"
+        "cooldown": "120s",
+        "duration": "15s"
     },
     "consolation": {
         "name": "Consolation",
-        "icon": "https://xivapi.com/i/002000/002851.png"
+        "icon": "https://xivapi.com/i/002000/002851.png",
+        "duration": "30s"
     },
     "deployment-tactics": {
         "name": "Deployment Tactics",
@@ -31,7 +34,8 @@
     "dissipation": {
         "name": "Dissipation",
         "icon": "https://xivapi.com/i/002000/002810.png",
-        "cooldown": "180s"
+        "cooldown": "180s",
+        "duration": "30s"
     },
     "emergency-tactics": {
         "name": "Emergency Tactics",
@@ -57,7 +61,8 @@
     "excogitation": {
         "name": "Excogitation",
         "icon": "https://xivapi.com/i/002000/002813.png",
-        "cooldown": "45s"
+        "cooldown": "45s",
+        "duration": "45s"
     },
     "fey-blessing": {
         "name": "Fey Blessing",
@@ -67,53 +72,67 @@
     "fey-illumination": {
         "name": "Fey Illumination",
         "icon": "https://xivapi.com/i/002000/002853.png",
-        "cooldown": "120s"
+        "cooldown": "120s",
+        "duration": "20s"
+    },
+    "fey-union": {
+        "name": "Fey Union",
+        "icon": "https://xivapi.com/i/002000/002818.png"
     },
     "indominability": {
         "name": "Indominability",
         "icon": "https://xivapi.com/i/002000/002806.png",
         "cooldown": "30s"
     },
-    "fey-union": {
-        "name": "Fey Union",
-        "icon": "https://xivapi.com/i/002000/002818.png"
-    },
     "lucid-dreaming": {
         "name": "Lucid Dreaming",
         "icon": "https://xivapi.com/i/000000/000865.png",
-        "cooldown": "60s"
+        "cooldown": "60s",
+        "duration": "21s"
+    },
+    "lustrate": {
+        "name": "Lustrate",
+        "icon": "https://xivapi.com/i/002000/002805.png"
     },
     "recitation": {
         "name": "Recitation",
         "icon": "https://xivapi.com/i/002000/002822.png",
-        "cooldown": "90s"
+        "cooldown": "90s",
+        "duration": "15s"
     },
     "sacred-soil": {
         "name": "Sacred Soil",
         "icon": "https://xivapi.com/i/002000/002804.png",
-        "cooldown": "30s"
+        "cooldown": "30s",
+        "duration": "15s"
     },
     "succor": {
         "name": "Succor",
-        "icon": "https://xivapi.com/i/002000/002802.png"
+        "icon": "https://xivapi.com/i/002000/002802.png",
+        "duration": "30s"
     },
     "summon-seraph": {
         "name": "Summon Seraph",
         "icon": "https://xivapi.com/i/002000/002850.png",
-        "cooldown": "120s"
+        "cooldown": "120s",
+        "duration": "20s"
     },
     "surecast": {
         "name": "Surecast",
-        "icon": "https://xivapi.com/i/000000/000869.png"
+        "icon": "https://xivapi.com/i/000000/000869.png",
+        "cooldown": "120s",
+        "duration": "6s"
     },
     "swiftcast": {
         "name": "Swiftcast",
         "icon": "https://xivapi.com/i/000000/000866.png",
-        "cooldown": "60s"
+        "cooldown": "60s",
+        "duration": "10s"
     },
     "whispering-dawn": {
         "name": "Whispering Dawn",
         "icon": "https://xivapi.com/i/002000/002852.png",
-        "cooldown": "60s"
+        "cooldown": "60s",
+        "duration": "21s"
     }
 }
