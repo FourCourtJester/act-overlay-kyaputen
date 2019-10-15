@@ -98,15 +98,15 @@
         },
         {
             "t": "02:12",
-            "mechanic": "consolation"
-        },
-        {
-            "t": "02:12",
             "mechanic": "adloquium"
         },
         {
             "t": "02:15",
             "mechanic": "biolysis"
+        },
+        {
+            "t": "02:15",
+            "mechanic": "consolation"
         },
         {
             "t": "02:15",
@@ -119,10 +119,6 @@
         {
             "t": "02:22",
             "mechanic": "whispering-dawn"
-        },
-        {
-            "t": "02:24",
-            "mechanic": "fey-blessing"
         },
         {
             "t": "02:36",
@@ -145,16 +141,16 @@
             "mechanic": "lucid-dreaming"
         },
         {
+            "t": "02:49",
+            "mechanic": "fey-blessing"
+        },
+        {
             "t": "03:00",
             "mechanic": "aetherflow"
         },
         {
             "t": "03:03",
             "mechanic": "energy-drain-3"
-        },
-        {
-            "t": "03:09",
-            "mechanic": "succor"
         },
         {
             "t": "03:15",
@@ -206,11 +202,7 @@
         },
         {
             "t": "04:02",
-            "mechanic": "energy-drain-2"
-        },
-        {
-            "t": "04:03",
-            "mechanic": "indominability"
+            "mechanic": "energy-drain-3"
         },
         {
             "t": "04:07",
@@ -233,15 +225,11 @@
             "mechanic": "biolysis"
         },
         {
-            "t": "04:15",
+            "t": "04:21",
             "mechanic": "deployment-tactics"
         },
         {
             "t": "04:30",
-            "mechanic": "biolysis"
-        },
-        {
-            "t": "04:31",
             "mechanic": "lucid-dreaming"
         },
         {
