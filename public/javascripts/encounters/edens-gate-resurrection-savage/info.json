@@ -2,7 +2,7 @@
     "_id": "encounter_mechanics",
     "zone": "Eden's Gate: Ressurection (Savage)",
     "readme": "Boss actions for Eden's Gate: Ressurection (Savage). Intermission is 50 seconds long. Players regain control four seconds after transition. Boss spawns ten seconds after transition.",
-    "phases": [null, "Eden Prim\\|[\\w]{4}\\|Eternal Breath\\|"],
+    "phases": [null, "Eden Prime\\|[\\w]{4}\\|Eternal Breath\\|"],
     "mechanics": {
         "dimensional-shift": {
             "name": "Dimensional Shift",
