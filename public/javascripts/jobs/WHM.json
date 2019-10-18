@@ -45,6 +45,12 @@
         "icon": "https://xivapi.com/i/002000/002639.png",
         "cooldown": "60s"
     },
+    "rescue": {
+        "name": "Rescue",
+        "icon": "https://xivapi.com/i/000000/000890.png",
+        "cooldown": "150s",
+        "duration": "21s"
+    },
     "surecast": {
         "name": "Surecast",
         "icon": "https://xivapi.com/i/000000/000869.png"

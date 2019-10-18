@@ -100,6 +100,12 @@
         "cooldown": "90s",
         "duration": "15s"
     },
+    "rescue": {
+        "name": "Rescue",
+        "icon": "https://xivapi.com/i/000000/000890.png",
+        "cooldown": "150s",
+        "duration": "21s"
+    },
     "sacred-soil": {
         "name": "Sacred Soil",
         "icon": "https://xivapi.com/i/002000/002804.png",
