@@ -38,7 +38,7 @@
         },
 		{
 			"t": "00:31",
-			"mechanic": "combust"
+			"mechanic": "combust-iii"
 		},
 		{
 			"t": "00:43",
@@ -54,7 +54,7 @@
         },
 		{
 			"t": "01:01",
-			"mechanic": "combust"
+			"mechanic": "combust-iii"
 		},
 		{
 			"t": "01:07",
@@ -86,7 +86,7 @@
         },
 		{
 			"t": "01:31",
-			"mechanic": "combust"
+			"mechanic": "combust-iii"
 		},
 		{
             "t": "01:35",
@@ -106,7 +106,7 @@
         },
 		{
 			"t": "02:01",
-			"mechanic": "combust"
+			"mechanic": "combust-iii"
 		},
 		{
             "t": "02:05",
@@ -142,7 +142,7 @@
         },
 		{
 			"t": "02:31",
-			"mechanic": "combust"
+			"mechanic": "combust-iii"
 		},
 		{
             "t": "02:33",
@@ -211,7 +211,7 @@
 		},
 		{
 			"t": "00:07",
-			"mechanic": "combust",
+			"mechanic": "combust-iii",
 			"phase": 2
 		},
 		{
@@ -241,7 +241,7 @@
 		},
 		{
 			"t": "00:37",
-			"mechanic": "combust",
+			"mechanic": "combust-iii",
 			"phase": 2
 		},
 		{
@@ -275,7 +275,7 @@
 		},
 		{
 			"t": "01:07",
-			"mechanic": "combust",
+			"mechanic": "combust-iii",
 			"phase": 2
 		},
 		{
@@ -310,7 +310,7 @@
 		},
 		{
 			"t": "01:37",
-			"mechanic": "combust",
+			"mechanic": "combust-iii",
 			"phase": 2
 		},
 		{
@@ -325,7 +325,7 @@
 		},
 		{
 			"t": "02:07",
-			"mechanic": "combust",
+			"mechanic": "combust-iii",
 			"phase": 2
 		},
 		{
@@ -360,7 +360,7 @@
 		},
 		{
 			"t": "02:37",
-			"mechanic": "combust",
+			"mechanic": "combust-iii",
 			"phase": 2
 		},
 		{
@@ -385,7 +385,7 @@
 		},
 		{
 			"t": "03:07",
-			"mechanic": "combust",
+			"mechanic": "combust-iii",
 			"phase": 2
 		},
 		{
@@ -425,7 +425,7 @@
 		},
 		{
 			"t": "03:37",
-			"mechanic": "combust",
+			"mechanic": "combust-iii",
 			"phase": 2
 		},
 		{
@@ -435,7 +435,7 @@
 		},
 		{
 			"t": "04:07",
-			"mechanic": "combust",
+			"mechanic": "combust-iii",
 			"phase": 2
 		},
 		{
@@ -480,7 +480,7 @@
 		},
 		{
 			"t": "04:37",
-			"mechanic": "combust",
+			"mechanic": "combust-iii",
 			"phase": 2
 		},
 		{
@@ -490,7 +490,7 @@
 		},
 		{
 			"t": "05:07",
-			"mechanic": "combust",
+			"mechanic": "combust-iii",
 			"phase": 2
 		},
 		{
