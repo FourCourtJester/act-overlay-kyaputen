@@ -57,7 +57,7 @@
 			"mechanic": "combust"
 		},
 		{
-			"t": "01:07"
+			"t": "01:07",
 			"mechanic": "aspected-benefic"
 		},
         {
@@ -154,7 +154,7 @@
 		},
 		{
 			"t": "03:00",
-			"mechanic": "sleeve-draw",
+			"mechanic": "sleeve-draw"
 		},
 		{
             "t": "03:05",
@@ -246,7 +246,7 @@
 		},
 		{
 			"t": "00:38",
-			"mechanic": "draw",
+			"mechanic": "draw"
 		},
 		{
 			"t": "00:45",
@@ -527,6 +527,6 @@
 			"t": "05:35",
 			"mechanic": "earthly-star-pop",
 			"phase": 2
-		},
+		}
     ]
 }
