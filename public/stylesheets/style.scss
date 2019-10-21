@@ -87,6 +87,10 @@ body {
             height:32px;
             transform:rotateY(-180deg) rotateZ(-90deg);
         }
+
+        &.hide {
+            margin-top:calc(-#{$img-size-small} - 1rem);
+        }
     }
 
     &.medium-icons {
@@ -101,6 +105,10 @@ body {
 
             svg {
                 top:-3px;
+            }
+
+            &.hide {
+                margin-top:calc(-#{$img-size-medium} - 1rem);
             }
         }
     }
@@ -123,6 +131,10 @@ body {
 
             .message {
                 display:none;
+            }
+
+            &.hide {
+                margin-top:calc(-#{$img-size-large} - 1rem);
             }
         }
     }
@@ -242,7 +254,6 @@ button {
 
                         &.hide {
                             opacity:0;
-                            margin-top:-32px;
                         }
 
                         // Animation

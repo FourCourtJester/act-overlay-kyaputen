@@ -359,11 +359,11 @@ class KyaputenDashboard {
                     Utils.setElementValue($ttl, ttl)
                 } else {
                     // Hide the mechanic
-                    const
-                        amt = $list.get(0).style.transform.length ?
-                            +$list.get(0).style.transform.slice(11, -3) :
-                            0,
-                        y = amt - $entry.outerHeight() - 12
+                    // const
+                    //     amt = $list.get(0).style.transform.length ?
+                    //         +$list.get(0).style.transform.slice(11, -3) :
+                    //         0,
+                    //     y = amt - $entry.outerHeight() - 12
 
                     // Only animate if this mechanic hasn't been skipped
                     // $list.css('transform', `translateY(${y}px)`)

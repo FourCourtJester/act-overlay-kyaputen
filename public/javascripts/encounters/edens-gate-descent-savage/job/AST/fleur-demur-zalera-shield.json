@@ -1,0 +1,740 @@
+{
+	"_id": "job_timeline",
+	"zone": "Eden's Gate: Descent (Savage)",
+	"job": {
+		"author": "Fleur Demur",
+		"server": "Zalera (Crystal)",
+		"name": "Astrologian",
+		"abbr": "AST"
+	},
+	"script": [
+		{
+			"t": "00:02",
+			"mechanic": "lightspeed"
+		},
+		{
+			"t": "00:03",
+			"mechanic": "sleeve-draw"
+		},
+		{
+			"t": "00:05",
+			"mechanic": "earthly-star"
+		},
+		{
+			"t": "00:06",
+			"mechanic": "essential-dignity"
+		},
+		{
+			"t": "00:09",
+			"mechanic": "celestial-intersection"
+		},
+		{
+			"t": "00:11",
+			"mechanic": "horoscope-helios-pop"
+		},
+		{
+			"t": "00:15",
+			"mechanic": "divination"
+		},
+		{
+			"t": "00:17",
+			"mechanic": "draw"
+		},
+		{
+			"t": "00:23",
+			"mechanic": "collective-unconscious"
+		},
+		{
+			"t": "00:25",
+			"mechanic": "earthly-star-pop"
+		},
+		{
+			"t": "00:27",
+			"mechanic": "celestial-opposition"
+		},
+		{
+			"t": "00:30",
+			"mechanic": "essential-dignity"
+		},
+		{
+			"t": "00:31",
+			"mechanic": "combust-iii"
+		},
+		{
+			"t": "00:40",
+			"mechanic": "celestial-intersection"
+		},
+		{
+			"t": "00:45",
+			"mechanic": "horoscope"
+		},
+		{
+			"t": "00:47",
+			"mechanic": "aspected-helios"
+		},
+		{
+			"t": "00:48",
+			"mechanic": "draw"
+		},
+		{
+			"t": "01:01",
+			"mechanic": "combust-iii"
+		},
+		{
+			"t": "01:10",
+			"mechanic": "horoscope-helios-pop"
+		},
+		{
+			"t": "01:15",
+			"mechanic": "celestial-intersection"
+		},
+		{
+			"t": "01:18",
+			"mechanic": "draw"
+		},
+		{
+			"t": "01:20",
+			"mechanic": "earthly-star"
+		},
+		{
+			"t": "01:25",
+			"mechanic": "essential-dignity"
+		},
+		{
+			"t": "01:31",
+			"mechanic": "combust-iii"
+		},
+		{
+			"t": "01:40",
+			"mechanic": "celestial-opposition"
+		},
+		{
+			"t": "01:40",
+			"mechanic": "earthly-star-pop"
+		},
+		{
+			"t": "01:43",
+			"mechanic": "lightspeed"
+		},
+		{
+			"t": "01:45",
+			"mechanic": "horoscope"
+		},
+		{
+			"t": "01:47",
+			"mechanic": "helios"
+		},
+		{
+			"t": "01:48",
+			"mechanic": "draw"
+		},
+		{
+			"t": "01:50",
+			"mechanic": "celestial-intersection"
+		},
+		{
+			"t": "01:55",
+			"mechanic": "neutral-sect"
+		},
+		{
+			"t": "01:57",
+			"mechanic": "aspected-helios"
+		},
+		{
+			"t": "01:58",
+			"mechanic": "synastry"
+		},
+		{
+			"t": "01:59",
+			"mechanic": "combust-iii"
+		},
+		{
+			"t": "02:00",
+			"mechanic": "collective-unconscious"
+		},
+		{
+			"t": "02:02",
+			"mechanic": "benefic-ii"
+		},
+		{
+			"t": "02:03",
+			"mechanic": "essential-dignity"
+		},
+		{
+			"t": "02:14",
+			"mechanic": "aspected-helios"
+		},
+		{
+			"t": "02:15",
+			"mechanic": "horoscope-helios-pop"
+		},
+		{
+			"t": "02:16",
+			"mechanic": "surecast"
+		},
+		{
+			"t": "02:17",
+			"mechanic": "divination"
+		},
+		{
+			"t": "02:19",
+			"mechanic": "draw"
+		},
+		{
+			"t": "02:20",
+			"mechanic": "earthly-star"
+		},
+		{
+			"t": "02:24",
+			"mechanic": "celestial-intersection"
+		},
+		{
+			"t": "02:29",
+			"mechanic": "combust-iii"
+		},
+		{
+			"t": "02:40",
+			"mechanic": "earthly-star-pop"
+		},
+		{
+			"t": "02:40",
+			"mechanic": "celestial-opposition"
+		},
+		{
+			"t": "02:45",
+			"mechanic": "horoscope"
+		},
+		{
+			"t": "02:46",
+			"mechanic": "aspected-helios"
+		},
+		{
+			"t": "02:49",
+			"mechanic": "draw"
+		},
+		{
+			"t": "02:54",
+			"mechanic": "celestial-intersection"
+		},
+		{
+			"t": "02:56",
+			"mechanic": "horoscope-helios-pop"
+		},
+		{
+			"t": "02:59",
+			"mechanic": "combust-iii"
+		},
+		{
+			"t": "03:03",
+			"mechanic": "sleeve-draw"
+		},
+		{
+			"t": "03:09",
+			"mechanic": "aspected-benefic"
+		},
+		{
+			"t": "03:11",
+			"mechanic": "essential-dignity"
+		},
+		{
+			"t": "03:20",
+			"mechanic": "earthly-star"
+		},
+		{
+			"t": "03:22",
+			"mechanic": "draw"
+		},
+		{
+			"t": "03:24",
+			"mechanic": "celestial-intersection"
+		},
+		{
+			"t": "03:29",
+			"mechanic": "combust-iii"
+		},
+		{
+			"t": "03:30",
+			"mechanic": "earthly-star-pop"
+		},
+		{
+			"t": "03:30",
+			"mechanic": "lightspeed"
+		},
+		{
+			"t": "03:32",
+			"mechanic": "aspected-helios"
+		},
+		{
+			"t": "03:40",
+			"mechanic": "celestial-opposition"
+		},
+		{
+			"t": "03:43",
+			"mechanic": "collective-unconscious"
+		},
+		{
+			"t": "03:45",
+			"mechanic": "horoscope"
+		},
+		{
+			"t": "03:47",
+			"mechanic": "aspected-helios"
+		},
+		{
+			"t": "03:48",
+			"mechanic": "horoscope-helios-pop"
+		},
+		{
+			"t": "03:52",
+			"mechanic": "draw"
+		},
+		{
+			"t": "03:54",
+			"mechanic": "celestial-intersection"
+		},
+		{
+			"t": "03:59",
+			"mechanic": "combust-iii"
+		},
+		{
+			"t": "04:02",
+			"mechanic": "essential-dignity"
+		},
+		{
+			"t": "04:03",
+			"mechanic": "aspected-benefic"
+		},
+		{
+			"t": "04:17",
+			"mechanic": "divination"
+		},
+		{
+			"t": "04:20",
+			"mechanic": "earthly-star"
+		},
+		{
+			"t": "04:22",
+			"mechanic": "essential-dignity"
+		},
+		{
+			"t": "04:24",
+			"mechanic": "draw"
+		},
+		{
+			"t": "04:24",
+			"mechanic": "celestial-intersection"
+		},
+		{
+			"t": "04:29",
+			"mechanic": "combust-iii"
+		},
+		{
+			"t": "04:32",
+			"mechanic": "earthly-star-pop"
+		},
+		{
+			"t": "04:40",
+			"mechanic": "neutral-sect"
+		},
+		{
+			"t": "04:45",
+			"mechanic": "horoscope"
+		},
+		{
+			"t": "04:47",
+			"mechanic": "aspected-helios"
+		},
+		{
+			"t": "04:54",
+			"mechanic": "draw"
+		},
+		{
+			"t": "04:56",
+			"mechanic": "horoscope-helios-pop"
+		},
+		{
+			"t": "04:58",
+			"mechanic": "aspected-helios"
+		},
+		{
+			"t": "04:59",
+			"mechanic": "celestial-intersection"
+		},
+		{
+			"t": "05:01",
+			"mechanic": "combust-iii"
+		},
+		{
+			"t": "05:15",
+			"mechanic": "synastry"
+		},
+		{
+			"t": "05:22",
+			"mechanic": "earthly-star"
+		},
+		{
+			"t": "05:24",
+			"mechanic": "draw"
+		},
+		{
+			"t": "05:25",
+			"mechanic": "essential-dignity"
+		},
+		{
+			"t": "05:28",
+			"mechanic": "collective-unconscious"
+		},
+		{
+			"t": "05:31",
+			"mechanic": "benefic-ii"
+		},
+		{
+			"t": "05:32",
+			"mechanic": "celestial-intersection"
+		},
+		{
+			"t": "05:33",
+			"mechanic": "combust-iii"
+		},
+		{
+			"t": "05:34",
+			"mechanic": "essential-dignity"
+		},
+		{
+			"t": "05:42",
+			"mechanic": "earthly-star-pop"
+		},
+		{
+			"t": "05:45",
+			"mechanic": "horoscope"
+		},
+		{
+			"t": "05:50",
+			"mechanic": "lightspeed"
+		},
+		{
+			"t": "05:51",
+			"mechanic": "surecast"
+		},
+		{
+			"t": "05:52",
+			"mechanic": "aspected-helios"
+		},
+		{
+			"t": "05:55",
+			"mechanic": "draw"
+		},
+		{
+			"t": "05:59",
+			"mechanic": "aspected-helios"
+		},
+		{
+			"t": "06:00",
+			"mechanic": "celestial-opposition"
+		},
+		{
+			"t": "06:02",
+			"mechanic": "celestial-intersection"
+		},
+		{
+			"t": "06:03",
+			"mechanic": "sleeve-draw"
+		},
+		{
+			"t": "06:04",
+			"mechanic": "combust-iii"
+		},
+		{
+			"t": "06:25",
+			"mechanic": "draw"
+		},
+		{
+			"t": "06:17",
+			"mechanic": "divination"
+		},
+		{
+			"t": "06:21",
+			"mechanic": "aspected-helios"
+		},
+		{
+			"t": "06:22",
+			"mechanic": "horoscope-helios-pop"
+		},
+		{
+			"t": "06:32",
+			"mechanic": "celestial-intersection"
+		},
+		{
+			"t": "06:34",
+			"mechanic": "combust-iii"
+		},
+		{
+			"t": "06:39",
+			"mechanic": "benefic-ii"
+		},
+		{
+			"t": "06:40",
+			"mechanic": "essential-dignity"
+		},
+		{
+			"t": "06:45",
+			"mechanic": "horoscope"
+		},
+		{
+			"t": "06:47",
+			"mechanic": "neutral-sect"
+		},
+		{
+			"t": "06:49",
+			"mechanic": "earthly-star"
+		},
+		{
+			"t": "06:51",
+			"mechanic": "aspected-helios"
+		},
+		{
+			"t": "06:55",
+			"mechanic": "draw"
+		},
+		{
+			"t": "07:00",
+			"mechanic": "celestial-opposition"
+		},
+		{
+			"t": "07:02",
+			"mechanic": "celestial-intersection"
+		},
+		{
+			"t": "07:04",
+			"mechanic": "combust-iii"
+		},
+		{
+			"t": "07:07",
+			"mechanic": "collective-unconscious"
+		},
+		{
+			"t": "07:09",
+			"mechanic": "earthly-star-pop"
+		},
+		{
+			"t": "07:17",
+			"mechanic": "horoscope-helios-pop"
+		},
+		{
+			"t": "07:20",
+			"mechanic": "lightspeed"
+		},
+		{
+			"t": "07:21",
+			"mechanic": "essential-dignity"
+		},
+		{
+			"t": "07:25",
+			"mechanic": "draw"
+		},
+		{
+			"t": "07:30",
+			"mechanic": "aspected-helios"
+		},
+		{
+			"t": "07:32",
+			"mechanic": "celestial-intersection"
+		},
+		{
+			"t": "07:34",
+			"mechanic": "combust-iii"
+		},
+		{
+			"t": "07:45",
+			"mechanic": "horoscope"
+		},
+		{
+			"t": "07:47",
+			"mechanic": "synastry"
+		},
+		{
+			"t": "07:49",
+			"mechanic": "benefic-ii"
+		},
+		{
+			"t": "07:50",
+			"mechanic": "essential-dignity"
+		},
+		{
+			"t": "07:52",
+			"mechanic": "aspected-helios"
+		},
+		{
+			"t": "07:55",
+			"mechanic": "draw"
+		},
+		{
+			"t": "07:58",
+			"mechanic": "earthly-star"
+		},
+		{
+			"t": "08:00",
+			"mechanic": "celestial-opposition"
+		},
+		{
+			"t": "08:02",
+			"mechanic": "celestial-intersection"
+		},
+		{
+			"t": "08:04",
+			"mechanic": "combust-iii"
+		},
+		{
+			"t": "08:05",
+			"mechanic": "essential-dignity"
+		},
+		{
+			"t": "08:17",
+			"mechanic": "divination"
+		},
+		{
+			"t": "08:18",
+			"mechanic": "earthly-star-pop"
+		},
+		{
+			"t": "08:25",
+			"mechanic": "draw"
+		},
+		{
+			"t": "08:32",
+			"mechanic": "celestial-intersection"
+		},
+		{
+			"t": "08:33",
+			"mechanic": "combust-iii"
+		},
+		{
+			"t": "08:40",
+			"mechanic": "essential-dignity"
+		},
+		{
+			"t": "08:55",
+			"mechanic": "draw"
+		},
+		{
+			"t": "08:56",
+			"mechanic": "horoscope"
+		},
+		{
+			"t": "08:58",
+			"mechanic": "neutral-sect"
+		},
+		{
+			"t": "08:58",
+			"mechanic": "earthly-star"
+		},
+		{
+			"t": "09:00",
+			"mechanic": "aspected-helios"
+		},
+		{
+			"t": "09:01",
+			"mechanic": "celestial-opposition"
+		},
+		{
+			"t": "09:03",
+			"mechanic": "celestial-intersection"
+		},
+		{
+			"t": "09:04",
+			"mechanic": "combust-iii"
+		},
+		{
+			"t": "09:05",
+			"mechanic": "sleeve-draw"
+		},
+		{
+			"t": "09:17",
+			"mechanic": "aspected-helios"
+		},
+		{
+			"t": "09:18",
+			"mechanic": "earthly-star-pop"
+		},
+		{
+			"t": "09:20",
+			"mechanic": "horoscope-helios-pop"
+		},
+		{
+			"t": "09:25",
+			"mechanic": "essential-dignity"
+		},
+		{
+			"t": "09:26",
+			"mechanic": "draw"
+		},
+		{
+			"t": "09:33",
+			"mechanic": "celestial-intersection"
+		},
+		{
+			"t": "09:34",
+			"mechanic": "combust-iii"
+		},
+		{
+			"t": "09:45",
+			"mechanic": "aspected-helios"
+		},
+		{
+			"t": "09:50",
+			"mechanic": "lightspeed"
+		},
+		{
+			"t": "09:56",
+			"mechanic": "draw"
+		},
+		{
+			"t": "09:56",
+			"mechanic": "horoscope"
+		},
+		{
+			"t": "09:57",
+			"mechanic": "aspected-helios"
+		},
+		{
+			"t": "09:58",
+			"mechanic": "earthly-star"
+		},
+		{
+			"t": "10:01",
+			"mechanic": "celestial-opposition"
+		},
+		{
+			"t": "10:03",
+			"mechanic": "celestial-intersection"
+		},
+		{
+			"t": "10:04",
+			"mechanic": "combust-iii"
+		},
+		{
+			"t": "10:05",
+			"mechanic": "horoscope-helios-pop"
+		},
+		{
+			"t": "10:06",
+			"mechanic": "essential-dignity"
+		},
+		{
+			"t": "10:07",
+			"mechanic": "essential-dignity"
+		},
+		{
+			"t": "10:08",
+			"mechanic": "earthly-star-pop"
+		},
+		{
+			"t": "10:09",
+			"mechanic": "collective-unconscious"
+		},
+		{
+			"t": "10:17",
+			"mechanic": "divination"
+		}
+	]
+}
