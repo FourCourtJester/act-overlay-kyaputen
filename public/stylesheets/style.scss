@@ -41,12 +41,6 @@ scrollbar, ::-webkit-scrollbar {
     display:none;
 }
 
-// Fonts
-@font-face {
-	font-family:'DS Digital';
-	src:url('../fonts/DS-DIGIB.ttf');
-}
-
 // Animations
 @keyframes countdown-svg {
     from {

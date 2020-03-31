@@ -31,6 +31,16 @@ class KyaputenDashboard {
             job: '',
         }
 
+        this.settings = {
+            papaparse: {
+                download: true,
+                dynamicTyping: true,
+                header: true,
+                skipEmptyLines: true,
+                transformHeader: (header) => Utils.slugify(header),
+            },
+        }
+
         this.path = {
             encounters: `${path}/javascripts/encounters`,
             jobs: `${path}/javascripts/jobs`,
@@ -57,6 +67,10 @@ class KyaputenDashboard {
             E1S: `Eden's Gate: Resurrection (Savage)`,
             E2S: `Eden's Gate: Descent (Savage)`,
             E3S: `Eden's Gate: Inundation (Savage)`,
+            E5S: `Eden's Verse: Fulmination (Savage)`,
+            E6S: `Eden's Verse: Furor (Savage)`,
+            E7S: `Eden's Verse: Iconoclasm (Savage)`,
+            E8S: `Eden's Verse: Refulgence (Savage)`,
         }
 
         // Combat log
@@ -243,37 +257,79 @@ class KyaputenDashboard {
 
             if (!this.supported_encounters[zone_abbr]) throw new Error(`${this.combat.zone} is not (yet) supported by Kyaputen.`)
 
-            // Load encounter info
-            files.push($.getJSON(`${this.path.encounters}/${zone_slug}/info.json`))
+            // Encounter Data
+            files.push($.getJSON(`${this.path.encounters}/${zone_slug}/encounter.json`))
 
             // Either load the encounter actions or job actions
             if (this.options.job) {
-                files.push($.getJSON(`${this.path.jobs}/${this.options.job}.json`))
-                files.push($.getJSON(`${this.path.encounters}/${zone_slug}/job/${this.options.job}/${Utils.slugify(this.options.authors[zone_abbr])}.json`))
+                // Job Mechanics
+                files.push(this.getCSV(`${this.path.jobs}/${this.options.job}.csv`, {
+                    callback: (resolve, results) => {
+                        resolve({
+                            _id: 'job_actions',
+                            mechanics: results.reduce((obj, entry) => {
+                                obj[Utils.slugify(entry.name)] = entry
+                                return obj
+                            }, {}),
+                        })
+                    },
+                }))
+
+                // Job Timeline
+                files.push(this.getCSV(`${this.path.encounters}/${zone_slug}/job/${this.options.job}/${Utils.slugify(this.options.authors[zone_abbr])}.csv`, {
+                    callback: (resolve, results) => {
+                        resolve({
+                            _id: 'job_timeline',
+                            timeline: results.map((entry) => {
+                                entry.slug = Utils.slugify(entry.name)
+                                return entry
+                            }),
+                        })
+                    },
+                }))
             } else {
-                files.push($.getJSON(`${this.path.encounters}/${zone_slug}/fight.json`))
+                // Encounter Mechanics
+                files.push(this.getCSV(`${this.path.encounters}/${zone_slug}/mechanics.csv`, {
+                    callback: (resolve, results) => {
+                        resolve({
+                            _id: 'encounter_mechanics',
+                            mechanics: results.reduce((obj, entry) => {
+                                obj[entry.slug] = entry
+                                return obj
+                            }, {}),
+                        })
+                    },
+                }))
+
+                // Encounter Timeline
+                files.push(this.getCSV(`${this.path.encounters}/${zone_slug}/timeline.csv`, {
+                    callback: (resolve, results) => {
+                        resolve({
+                            _id: 'encounter_timeline',
+                            timeline: results,
+                        })
+                    },
+                }))
             }
 
             Promise
                 .all(files)
                 .then((loaded_files) => {
+                    console.log(loaded_files)
                     loaded_files.forEach((f) => {
                         switch (f._id) {
                         case 'encounter_mechanics':
+                        case 'job_actions':
                             Utils.setObjValue(this.combat, 'encounter.mechanics', f.mechanics)
+                            break
+
+                        case 'encounter_description':
                             Utils.setObjValue(this.combat, 'encounter.phases', f.phases.map((p) => p == null ? null : new RegExp(p)))
                             break
 
                         case 'encounter_timeline':
-                            Utils.setObjValue(this.combat, 'encounter.timeline', f.script)
-                            break
-
-                        case 'job_actions':
-                            Utils.setObjValue(this.combat, 'encounter.mechanics', f)
-                            break
-
                         case 'job_timeline':
-                            Utils.setObjValue(this.combat, 'encounter.timeline', f.script)
+                            Utils.setObjValue(this.combat, 'encounter.timeline', f.timeline)
                             break
                         }
                     })
@@ -315,12 +371,12 @@ class KyaputenDashboard {
         // Create all entries of this encounter
         for (const entry of this.combat.encounter.timeline) {
             const
-                mechanic = this.combat.encounter.mechanics[entry.mechanic],
+                mechanic = this.combat.encounter.mechanics[entry.slug],
                 tpl = this.elements.mustache[this.options.job ? 'job' : 'boss'],
                 $tpl = $(Mustache.render($(`${tpl}`).html(), {
                     mechanic: mechanic,
-                    ttl: this._convertTTL(entry.t),
-                    phase: Utils.getObjValue(entry, 'phase') || 1,
+                    ttl: this._convertTTL(entry.timestamp),
+                    phase: +Utils.getObjValue(entry, 'phase') || 1,
                 }))
 
             $(this.elements.timeline).append($tpl)
@@ -395,6 +451,8 @@ class KyaputenDashboard {
             .filter(`.phase-${ph}`).removeClass('hide').addClass('show')
     }
 
+    // Assignments
+
     /**
      * 
      * @param {String} str 
@@ -406,7 +464,29 @@ class KyaputenDashboard {
     }
 
     /**
+     * 
+     * @param {String} path 
+     * @param {Object} opts
+     * @param {Function} [opts.transformHeader]
+     * @return {Promise}
+     */
+    getCSV (path, opts) {
+        const config = this.settings.papaparse
+
+        if (opts.transformHeader) config.transformHeader = opts.transformHeader
+
+        return new Promise((resolve, reject) => {
+            Papa.parse(path, Object.assign(config, {
+                complete: (results) => opts.callback(resolve, results.data),
+            }))
+        })
+    }
+
+    // Socket Events
+
+    /**
      * Handles a CombatData event
+     * @return {Boolean}
      */
     _onCombatData ({ type: type, Encounter: encounter, Combatant: combatants, isActive: active }) {
         // Convert all types to Boolean
@@ -438,6 +518,8 @@ class KyaputenDashboard {
         }
 
         if (active == false) this.unloadEncounter()
+
+        return true
     }
 
     /**
@@ -445,10 +527,11 @@ class KyaputenDashboard {
      * @return {Boolean}
      */
     _onChat ({ type: type, line: line, rawLine: raw }) {
+        // console.log(raw)
         if (!Utils.getObjValue(this.combat, 'encounter.phases')) return false
 
         this.combat.encounter.phases.forEach((p, i) => {
-            if (p !== null && p.test(raw)) this.phase(i + 1)
+            if (p !== null && p.test(raw)) Utils.debounce('phase', () => this.phase(i + 1), 500)
         })
 
         return true

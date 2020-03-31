@@ -6,12 +6,36 @@ class KyaputenToolkit {
      * @constructor
      */
     constructor () {
+        this.debounce_fn = {}
         this.viewport = {
             sm: '(min-width: 576px)',
             md: '(min-width: 768px)',
             lg: '(min-width: 992px)',
             xl: '(min-width: 1200px)',
         }
+    }
+
+    /**
+     * Debounces a function
+     * @param {String} key
+     * @param {Function} fn 
+     * @param {Number} [delay=250]
+     * @return {Boolean}
+     */
+    async debounce (key, fn, delay = 250) {
+        const that = this
+
+        // If this function is on cooldown, ignore the call
+        if (this.debounce_fn[key]) return false
+
+        // Call the function
+        fn()
+
+        // Create the cooldown
+        this.debounce_fn[key] = setTimeout(function () {
+            clearTimeout(that.debounce_fn[key])
+            delete that.debounce_fn[key]
+        }, delay)
     }
 
     /**

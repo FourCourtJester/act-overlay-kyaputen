@@ -3,9 +3,6 @@
         "AST": [
             "Fleur DeMur (Zalera) (Shield)"
         ],
-        "MNK": [
-            "Shekawa Phen (Zalera)"
-        ],
         "SCH": [
             "Shekawa Phen (Zalera)"
         ],
@@ -35,5 +32,9 @@
             "Shekawa Phen (Zalera)"
         ]
     },
-    "E4S": {}
+    "E4S": {},
+    "E5S": {},
+    "E6S": {},
+    "E7S": {},
+    "E8S": {}
 }

@@ -1,12 +1,12 @@
 # act-overlay-kyaputen
 
 <p align="center">
-  <img src="./docs/full_screen_example.jpg" height="225" width="400" />
-  <img src="./docs/boss_example.jpg" height="225" width="632" />
-  <img src="./docs/job_example.jpg" height="225" width="176" />
+  <img src="./docs/full_screen_example.png?raw=true" height="225" width="400" /><br />
+  <img src="./docs/boss_example.png?raw=true" height="225" width="632" />
+  <img src="./docs/job_example.png?raw=true" height="225" width="176" />
 </p>
 
-A lightweight Boss Mods overlay that allows users to choose encounter scripts (if supported) by authors and give reminders to the player on mechanics and how to execute them in a timely manner.
+A lightweight Boss Mods overlay that allows users to choose encounter maps (if supported) by authors and give explanations to the player on mechanics and how to execute them in real time.
 
 # How to Use
 

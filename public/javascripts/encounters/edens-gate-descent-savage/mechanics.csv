@@ -1,0 +1,27 @@
+Name,Slug,Type,Message,Cast
+Cycle of Chaos,cycle-of-chaos,Combo,Voidwalker will cast this or Cycle of Retribution.,5
+Cycle of Retribution,cycle-of-retribution,Combo,Voidwalker will cast this or Cycle of Chaos.,5
+Doomvoid Guillotine (CoC) or Doomvoid Slicer (CoR),c-1,Combo,Voidwalker will either one of these.,5
+Doomvoid Slicer (CoC) or Doomvoid Cleaver (CoR),c-2,Combo,Voidwalker will either one of these.,5
+Doomvoid Cleaver (CoC) or Doomvoid Guillotine (CoR),c-3,Combo,Voidwalker will either one of these.,4
+Dark Fire III,dark-fire-3,Positional,Position yourself away from other players and telegraphs.,5
+Doomvoid Cleaver,doomvoid-cleaverPositional,Position yourself in your designated position.,4
+Doomvoid Guillotine or Slicer,doomvoid-guillotine-or-doomvoid-slicer,Random,Voidwalker will cast only one.,4
+Doomvoid Guillotine,doomvoid-guillotine,Positional,Position yourself to the sides of Voidwalker.,4
+Doomvoid Slicer,doomvoid-slicer,Area of Effect,Position yourself under Voidwalker.,4
+Quietus,enrage,Enrage,Defeat Voidwalker or you will die.,15
+Entropy,entropy,Raid Buster,Raid wide unavoidable damage.,6
+Empty Hate or Empty Rage,empty-hate-or-empty-rage,Random,The Hand of Erebos will cast only one.,6
+Empty Hate,empty-hate,Knockback,The Hand of Erebos will do a party knockback.,6
+Empty Rage,empty-rage,Area of Effect,The Hand of Erebos will do a party cleave.,6
+Equilibrium,equilibrium,Stack,Position yourself with your partner to mitigate incoming damage.,5
+Flare,flare,Positional,Position yourself at your designated position.,5
+Hell Wind,hell-wind,Prey,Marked players will be reduced to 1 health.,5
+Punishing Ray,punishing-ray,Positional,Position yourself at your designated position to mitigate incoming damage.,5
+Quietus,quietus,Raid Buster,Stacking Enrage buff for Voidwalker.,6
+Flare & Shadoweye (x2),shadoweye-and-flare,Multiple,Position yourself at your designated position and turn away from Shadoweye.,5
+Unholy Darkness & Shadoweye & Hellwind,shadoweye-and-hell-wind-and-unholy-darkness,Multiple,Stack, unless you have Hellwind, and turn away from Shadoweye.,5
+Punishing Ray & Shadoweye,shadoweye-and-punishing-ray,Multiple,Position yourself at your designated position and turn away from Shadoweye.,5
+Shadoweye,shadoweye,Positional,Do not face the marked player.,5
+Shadowflame,shadowflame,Tank Buster,Tanks will be hit with a targetted ability.,4
+Unholy Darkness,unholy-darkness,Stack,Stack with the marked player.,5

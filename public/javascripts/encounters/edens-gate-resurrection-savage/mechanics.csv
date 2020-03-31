@@ -1,0 +1,21 @@
+Name,Slug,Type,Message,Cast
+Dimensional Shift,dimensional-shift,Raid Buster,Will do 70% of max health as damage.,4
+Delta Attack,delta,Spread,Position yourself at your designated position.,5
+Fragor Maximus,enrage,Enrage,Defeat Eden or you will die.,5
+Fragor Maximus,fragor-maximus,Area of Effect,Massive party damage.,5
+Eden's Flare,flare,Area of Effect,Position yourself under Eden.,4
+Eden's Gravity,gravity,Raid Buster,Will do 70% of max health as damage.,4
+Mana Boost,mana-boost,Buff,Interrupt both enemies castings of this.,5
+Mana Burst,mana-burst,Raid Buster,Will wipe the party if Mana Boost was not interrupted.,3
+Mana Slice,mana-slice,Area of Effect,Tanks must aim this enemy away from the party.,5
+Pure Beam,pure-beam,Positional,Position yourself on the outside of an orb.,3
+Pure Light,pure-light,Positional,Position yourself behind Eden.,11
+Activate Beams,raid-beams,Positional,Position yourself so the telegraph fires away from the party.,3
+Random Ability,random,Random,Be alert.,5
+Spear of Paradise,spear,Tank Buster,2-Hit combo on the Tanks.,5
+Vice and Virtue,vice-and-virtue-dps,Positional,DPS must position these away from the party.,6
+Vice and Virtue,vice-and-virtue-dps-prey,Prey,Healers must transfer this debuff to DPS and then heal them.,6
+Vice and Virtue,vice-and-virtue-tank-prey,Prey,Healers must transfer this debuff to Tanks and then heal them.,6
+Vice and Virtue,vice-and-virtue-dps-stack,Positional,Position yourself with your partner to mitigate incoming damage.,6
+Vice and Virtue,vice-and-virtue-tank-stack,Tank Buster,Position yourself infront of your Tanks to mitigate incoming damage.,6
+Vice and Virtue,vice-and-virtue-tank,Tank Buster,Tanks will be hit by linear lasers. Do not stand with them.,6

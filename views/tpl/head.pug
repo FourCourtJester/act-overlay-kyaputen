@@ -9,10 +9,11 @@ head
     //- Javascript
     script(type="application/javascript", integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=", crossorigin="anonymous", src="https://code.jquery.com/jquery-3.4.1.min.js", defer)
     script.
-      window.jQuery || document.write(`<script type="application/javascript" src='#{path}/javascripts/dist/jquery/dist/jquery.min.js' defer><\/script>`)
+      window.jQuery || document.write(`<script type="application/javascript" src='#{path}/javascripts/dist/jquery/jquery.min.js' defer><\/script>`)
     //- Libraries
-    script(type="application/javascript", src=`${path}/javascripts/dist/bootstrap/dist/js/bootstrap.bundle.min.js`, defer)
+    script(type="application/javascript", src=`${path}/javascripts/dist/bootstrap/bootstrap.bundle.min.js`, defer)
     script(type="application/javascript", src=`${path}/javascripts/dist/mustache/mustache.min.js`, defer)
+    script(type="application/javascript", src=`${path}/javascripts/dist/papaparse/papaparse.min.js`, defer)
     //- Global variables
     script(type="application/javascript").
       const path = "#{path}"

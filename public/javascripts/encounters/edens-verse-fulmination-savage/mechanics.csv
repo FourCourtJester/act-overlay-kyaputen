@@ -1,0 +1,34 @@
+Name,Slug,Type,Message,Cast
+Centaur's Charge,centaurs-charge,Knockback,Will do a party knockback. A Tank can use Duty Action to prevent lethality.,0
+Chain Lightning,chain-lightning,Positional,Two farthest players are marked with a charge of Chain Lightning that will jump 8 times between players.,0
+Chain Lightning,chain-lightning-1,Positional,First jump of Chain Lightning.,0
+Chain Lightning,chain-lightning-2,Positional,Second jump of Chain Lightning.,0
+Chain Lightning,chain-lightning-3,Positional,Third jump of Chain Lightning.,0
+Chain Lightning,chain-lightning-4,Positional,Fourth jump of Chain Lightning.,0
+Chain Lightning,chain-lightning-5,Positional,Fifth jump of Chain Lightning.,0
+Chain Lightning,chain-lightning-6,Positional,Sixth jump of Chain Lightning.,0
+Chain Lightning,chain-lightning-7,Positional,Seventh jump of Chain Lightning.,0
+Chain Lightning,chain-lightning-8,Positional,Eight jump of Chain Lightning.,0
+Crippling Blow,crippling-blow,Tank Buster,Main Tank will be hit with a targetted ability.,0
+Executor Summons,executor-summons,Summon,Summons Raiden. Will target the player with the most Surge Protection buffs.,0
+Furious Judgement Volts,judgement-volts-furious,Area of Effect,Required a Surge Protection buff. Raid wide unavoidable damage.,0
+Furious Stepped Leader,stepped-leader-furious,Area of Effect,Targetted markers now explode in a donut pattern.,0
+Fury's Bolt,furys-bolt,Buff,Ramuh alters his next ability and will require players to have a Surge Protection buff.,0
+Fury's Bolt,furys-bolt-random,Buff,Ramuh may alter his next ability and will require players to have a Surge Protection buff.,0
+Fury's Fourteen,furys-fourteen,Buff,Ramuh buffs himself for his next mechanic.,0
+Judgement Jolt,judgement-jolt,Positional,Position yourself in the safe area.,0
+Judgement Volt,enrage,Enrage,Defeat Ramuh or you will die.,0
+Judgement Volts,judgement-volts,Raid Buster,Raid wide unavoidable damage.,0
+Levinbolts,levinbolts-1,Area of Effect,Targetted markers will appear on four players.,0
+Levinbolts,levinbolts-2,Area of Effect,Targetted markers will appear on four players.,0
+Levinforce,levinforce,Knockback,Will do a party knockback.,0
+Raiden - Shock Blast,shock-blast,Tank Buster,Targets the player with the most Surge Protection buffs.,0
+Stepped Leader,stepped-leader,Positional,Avoidable ground marker placed under every player.,0
+Stepped Leader,stepped-leader-random,Positional,Behavior is determined by Ramuh having a Fury's Bolt buff.,0
+Stormcloud Summons,stormcloud-summons-inner,Positional,Four closest players are marked with Hated of Levin.,0
+Stormcloud Summons,stormcloud-summons-outer,Positional,Four farthest players are marked to place a thundercloud.,0
+Stratospear Summons,stratospear-summons,Positional,Summons 4 staves. The shortest will not explode.,0
+Stratospear Summons,stratospear-summons-7,Positional,Summons 7 staves. Position yourself at your designated position for Centaur's Charge.,0
+Thunderstorm,thunderstorm,Area of Effect,Random ground markers will appear.,0
+Tribunal Summons,tribunal-summons,Positional,Summons Ixions that will deal lethal damage.,0
+Tribunal Summons,tribunal-summons-2,Positional,Summons even moreIxions that will deal lethal damage.,0

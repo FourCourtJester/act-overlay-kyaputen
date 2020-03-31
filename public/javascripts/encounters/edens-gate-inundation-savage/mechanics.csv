@@ -1,0 +1,36 @@
+Name,Slug,Type,Message,Cast
+Backbreaking Wave,backbreaking-wave,Positional,Tanks must position this away from the party.,0
+Black Smokers,black-smokers,Area of Damage,Tanks will take damage, and Hydrothermal Vents will spawn.,5
+Breaking Wave,breaking-wave,Positional,Tanks must position this away from the party.,0
+Drenching Pulse,drenching-pulse,Stack,Stack with the party and rotate around Leviathan.,3
+Drenching Pulse,drenching-pulse-light,Stack,Stack with the party and prepare for Freak Wave.,3
+The Storm,enrage,Enrage,Defeat Leviathan or you will die.,18
+Freak Wave,freak-wave,Spread,You must position this to not overlap with any of your party.,6
+Freak Wave,freak-wave-enhanced,Spread,You must position this to not overlap with any of your party. You will drop a damage telegraph after the cast.,6
+Hydrothermal Vent,hydrothermal-vent,Positional,Your party must soak these in alternating turn orders.,0
+Maelstrom,maelstrom,Positional,You must avoid puddles and avoid Leviathan two times.,3
+Maelstrom,maelstrom-enhanced,Positional,You must avoid puddles and avoid Leviathan three times.,3
+Monster Wave,monster-wave,Stack,Stack with the party and rotate around Leviathan.,4
+Plunging Wave,plunging-wave,Stack,Stack with the marked player.,0
+Refreshing Shower,refreshing-shower,Buff,Enhances Leviathan's actions.,3
+Rip Current,rip-current,Tank Buster,Tanks will be hit with a targetted ability.,5
+Roiling Pulse,roiling-pulse,Stack,Stack with the party and rotate around Leviathan.,3
+Scouring Tsunami,scouring-tsunami,Positional,The affected Tank will do massive Area of Effect damage.,30
+Smothering Tsunami,smothering-tsunami,Stack,Stack with the marked player.,25
+Spinning Dive,spinning-dive,Positional,Leviathan will attack in a linear telegraph.,0
+Splashing Tsunami,splashing-tsunami,Positional,Cleanse this debuff, or suffer lethal damage.,25
+Stormy Horizon,stormy-horizon,Raid Buster,Raid wide unavoidable damage.,5
+Sundering Tsunami,sundering-tsunami-1,Knockback,The affected player will do a party knockback.,8
+Sundering Tsunami,sundering-tsunami-2,Knockback,The affected player will do a party knockback.,21
+Surging Tsunami,surging-tsunami,Knockback,The affected player will do a party knockback.,8
+Sweeping Tsunami,sweeping-tsunami,Positional,The affected players will target the furthest player with a conal Area of Effect.,15
+Swirling Tsunami,swirling-tsunami,Stack,Stack on the marked player.,25
+Temporary Current,temporary-current,Positional,Leviathan will attack in a diagonal linear damage pattern.,6
+Tidal Rage,tidal-rage,Raid Buster,Raid wide unavoidable damage.,5
+Tidal Roar,tidal-roar,Raid Buster,Raid wide unavoidable damage.,4
+Tidal Wave,tidal-wave,Knockback,Will do a party knockback either from East or West platform.,10
+Tsunami,tsunami,Raid Buster,Raid wide unavoidable damage. Affects players with Tsunami debuffs.,6
+Undersea Quake,undersea-quake-center,Environmental,Leviathan will destroy the center of the platform.,5
+Undersea Quake,undersea-quake-sides,Environmental,Leviathan will destroy the East and West sides of the platform.,5
+Smothering, Swirling & Temporary Current,multiple-smothering-swirling-temporary-current,Multiple,Stack with the marked players on the sides of the platform.,0
+Breaking Wave, Killer Wave & Undersea Quake,multiple-breaking-killer-undersea-quake,Multiple,Stack with the marked players on the sides of the platform.,0

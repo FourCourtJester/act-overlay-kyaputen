@@ -25,32 +25,17 @@ const
     app = require('../app'),
     fs = require('fs-extra'),
     http = require('http'),
-    port = normalizePort(process.env.PORT || '3000'),
-    files = []
+    port = normalizePort(process.env.PORT || '3000')
 
 /**
- * Save the dependencies for the static serving of this overlay
+ * Save required files for public viewing
  */
 try {
-    // related Node front end packages
-    for (const module of [
-        'jquery/dist/jquery.min.js',
-        'bootstrap/dist/js/bootstrap.bundle.min.js',
-        'bootstrap/dist/js/bootstrap.bundle.min.js.map',
-        'mustache/mustache.min.js',
-    ]) {
-        files.push(new Promise((resolve, reject) => {
-            fs.copy(`node_modules/${module}`, `public/javascripts/dist/${module}`)
-                .then(() => {
-                    resolve()
-                })
-                .catch((err) => {
-                    reject(err)
-                })
-        }))
-    }
-
-    Promise.all(files)
+    fs.copy('./node_modules/jquery/dist/jquery.min.js', './public/javascripts/dist/jquery/jquery.min.js')
+    fs.copy('./node_modules/papaparse/papaparse.min.js', './public/javascripts/dist/papaparse/papaparse.min.js')
+    fs.copy('./node_modules/mustache/mustache.min.js', './public/javascripts/dist/mustache/mustache.min.js')
+    fs.copy('./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js', './public/javascripts/dist/bootstrap/bootstrap.bundle.min.js')
+    fs.copy('./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js.map', './public/javascripts/dist/bootstrap/bootstrap.bundle.min.js.map')
 } catch (err) {
     console.error(err)
 }
@@ -80,9 +65,9 @@ server.listen(port)
 server.on('error', (error) => {
     if (error.syscall !== 'listen') throw error
 
-    const bind = typeof port === 'string'
-        ? 'Pipe ' + port
-        : 'Port ' + port
+    const bind = typeof port === 'string' ?
+        'Pipe ' + port :
+        'Port ' + port
 
     // handle specific listen errors with friendly messages
     switch (error.code) {
