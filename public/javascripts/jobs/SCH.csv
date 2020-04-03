@@ -1,12 +1,12 @@
 Name,Icon,Duration,Cooldown
-Adloquium,https://xivapi.com/i/002000/002801.png,0s,2.5s
-Aetherflow,https://xivapi.com/i/000000/000510.png,0s,60s
+Adloquium,https://xivapi.com/i/002000/002801.png,30s,2.5s
+Aetherflow,https://xivapi.com/i/000000/000510.png,60s,60s
 Biolysis,https://xivapi.com/i/002000/002820.png,30s,0s
 Chain Stratagem,https://xivapi.com/i/002000/002815.png,15s,120s
 Consolation,https://xivapi.com/i/002000/002851.png,30s,0s
 Deployment Tactics,https://xivapi.com/i/002000/002808.png,0s,120s
 Dissipation,https://xivapi.com/i/002000/002810.png,30s,180s
-Emergency Tactics,https://xivapi.com/i/002000/002809.png,0s,15s
+Emergency Tactics,https://xivapi.com/i/002000/002809.png,15s,15s
 Energy Drain,https://xivapi.com/i/000000/000514.png,0s,0s
 Energy Drain x1,https://xivapi.com/i/000000/000514.png,0s,0s
 Energy Drain x2,https://xivapi.com/i/000000/000514.png,0s,0s
@@ -19,7 +19,7 @@ Indominability,https://xivapi.com/i/002000/002806.png,0s,30s
 Lucid Dreaming,https://xivapi.com/i/000000/000865.png,21s,60s
 Lustrate,https://xivapi.com/i/002000/002805.png,0s,0s
 Recitation,https://xivapi.com/i/002000/002822.png,15s,90s
-Rescue,https://xivapi.com/i/000000/000890.png,21s,150s
+Rescue,https://xivapi.com/i/000000/000890.png,0s,120s
 Sacred Soil,https://xivapi.com/i/002000/002804.png,15s,30s
 Succor,https://xivapi.com/i/002000/002802.png,30s,0s
 Summon Seraph,https://xivapi.com/i/002000/002850.png,20s,120s

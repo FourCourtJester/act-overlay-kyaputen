@@ -1,17 +1,18 @@
 Name,Icon,Duration,Cooldown
-Arms Length,https://xivapi.com/i/000000/000822.png,0s,120s
+Arm's Length,https://xivapi.com/i/000000/000822.png,6s,120s
 Equilibrium,https://xivapi.com/i/002000/002560.png,0s,60s
-Inner Release,https://xivapi.com/i/002000/002564.png,0s,90s
-Infuriate,https://xivapi.com/i/002000/002555.png,0s,60s
+Inner Release,https://xivapi.com/i/002000/002564.png,10s,90s
+Infuriate,https://xivapi.com/i/002000/002555.png,30s,60s
 Interject,https://xivapi.com/i/000000/000808.png,0s,30s
+Holmgang,https://xivapi.com/i/000000/000266.png,8s,240s
 Low Blow,https://xivapi.com/i/000000/000802.png,0s,25s
-Nascent Flash,https://xivapi.com/i/002000/002567.png,0s,25s
-Rampart,https://xivapi.com/i/000000/000801.png,0s,90s
-Raw Intuition,https://xivapi.com/i/002000/002559.png,0s,25s
-Reprisal,https://xivapi.com/i/000000/000806.png,0s,60s
-Shake It Off,https://xivapi.com/i/002000/002563.png,0s,90s
-Storm's Eye,https://xivapi.com/i/000000/000264.png,0s,
-Thrill of Battle,https://xivapi.com/i/000000/000263.png,0s,90s
-Tomahawk,https://xivapi.com/i/000000/000261.png,0s,
+Nascent Flash,https://xivapi.com/i/002000/002567.png,6s,25s
+Rampart,https://xivapi.com/i/000000/000801.png,20s,90s
+Raw Intuition,https://xivapi.com/i/002000/002559.png,6s,25s
+Reprisal,https://xivapi.com/i/000000/000806.png,10s,60s
+Shake It Off,https://xivapi.com/i/002000/002563.png,15s,90s
+Storm's Eye,https://xivapi.com/i/000000/000264.png,0s,0s
+Thrill of Battle,https://xivapi.com/i/000000/000263.png,10s,90s
+Tomahawk,https://xivapi.com/i/000000/000261.png,0s,0s
 Upheaval,https://xivapi.com/i/002000/002562.png,0s,30s
-Vengeance,https://xivapi.com/i/000000/000267.png,0s,120s
+Vengeance,https://xivapi.com/i/000000/000267.png,15s,120s

@@ -1,0 +1,42 @@
+Name,Slug,Type,Message,Cast
+Absolute Zero,absolute-zero,Raid Buster,Raid wide unavoidable damage.,0
+Akh Morn x3,akh-morn-3,Positional,Pulsing Area of Effect damage. Will give Hated of Wyrm or Hated of Frost.,0
+Akh Morn x4,akh-morn-4,Positional,Pulsing Area of Effect damage. Will give Hated of Wyrm or Hated of Frost.,0
+Akh Morn x5,akh-morn-5,Positional,Pulsing Area of Effect damage. Will give Hated of Wyrm or Hated of Frost.,0
+Akh Morn x6,akh-morn-6,Positional,Pulsing Area of Effect damage. Will give Hated of Wyrm or Hated of Frost.,0
+Akh Morn x7,akh-morn-7,Positional,Pulsing Area of Effect damage. Will give Hated of Wyrm or Hated of Frost.,0
+Ahk Rhai,ahk-rhai,Positional,Continous Area of Effect damage at the location of all players.,0
+Banish,banish,Area of Effect,Shiva will possibly invert the stack marker into a spread marker.,0
+Blue Mirror Reflect,blue-mirror-reflect,Positional,Shiva's Red Mirror will reflect the last Shiva ability cast.,0
+Bright Hunger,bright-hunger,Positional,Players within the Towers will take damage.,0
+Diamond Frost,diamond-frost,Positional,Shiva inflicts two players with Freezing and four players with Frigid Stone.,0
+Double Slap,double-slap,Tank Buster,Main Tank will be hit with a targetted ability.,0
+Drachen Armor,redress-drachen-armor,Buff,Shiva will summon Hraesvaelgar.,0
+Draconic Strike,draconic-strike,Knockback,Will do a party knockback.,0
+Driving or Biting Frost,driving-biting-random,Positional,Shiva will either do Driving Frost or Biting Frost.,0
+Driving or Biting Frost,driving-biting-inverse,Positional,Shiva will either do Driving Frost or Biting Frost.,0
+Embittered or Spiteful Dance,embittered-spiteful-dance-random,Positional,Shiva will either do Embittered or Spiteful Dance.,0
+Embittered or Spiteful Dance,embittered-spiteful-dance-inverse,Positional,Shiva will either do Embittered or Spiteful Dance.,0
+Frigid Needle,frigid-needle,Area of Effect,Lethal omnidirectional Area of Effect.,0
+Frigid Stone,frigid-stone,Positional,Avoidable ground marker placed under the four afflicted players.,0
+Frigid Water,frigid-water,Area of Effect,Shiva will mark two players with Flare.,0
+Frost Armor,redress-frost-armor,Buff,Shiva will turn the ground to ice.,0
+Green Mirror Reflect,green-mirror-reflect,Positional,Shiva's Red Mirror will reflect the last Shiva ability cast.,0
+Hallowed Wings,enrage,Enrage,Defeat Shiva or you will die.,0
+Hallowed Wings,hallowed-wings-knockback,Knockback,Shiva will do a cleave and reflected mirrors will do a party knockback.,0
+Hallowed Wings,hallowed-wings,Positional,Shiva will do half the arena in Area of Effect damage.,0
+Heart Asunder,heart-asunder,Raid Buster,Will do 50% of max health as damage.,0
+Heavenly Strike,heavenly-strike,Knockback,Will do a party knockback.,0
+Holy,holy,Area of Effect,Shiva will place a single marker in the center or eight edge positioned markers.,0
+Light Rampart,light-rampart,Positional,Shiva will chain together four players and tether the remaining four to Orbs.,0
+Morn Afah,morn-afah,Positional,Heavy sharable damage on the Main Tank.,0
+Red Mirror Reflect,red-mirror-reflect,Positional,Shiva's Red Mirror will reflect the last Shiva ability cast.,0
+Scythe or Axe Kick,scythe-axe-random,Positional,Shiva will either do Scythe or Axe Kick.,0
+Scythe or Axe Kick,scythe-axe-inverse,Positional,Shiva will either do Scythe or Axe Kick.,0
+Shattered World,shattered-world,Positional,Shiva will teleport players to a light Crystal.,0
+Shining Armor,redress-shining-armor,Blind,Shiva will turn anyone looking at her to stone.,0
+The House of Light,the-house-of-light,Positional,Shiva will use a cone Area of Effect on the four nearest players.,0
+The Path of Light,the-path-of-light,Positional,Shiva will use a cone Area of Effect on the four nearest players.,0
+Twin Silence or Stillness,twin-silence-stillness-random,Positional,Shiva will either do Twin Silence or Twin Stillness.,0
+Twin Silence or Stillness,twin-silence-stillness-inverse,Positional,Shiva will either do Twin Silence or Twin Stillness.,0
+Wyrm's Lament,wyrms-lament,Positional,Shiva will inflict four red and four blue debuffs that need to be resolved.,0
