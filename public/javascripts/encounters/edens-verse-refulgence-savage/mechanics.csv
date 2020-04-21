@@ -5,7 +5,7 @@ Akh Morn x4,akh-morn-4,Positional,Pulsing Area of Effect damage. Will give Hated
 Akh Morn x5,akh-morn-5,Positional,Pulsing Area of Effect damage. Will give Hated of Wyrm or Hated of Frost.,0
 Akh Morn x6,akh-morn-6,Positional,Pulsing Area of Effect damage. Will give Hated of Wyrm or Hated of Frost.,0
 Akh Morn x7,akh-morn-7,Positional,Pulsing Area of Effect damage. Will give Hated of Wyrm or Hated of Frost.,0
-Ahk Rhai,ahk-rhai,Positional,Continous Area of Effect damage at the location of all players.,0
+Ahk Rhai,akh-rhai,Positional,Continous Area of Effect damage at the location of all players.,0
 Banish,banish,Area of Effect,Shiva will possibly invert the stack marker into a spread marker.,0
 Blue Mirror Reflect,blue-mirror-reflect,Positional,Shiva's Red Mirror will reflect the last Shiva ability cast.,0
 Bright Hunger,bright-hunger,Positional,Players within the Towers will take damage.,0
@@ -28,6 +28,7 @@ Hallowed Wings,hallowed-wings,Positional,Shiva will do half the arena in Area of
 Heart Asunder,heart-asunder,Raid Buster,Will do 50% of max health as damage.,0
 Heavenly Strike,heavenly-strike,Knockback,Will do a party knockback.,0
 Holy,holy,Area of Effect,Shiva will place a single marker in the center or eight edge positioned markers.,0
+Icelit Dragonsong,icelit-dragonsong,Positional,Shiva inflicts two players with Freezing and four players with Frigid Stone.,0
 Light Rampart,light-rampart,Positional,Shiva will chain together four players and tether the remaining four to Orbs.,0
 Morn Afah,morn-afah,Positional,Heavy sharable damage on the Main Tank.,0
 Red Mirror Reflect,red-mirror-reflect,Positional,Shiva's Red Mirror will reflect the last Shiva ability cast.,0
