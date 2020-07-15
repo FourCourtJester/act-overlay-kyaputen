@@ -32,5 +32,5 @@ Tidal Wave,tidal-wave,Knockback,Will do a party knockback either from East or We
 Tsunami,tsunami,Raid Buster,Raid wide unavoidable damage. Affects players with Tsunami debuffs.,6
 Undersea Quake,undersea-quake-center,Environmental,Leviathan will destroy the center of the platform.,5
 Undersea Quake,undersea-quake-sides,Environmental,Leviathan will destroy the East and West sides of the platform.,5
-Smothering, Swirling & Temporary Current,multiple-smothering-swirling-temporary-current,Multiple,Stack with the marked players on the sides of the platform.,0
-Breaking Wave, Killer Wave & Undersea Quake,multiple-breaking-killer-undersea-quake,Multiple,Stack with the marked players on the sides of the platform.,0
+Smothering, Swirling & Temporary Current,smothering-swirling-temporary-current,Multiple,Stack with the marked players on the sides of the platform.,0
+Breaking Wave, Killer Wave & Undersea Quake,breaking-killer-undersea-quake,Multiple,Stack with the marked players on the sides of the platform.,0

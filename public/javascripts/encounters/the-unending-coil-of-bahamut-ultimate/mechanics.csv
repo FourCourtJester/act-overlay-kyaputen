@@ -1,0 +1,7 @@
+Name,Slug,Type,Message,Cast
+Plummet,plummet,Tank Buster,Main Tank will be cleaved.,0
+Twister,twister,Area of Effect,Party members will have a twister appear beneat them.,0
+Fireball,fireball,Positional,A single party member will have a fireball the party will have to soak.,0
+Death Sentence,death-sentence,Tank Buster,Main Tank will be dealt heavy damage.,0
+Generate,generate,Positional,A random damage dealer will be targetted for Hatch.,0
+Liquid Hell,liquid-hell,Positional,A random target will be targetted for persistent fire splashes.,0

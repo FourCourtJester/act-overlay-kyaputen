@@ -19,8 +19,8 @@ Flare,flare,Positional,Position yourself at your designated position.,5
 Hell Wind,hell-wind,Prey,Marked players will be reduced to 1 health.,5
 Punishing Ray,punishing-ray,Positional,Position yourself at your designated position to mitigate incoming damage.,5
 Quietus,quietus,Raid Buster,Stacking Enrage buff for Voidwalker.,6
-Flare & Shadoweye (x2),shadoweye-and-flare,Multiple,Position yourself at your designated position and turn away from Shadoweye.,5
-Unholy Darkness & Shadoweye & Hellwind,shadoweye-and-hell-wind-and-unholy-darkness,Multiple,Stack, unless you have Hellwind, and turn away from Shadoweye.,5
+Shadoweye & Flare,shadoweye-flare,Multiple,Position yourself at your designated position and turn away from Shadoweye.,5
+Shadoweye & Hell Wind & Unholy Darkness,shadoweye-hell-wind-unholy-darkness,Multiple,Stack, unless you have Hellwind, and turn away from Shadoweye.,5
 Punishing Ray & Shadoweye,shadoweye-and-punishing-ray,Multiple,Position yourself at your designated position and turn away from Shadoweye.,5
 Shadoweye,shadoweye,Positional,Do not face the marked player.,5
 Shadowflame,shadowflame,Tank Buster,Tanks will be hit with a targetted ability.,4

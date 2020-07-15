@@ -1,4 +1,9 @@
 {
+    "Test": {
+        "SCH": [
+            "Shekawa Phen (Zalera)"
+        ]
+    },
     "E1S": {
         "AST": [
             "Fleur DeMur (Zalera) (Shield)"
@@ -41,6 +46,11 @@
     "E6S": {},
     "E7S": {},
     "E8S": {
+        "SCH": [
+            "Shekawa Phen (Zalera)"
+        ]
+    },
+    "UCOB": {
         "SCH": [
             "Shekawa Phen (Zalera)"
         ]

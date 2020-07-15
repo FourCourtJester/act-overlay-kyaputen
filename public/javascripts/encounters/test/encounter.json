@@ -1,0 +1,10 @@
+{
+    "_id": "encounter_description",
+    "zone": "Script Test",
+    "description": "",
+    "readme": "Testing Data Set",
+    "phases": [
+        "Ragnarok[|:][\\w]{4}[|:]Heavensfall[|:]",
+        "Twintania sucks"
+    ]
+}

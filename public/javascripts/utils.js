@@ -66,7 +66,7 @@ class KyaputenToolkit {
         return Object
             .keys(obj)
             .find((k) => {
-                return obj[k] == val
+                return obj[k].toLowerCase() == val.toLowerCase()
             })
     }
 

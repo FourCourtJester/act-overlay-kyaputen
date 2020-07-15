@@ -1,0 +1,10 @@
+{
+    "_id": "encounter_description",
+    "zone": "The Unending Coil of Bahamut (Ultimate)",
+    "description": "",
+    "readme": "Boss actions for Eden's Verse: Refulgence (Savage).",
+    "phases": [
+        "Ragnarok[|:][\\w]{4}[|:]Heavensfall[|:]",
+        "Bahamut Prime[|:][\\w]{4}[|:]Seventh Umbral Era[|:]"
+    ]
+}

@@ -71,6 +71,8 @@ class KyaputenDashboard {
             E6S: `Eden's Verse: Furor (Savage)`,
             E7S: `Eden's Verse: Iconoclasm (Savage)`,
             E8S: `Eden's Verse: Refulgence (Savage)`,
+            UCOB: `The Unending Coil Of Bahamut (Ultimate)`,
+            // Test: `Script Test`,
         }
 
         // Combat log
@@ -251,7 +253,7 @@ class KyaputenDashboard {
     async loadEncounter () {
         try {
             const
-                zone_slug = Utils.slugify(this.combat.zone),
+                zone_slug = Utils.slugify(this.combat.zone || 'undefined'),
                 zone_abbr = Utils.getObjKey(this.supported_encounters, this.combat.zone),
                 files = []
 
@@ -315,7 +317,6 @@ class KyaputenDashboard {
             Promise
                 .all(files)
                 .then((loaded_files) => {
-                    console.log(loaded_files)
                     loaded_files.forEach((f) => {
                         switch (f._id) {
                         case 'encounter_mechanics':
@@ -405,7 +406,6 @@ class KyaputenDashboard {
         for (const entry of $(this.elements.timeline).children(`.phase-${phase}.show`)) {
             saves.push(new Promise((resolve, reject) => {
                 const
-                    $list = $(this.elements.timeline),
                     $entry = $(entry),
                     $ttl = $(this.elements.ttl, $entry),
                     ttl = +$ttl.text() - 1
@@ -415,15 +415,6 @@ class KyaputenDashboard {
                     Utils.setElementValue($ttl, ttl)
                 } else {
                     // Hide the mechanic
-                    // const
-                    //     amt = $list.get(0).style.transform.length ?
-                    //         +$list.get(0).style.transform.slice(11, -3) :
-                    //         0,
-                    //     y = amt - $entry.outerHeight() - 12
-
-                    // Only animate if this mechanic hasn't been skipped
-                    // $list.css('transform', `translateY(${y}px)`)
-
                     // Remove the entry from future consideration
                     $entry.toggleClass('show hide')
                 }
@@ -442,13 +433,18 @@ class KyaputenDashboard {
      * @param {Number} ph 
      */
     phase (ph) {
-        console.log(`Phase ${ph}`)
-        Utils.setObjValue(this.combat, 'encounter.phase', ph)
+        if (ph) Utils.setObjValue(this.combat, 'encounter.phase', ph)
+        else {
+            this.combat.encounter.phase++
+            this.combat.encounter.phases.shift()
+        }
+
+        console.log(`Phase ${this.combat.encounter.phase}`)
 
         $(this.elements.timeline)
             .removeAttr('style')
             .children().addClass('hide').removeClass('show')
-            .filter(`.phase-${ph}`).removeClass('hide').addClass('show')
+            .filter(`.phase-${this.combat.encounter.phase}`).removeClass('hide').addClass('show')
     }
 
     // Assignments
@@ -527,12 +523,12 @@ class KyaputenDashboard {
      * @return {Boolean}
      */
     _onChat ({ type: type, line: line, rawLine: raw }) {
-        // console.log(raw)
         if (!Utils.getObjValue(this.combat, 'encounter.phases')) return false
+        if (!this.combat.encounter.phases.length) return false
 
-        this.combat.encounter.phases.forEach((p, i) => {
-            if (p !== null && p.test(raw)) Utils.debounce('phase', () => this.phase(i + 1), 500)
-        })
+        console.log(raw)
+
+        if (this.combat.encounter.phases[0].test(raw)) Utils.debounce('phase', () => this.phase(), 500)
 
         return true
     }
