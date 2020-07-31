@@ -439,7 +439,7 @@ class KyaputenDashboard {
             this.combat.encounter.phases.shift()
         }
 
-        console.log(`Phase ${this.combat.encounter.phase}`)
+        console.log(`Combat Phase: ${this.combat.encounter.phase}`)
 
         $(this.elements.timeline)
             .removeAttr('style')
@@ -484,7 +484,7 @@ class KyaputenDashboard {
      * Handles a CombatData event
      * @return {Boolean}
      */
-    _onCombatData ({ type: type, Encounter: encounter, Combatant: combatants, isActive: active }) {
+    async _onCombatData ({ type: type, Encounter: encounter, Combatant: combatants, isActive: active }) {
         // Convert all types to Boolean
         active = String(active).toString().toLowerCase() == 'true'
 
@@ -522,11 +522,10 @@ class KyaputenDashboard {
      * Handles a Chat event
      * @return {Boolean}
      */
-    _onChat ({ type: type, line: line, rawLine: raw }) {
+    async _onChat ({ type: type, line: line, rawLine: raw }) {
+        console.log(raw)
         if (!Utils.getObjValue(this.combat, 'encounter.phases')) return false
         if (!this.combat.encounter.phases.length) return false
-
-        console.log(raw)
 
         if (this.combat.encounter.phases[0].test(raw)) Utils.debounce('phase', () => this.phase(), 500)
 
