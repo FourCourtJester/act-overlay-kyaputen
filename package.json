@@ -6,8 +6,8 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "bootstrap": "^4.5.0",
-    "eslint": "^7.4.0",
+    "bootstrap": "^4.5.2",
+    "eslint": "^7.8.1",
     "eslint-config-google": "^0.14.0",
     "express": "~4.17.1",
     "fs-extra": "^9.0.1",
@@ -15,7 +15,7 @@
     "jquery": "^3.5.1",
     "mustache": "^4.0.1",
     "node-sass-middleware": "0.11.0",
-    "papaparse": "^5.2.0",
+    "papaparse": "^5.3.0",
     "pug": "3.0.0",
     "serve-favicon": "^2.5.0"
   }
