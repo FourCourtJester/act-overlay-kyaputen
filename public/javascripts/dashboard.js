@@ -523,7 +523,6 @@ class KyaputenDashboard {
      * @return {Boolean}
      */
     async _onChat ({ type: type, line: line, rawLine: raw }) {
-        console.log(raw)
         if (!Utils.getObjValue(this.combat, 'encounter.phases')) return false
         if (!this.combat.encounter.phases.length) return false
 

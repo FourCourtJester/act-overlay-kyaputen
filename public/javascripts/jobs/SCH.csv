@@ -9,7 +9,10 @@ Dissipation,https://xivapi.com/i/002000/002810.png,30s,180s
 Emergency Tactics,https://xivapi.com/i/002000/002809.png,15s,15s
 Energy Drain,https://xivapi.com/i/000000/000514.png,0s,0s
 Energy Drain x1,https://xivapi.com/i/000000/000514.png,0s,0s
+1x Energy Drain,https://xivapi.com/i/000000/000514.png,0s,0s
+2x Energy Drain,https://xivapi.com/i/000000/000514.png,0s,0s
 Energy Drain x2,https://xivapi.com/i/000000/000514.png,0s,0s
+3x Energy Drain,https://xivapi.com/i/000000/000514.png,0s,0s
 Energy Drain x3,https://xivapi.com/i/000000/000514.png,0s,0s
 Excogitation,https://xivapi.com/i/002000/002813.png,45s,45s
 Fey Blessing,https://xivapi.com/i/002000/002854.png,0s,60s
@@ -21,6 +24,7 @@ Lustrate,https://xivapi.com/i/002000/002805.png,0s,0s
 Recitation,https://xivapi.com/i/002000/002822.png,15s,90s
 Rescue,https://xivapi.com/i/000000/000890.png,0s,120s
 Sacred Soil,https://xivapi.com/i/002000/002804.png,15s,30s
+Sprint,https://xivapi.com/i/000000/000405.png,60s,10s
 Succor,https://xivapi.com/i/002000/002802.png,30s,0s
 Summon Seraph,https://xivapi.com/i/002000/002850.png,20s,120s
 Surecast,https://xivapi.com/i/000000/000869.png,6s,120s
