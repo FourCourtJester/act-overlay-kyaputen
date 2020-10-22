@@ -163,8 +163,9 @@ Timestamp,Name,Phase
 01:12,2x-energy-drain,4
 01:24,dissipation,4
 01:27,succor,4
+01:30,fey-illumination,4
 01:33,biolysis,4
-01:34,fey-illumination,4
+01:34,dissipation,4
 01:35,sacred-soil,4
 01:42,2x-energy-drain,4
 01:51,aetherflow,4
